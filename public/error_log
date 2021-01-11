@@ -1,0 +1,40 @@
+[12-Jul-2020 04:53:43 UTC] PHP Fatal error:  Uncaught Symfony\Component\HttpFoundation\File\Exception\FileNotFoundException: The file "/tmp/php6VUnB5" does not exist in /home/dxg2kvj9rl01/public_html/vendor/symfony/http-foundation/File/File.php:36
+Stack trace:
+#0 /home/dxg2kvj9rl01/public_html/vendor/symfony/http-foundation/File/UploadedFile.php(77): Symfony\Component\HttpFoundation\File\File->__construct('/tmp/php6VUnB5', true)
+#1 /home/dxg2kvj9rl01/public_html/vendor/symfony/http-foundation/FileBag.php(87): Symfony\Component\HttpFoundation\File\UploadedFile->__construct('/tmp/php6VUnB5', 'up.php', '', 0, false)
+#2 /home/dxg2kvj9rl01/public_html/vendor/symfony/http-foundation/FileBag.php(52): Symfony\Component\HttpFoundation\FileBag->convertFileInformation(Array)
+#3 /home/dxg2kvj9rl01/public_html/vendor/symfony/http-foundation/FileBag.php(61): Symfony\Component\HttpFoundation\FileBag->set('ATTARI', Array)
+#4 /home/dxg2kvj9rl01/public_html/vendor/symfony/http-foundation/FileBag.php(40): Symfony\Component\HttpFoundation\FileBag->add(Array)
+#5 /home/dxg2k in /home/dxg2kvj9rl01/public_html/vendor/symfony/http-foundation/File/File.php on line 36
+[12-Jul-2020 04:53:44 UTC] PHP Fatal error:  Uncaught Symfony\Component\HttpFoundation\File\Exception\FileNotFoundException: The file "/tmp/phps6gaSg" does not exist in /home/dxg2kvj9rl01/public_html/vendor/symfony/http-foundation/File/File.php:36
+Stack trace:
+#0 /home/dxg2kvj9rl01/public_html/vendor/symfony/http-foundation/File/UploadedFile.php(77): Symfony\Component\HttpFoundation\File\File->__construct('/tmp/phps6gaSg', true)
+#1 /home/dxg2kvj9rl01/public_html/vendor/symfony/http-foundation/FileBag.php(87): Symfony\Component\HttpFoundation\File\UploadedFile->__construct('/tmp/phps6gaSg', 'up.php', '', 0, false)
+#2 /home/dxg2kvj9rl01/public_html/vendor/symfony/http-foundation/FileBag.php(52): Symfony\Component\HttpFoundation\FileBag->convertFileInformation(Array)
+#3 /home/dxg2kvj9rl01/public_html/vendor/symfony/http-foundation/FileBag.php(61): Symfony\Component\HttpFoundation\FileBag->set('data_image', Array)
+#4 /home/dxg2kvj9rl01/public_html/vendor/symfony/http-foundation/FileBag.php(40): Symfony\Component\HttpFoundation\FileBag->add(Array)
+#5 /home/d in /home/dxg2kvj9rl01/public_html/vendor/symfony/http-foundation/File/File.php on line 36
+[12-Jul-2020 04:53:46 UTC] PHP Fatal error:  Uncaught Symfony\Component\HttpFoundation\File\Exception\FileNotFoundException: The file "/tmp/phpJFoAqT" does not exist in /home/dxg2kvj9rl01/public_html/vendor/symfony/http-foundation/File/File.php:36
+Stack trace:
+#0 /home/dxg2kvj9rl01/public_html/vendor/symfony/http-foundation/File/UploadedFile.php(77): Symfony\Component\HttpFoundation\File\File->__construct('/tmp/phpJFoAqT', true)
+#1 /home/dxg2kvj9rl01/public_html/vendor/symfony/http-foundation/FileBag.php(87): Symfony\Component\HttpFoundation\File\UploadedFile->__construct('/tmp/phpJFoAqT', 'up.php', '', 0, false)
+#2 /home/dxg2kvj9rl01/public_html/vendor/symfony/http-foundation/FileBag.php(52): Symfony\Component\HttpFoundation\FileBag->convertFileInformation(Array)
+#3 /home/dxg2kvj9rl01/public_html/vendor/symfony/http-foundation/FileBag.php(61): Symfony\Component\HttpFoundation\FileBag->set('uploadimage', Array)
+#4 /home/dxg2kvj9rl01/public_html/vendor/symfony/http-foundation/FileBag.php(40): Symfony\Component\HttpFoundation\FileBag->add(Array)
+#5 /home/ in /home/dxg2kvj9rl01/public_html/vendor/symfony/http-foundation/File/File.php on line 36
+[12-Jul-2020 04:53:47 UTC] PHP Fatal error:  Uncaught Symfony\Component\HttpFoundation\File\Exception\FileNotFoundException: The file "/tmp/phpJSGhyO" does not exist in /home/dxg2kvj9rl01/public_html/vendor/symfony/http-foundation/File/File.php:36
+Stack trace:
+#0 /home/dxg2kvj9rl01/public_html/vendor/symfony/http-foundation/File/UploadedFile.php(77): Symfony\Component\HttpFoundation\File\File->__construct('/tmp/phpJSGhyO', true)
+#1 /home/dxg2kvj9rl01/public_html/vendor/symfony/http-foundation/FileBag.php(87): Symfony\Component\HttpFoundation\File\UploadedFile->__construct('/tmp/phpJSGhyO', 'up.php', '', 0, false)
+#2 /home/dxg2kvj9rl01/public_html/vendor/symfony/http-foundation/FileBag.php(52): Symfony\Component\HttpFoundation\FileBag->convertFileInformation(Array)
+#3 /home/dxg2kvj9rl01/public_html/vendor/symfony/http-foundation/FileBag.php(61): Symfony\Component\HttpFoundation\FileBag->set('uploadimage', Array)
+#4 /home/dxg2kvj9rl01/public_html/vendor/symfony/http-foundation/FileBag.php(40): Symfony\Component\HttpFoundation\FileBag->add(Array)
+#5 /home/ in /home/dxg2kvj9rl01/public_html/vendor/symfony/http-foundation/File/File.php on line 36
+[12-Jul-2020 04:53:50 UTC] PHP Fatal error:  Uncaught Symfony\Component\HttpFoundation\File\Exception\FileNotFoundException: The file "/tmp/phpPjfpXn" does not exist in /home/dxg2kvj9rl01/public_html/vendor/symfony/http-foundation/File/File.php:36
+Stack trace:
+#0 /home/dxg2kvj9rl01/public_html/vendor/symfony/http-foundation/File/UploadedFile.php(77): Symfony\Component\HttpFoundation\File\File->__construct('/tmp/phpPjfpXn', true)
+#1 /home/dxg2kvj9rl01/public_html/vendor/symfony/http-foundation/FileBag.php(87): Symfony\Component\HttpFoundation\File\UploadedFile->__construct('/tmp/phpPjfpXn', 'up.php', '', 0, false)
+#2 /home/dxg2kvj9rl01/public_html/vendor/symfony/http-foundation/FileBag.php(52): Symfony\Component\HttpFoundation\FileBag->convertFileInformation(Array)
+#3 /home/dxg2kvj9rl01/public_html/vendor/symfony/http-foundation/FileBag.php(61): Symfony\Component\HttpFoundation\FileBag->set('userfile', Array)
+#4 /home/dxg2kvj9rl01/public_html/vendor/symfony/http-foundation/FileBag.php(40): Symfony\Component\HttpFoundation\FileBag->add(Array)
+#5 /home/dxg in /home/dxg2kvj9rl01/public_html/vendor/symfony/http-foundation/File/File.php on line 36

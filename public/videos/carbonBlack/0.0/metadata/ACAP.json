@@ -1,0 +1,9 @@
+{"metadata" : {"frameRate":"30","generator":"Presenter","generatorVersion":"11.1.0","launchFile":"index.htm","title":"Format","totalSlides":"1",
+"durationInMS":"5000"} ,
+"contentStructure" : [{ "id" :"1256","class" :"slide","title" :"In Development","roles" : {"navigation" :{ "navid":"dy256" },"slide" :{ "durationInMS":"5000","hidePlaybar":"false" } },"thumbnail" : "data\/resources\/ha\/Slide1.PNG"},
+{ "id" :"11001","roles" : {"slide" :{ "durationInMS":"0" } }},
+{ "id" :"21001","roles" : {"slide" :{ "durationInMS":"0" } }}],
+"contentSettings" : {"global":{"pptxAutoPlay":"true", "showPresentationTitle":"true", "showSpeakerBio":"true", "showSpeakerEmail":"true", "showSpeakerImage":"true", "showSpeakerLogo":"true", "showSpeakerName":"true", "showSpeakerTitle":"true", "staticTOC":"false"},"toc":{"enabled":"true", "showNotes":"true", "showOnRight":"true", "showOutline":"true", "showQuizOutline":"true", "showSearch":"true", "showThumbnails":"true"},"playbar":{"enabled":"true"}},
+"contentReporting" : {"exitNormalIfCompleted":"false"
+},
+"toc" : [{"id" : "1256","title" : "In Development"}]}

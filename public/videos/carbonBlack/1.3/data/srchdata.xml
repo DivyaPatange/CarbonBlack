@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<document-metadata version="1.0" xmlns="http://breeze.macromedia.com/">
+	<document-info>
+		<title>1.3 Carbon Black Nomenclature</title>
+		<summary></summary>
+		<author/>
+		<keywords/>
+		<thumbnail href="data/thumb/thumb_slide_000001.jpg"/>
+		<view-link href="/viewer.swf?slide={{position}}" href-html5="/" href-swf="/viewer.swf?slide={{position}}"/>
+	</document-info>
+	<section type="slide" position="1" xmlns="">
+		<title>1.3 Carbon Black Nomenclature</title>
+		<content>1.3 Carbon Black Nomenclature </content>
+		<related-content>&lt;TextFlow xmlns = "http://ns.adobe.com/textLayout/2008" fontFamily = "Verdana" fontSize = "9"&gt;&lt;p&gt;&lt;span &gt;This is the module &lt;/span&gt;&lt;span &gt;1.3 &lt;/span&gt;&lt;span &gt;Carbon Black Nomenclature.&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;In this short module, we will learn how the carbon black industry names their products. The word, nomenclature, is used to describe systematic naming.  The most commonly used nomenclature is provided by ASTM International.  An overview of other nomenclature systems will be explored.&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;/TextFlow&gt;</related-content>
+		<thumbnail href="data/thumb/thumb_slide_000001.jpg"/>
+	</section>
+	<section type="slide" position="2" xmlns="">
+		<title>ASTM Nomenclature for Grades</title>
+		<content>   “N” stands for normal cure rate “S” stands for slow cure rate First digit indicates particle size Second and third digit arbitrarily assigned by ASTM and means nothing specific ASTM Nomenclature for Grades N550 American Society for Testing and Materials 	Now ASTM 	Standards Organization 	Voluntary Consensus Technical Standards 	Global Carbon Black Industry Participates </content>
+		<related-content>&lt;TextFlow xmlns = "http://ns.adobe.com/textLayout/2008" fontFamily = "Verdana" fontSize = "9"&gt;&lt;p&gt;&lt;span &gt;ASTM International, formerly known as American Society for Testing and Materials, is an international &lt;/span&gt;&lt;span &gt;standards organization&lt;/span&gt;&lt;span &gt; that develops and publishes voluntary consensus technical &lt;/span&gt;&lt;span &gt;standards&lt;/span&gt;&lt;span &gt; for a wide range of materials, products, systems, and &lt;/span&gt;&lt;span &gt;services&lt;/span&gt;&lt;span &gt;.  Many voluntary consensus standards operate globally.   The global carbon black industry participates in ASTM and recognizes the standards as applied to carbon black.&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;ASTM has set up standards for the nomenclature related to carbon blacks used in rubber applications.  ASTM nomenclature uses a letter and three numbers in combination to describe a grade of carbon black.  The example listed here is N550.  The “N” in N550 stands for normal cure rate. If the name begins with an “S” then the carbon black has a slow cure rate.   &lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;The first number following the letter is the most important in the ASTM system and indicates particle size.  We will look at the different numbers and what they mean on the next two slides.&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;The second and third numbers have no meaning other than they are arbitrarily assigned to a specific carbon black by ASTM.  Typically, different numbers indicate that the carbon blacks have different structures.  An example of this would be in the N300 series where we have N326, N330 and N347 with typical OAN’s of 72, 102 and 124, respectively.&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;/TextFlow&gt;</related-content>
+		<thumbnail href="data/thumb/thumb_slide_000002.jpg"/>
+	</section>
+	<section type="slide" position="3" xmlns="">
+		<title>Carbon Black Particle</title>
+		<content>Carbon Black Particle      Particle Particles vary in size within an aggregate Sizes vary even more between aggregates Around 2000 particles are measured to obtain a representative diameter </content>
+		<related-content>&lt;TextFlow xmlns = "http://ns.adobe.com/textLayout/2008" fontFamily = "Verdana" fontSize = "9"&gt;&lt;p&gt;&lt;span &gt;Notice in this micrograph of an aggregate that the particles of carbon black vary in size.  Though not pictured particles vary in size even more between aggregates.  The average particle size is determined by using many micrographs similar to the one here.  Usually around 2000 particles from many different size aggregates are measured to obtain a representative diameter.  &lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;ASTM nomenclature uses this average particle diameter as we will see in the next slide.&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;/TextFlow&gt;</related-content>
+		<thumbnail href="data/thumb/thumb_slide_000003.jpg"/>
+	</section>
+	<section type="slide" position="4" xmlns="">
+		<title>First Digit Assignment by  ASTM in Carbon Black Nomenclature System</title>
+		<content>First Digit Assignment by &amp;#x0A;ASTM in Carbon Black Nomenclature System First DigitAverage Particle Size, nm01 to 10111 to 19220 to 25326 to 30431 to 39540 to 48649 to 60761 to 1008101 to 2009201 to 500  N550 ~ 42nm </content>
+		<related-content>&lt;TextFlow xmlns = "http://ns.adobe.com/textLayout/2008" fontFamily = "Verdana" fontSize = "9"&gt;&lt;p&gt;&lt;span &gt;The first number in the ASTM name defines the average particle diameter.  Our N550 example has a “5” as the first number and it indicates that N550 has an average particle diameter between 40 and 48 nanometers.  Typical results give N550 a measured diameter of 42 nanometers.  &lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;As you can see, all ten single digits have a diameter range associated with them.   We will now show some of these names and their average diameter on the next slide.&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;/TextFlow&gt;</related-content>
+		<thumbnail href="data/thumb/thumb_slide_000004.jpg"/>
+	</section>
+	<section type="slide" position="5" xmlns="">
+		<title>Particle Size vs. ASTM Names</title>
+		<content>Particle Size vs. ASTM Names N900 N300 N700 N500 N200 N100       300 nm  20 nm   5 m2/g 150 m2/g  Series Name Particle Size Surface Area   </content>
+		<related-content>&lt;TextFlow xmlns = "http://ns.adobe.com/textLayout/2008" fontFamily = "Verdana" fontSize = "9"&gt;&lt;p&gt;&lt;span &gt;This slide illustrates the relative diameter drawn to scale of the different series of carbon blacks according to the ASTM nomenclature.  We see the N900’s down to the N100’s with particles ranging from over 300 nanometers to less than 20 nanometers.  The associated surface areas range from about 5 square meters per gram up to 150 square meters per gram..&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;/TextFlow&gt;</related-content>
+		<thumbnail href="data/thumb/thumb_slide_000005.jpg"/>
+	</section>
+	<section type="slide" position="6" xmlns="">
+		<title>Subdivisions  (Nicknames)</title>
+		<content>Description used for identification More generic to cover unique areas Carbon Black Process Thermal/Furnace/Channel Performance Subdivisions  (Nicknames) HardSoftN100N500N200N600N300N700   </content>
+		<related-content>&lt;TextFlow xmlns = "http://ns.adobe.com/textLayout/2008" fontFamily = "Verdana" fontSize = "9"&gt;&lt;p&gt;&lt;span &gt;In this area of nomenclature descriptive names are used to identify the carbon black type.  These names are more generic and cover some of the more unique areas associated with carbon black.&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;One way to describe a carbon black is simply by the name of the process type from which it originates such as thermal, furnace, or channel black.&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;A natural separation of carbon blacks is whether the addition of the black makes rubber hard or soft.  Hard blacks correspond to ASTM N100, 200 or 300 series; whereas, soft blacks correspond to the N500, 600 and 700 series.&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;/TextFlow&gt;</related-content>
+		<thumbnail href="data/thumb/thumb_slide_000006.jpg"/>
+	</section>
+	<section type="slide" position="7" xmlns="">
+		<title>Subdivisions  (Nicknames)</title>
+		<content>Application Can indicate an ease of dispersion, lack of grit, or lack of other impurities Examples Plastics grade - Low grit, soft pellet, medium to high structure  Tread grade – Used in the tread of the tire Carcass grade – Used in the carcass of the tire Inner-liner grade – Used in the internal lining of the tire Subdivisions  (Nicknames) </content>
+		<related-content>&lt;TextFlow xmlns = "http://ns.adobe.com/textLayout/2008" fontFamily = "Verdana" fontSize = "9"&gt;&lt;p&gt;&lt;span &gt;Many carbon blacks are described by application and can be an indication of ease of dispersion, absence of grit and/or the absence of other impurities.  For example, one may describe a low grit, soft pellet, medium to high structure carbon black as a “plastics” black.  A plastics black could be included in the Specialty and Industrial categories.&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;Tire application grades could be described as tread, carcass, and/or inner-line depending on where they are used in the tire.  A tread grade may have good abrasion resistance and low rolling resistance to give long mileage and good energy consumption for the car.  A carcass grade may have low heat buildup and good flex strength.  A inner-liner product may give good permeability so the tire does not leak air.&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;/TextFlow&gt;</related-content>
+		<thumbnail href="data/thumb/thumb_slide_000007.jpg"/>
+	</section>
+	<section type="slide" position="8" xmlns="">
+		<title>Old Names for Carbon Black </title>
+		<content>“Old” NameAbbrev.ASTMSuper Abrasion FurnaceSAF~N110Intermediate Super Abrasion FurnaceISAF~N220Fast Extruding FurnaceFEF~N550General Purpose FurnaceGPF~N660Semi Reinforcing FurnaceSRF~N762Medium ThermalMT~N990 Old Names for Carbon Black    </content>
+		<related-content>&lt;TextFlow xmlns = "http://ns.adobe.com/textLayout/2008" fontFamily = "Verdana" fontSize = "9"&gt;&lt;p&gt;&lt;span &gt;And a module would not be complete without a little historical nomenclature. As you can see listed here, many years ago the carbon blacks were named according to their properties in an application. Hence, an SAF carbon black would be an N110 type which is made on a furnace reactor and provides super abrasion resistance in tire treads.  However, as you can see, the “resistance” term was left out of the name which seems to me would add confusion to what is being described.&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;FEF or fine extruding furnace is our common example of N550. N550 is, of course, made in a furnace type reactor which we sometimes call a soft grade reactor.  And where does the “soft” come from?   As you remember, when a carbon black is added to rubber and it makes the rubber relatively soft then it is a “soft” grade; hence the term “soft grade” reactor.&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;/TextFlow&gt;</related-content>
+		<thumbnail href="data/thumb/thumb_slide_000008.jpg"/>
+	</section>
+	<section type="slide" position="9" xmlns="">
+		<title>Commercial Names for Carbon Black </title>
+		<content>Trademarks Klarex Electra Referred to by their nearest ASTM grade Numerous without any rationale Knowing them would be pure memorization Commercial Names for Carbon Black  </content>
+		<related-content>&lt;TextFlow xmlns = "http://ns.adobe.com/textLayout/2008" fontFamily = "Verdana" fontSize = "9"&gt;&lt;p&gt;&lt;span &gt;Many names found in the industry are what we call commercial names.  There are many in the carbon black industry which are trademarks by individual companies to uniquely identify their products.  Some may be unique to particular applications where the product is used, for instance, the &lt;/span&gt;&lt;span &gt;Klarex&lt;/span&gt;&lt;span &gt; trademark which is used for clean soft black applications and Electra which is used for blacks with conductive properties. Many times these are combined with their ASTM product nomenclature to inform the end user of the product more about the morphology in a systematic way. &lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;The nomenclature used for different carbon blacks can be interesting.  Trademarks in particular are usually protected by national and global regulations and care must be taken in their consistent use to protect the identity of the manufacturer’s products.&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;/TextFlow&gt;</related-content>
+		<thumbnail href="data/thumb/thumb_slide_000009.jpg"/>
+	</section>
+	<section type="slide" position="10" xmlns="">
+		<title>END</title>
+		<content>END </content>
+		<related-content>&lt;TextFlow xmlns = "http://ns.adobe.com/textLayout/2008" fontFamily = "Verdana" fontSize = "9"&gt;&lt;p&gt;&lt;span &gt;This is the end of &lt;/span&gt;&lt;span &gt;module &lt;/span&gt;&lt;span &gt;1.3 &lt;/span&gt;&lt;span &gt;Carbon Black Nomenclature.&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;/TextFlow&gt;</related-content>
+		<thumbnail href="data/thumb/thumb_slide_000010.jpg"/>
+	</section>
+</document-metadata>

@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<presentation width="720" height="540" isRTL="0" preview="0" enableAccessibility="0" defaultSlideDuration="5" start="play" buildNum="11.1.0.189">
+	<presentationTitle>8.1 Theory of Drying Carbon Black</presentationTitle>
+	<speakers></speakers>
+	<search url="srchdata.xml"/>
+	<presentationBg url="bg.swf"/>
+	<masters><master url="Master0.swf" id="1" totalFrames="1"><backdrop frameNum="0"/><slidexml><AS3Class className="TL_a95db15a9f924fe68039b94bc6c7e32dyxy" classType="PptTmline_xyxyxyxyxyxyxyxyxyxyxyxyxyxy" frameRate="30"><OnLoadCallBacks/><Audios/></AS3Class></slidexml></master></masters>
+	<layouts><layout url="Layout0.swf" id="1" totalFrames="1"><backdrop displayBgSp="false"/><slidexml><AS3Class className="TL_f18e57ae413149f18a748e428dd339bayxy" classType="PptTmline_xyxyxyxyxyxyxyxyxyxyxyxyxyxy" frameRate="30"><OnLoadCallBacks/><Audios/></AS3Class></slidexml></layout><layout url="Layout1.swf" id="2" totalFrames="1"><backdrop displayBgSp="true"/><slidexml><AS3Class className="TL_a350109e8a57464faba00836ddcef232yxy" classType="PptTmline_xyxyxyxyxyxyxyxyxyxyxyxyxyxy" frameRate="30"><OnLoadCallBacks/><Audios/></AS3Class></slidexml></layout></layouts>
+	<slides>
+		<slide id="256" showInTOC="" inSequence="" frameRate="30" totalFrames="30" usePptxSlideDur="0" lockInteractionSlide="false" isHiddenInteractionSl="false" isWrongInteractionSl="false" swfConvertorEngine="Nova" slideDuration="52.72" advance="auto" blockMovement="false" hideplaybar="false" type="normal">
+			<transition/>
+			<content url="Slide0.swf" id="256"/>
+			<backdrop displayBgSp="true"/>
+			<master id="1" frameNum="0"/>
+			<layout id="1" frameNum="0"/>
+			<slidexml><AS3Class className="TL_f832a674d287494c8dec0dbc6e15e71fyxy" classType="PptTmline_xyxyxyxyxyxyxyxyxyxyxyxyxyxy" frameRate="30" normalSlide="1"><OnLoadCallBacks/><Audios/></AS3Class></slidexml>
+			<clickAnimations></clickAnimations>
+			<webObjectContents/>
+			<flvContents/>
+			<audios id="1" duration=" 52720">
+				<media url="a24x1.mp3" startMsecs="0" duration="52720" startAtMSecs="0"/>
+			</audios>
+			<playbackActions></playbackActions>
+			<slideTitle>@ 8.1 Theory of Drying Carbon Black@</slideTitle>
+			<notes isHTML="true">&lt;TextFlow xmlns = "http://ns.adobe.com/textLayout/2008" fontFamily = "Verdana" fontSize = "9"&gt;&lt;p&gt;&lt;span &gt;This is Module 8.1 Theory of Drying Carbon Black &lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;Drying is a widespread operation in the chemical process industry.  &lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;It is used for chemicals of all types: &lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;  Pharmaceuticals &lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;  Biological materials&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;  Foods&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;  Detergents&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;  Wood&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;  Minerals&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;  Industrial wastes &lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;  and carbon black&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;Drying is distinguished from mechanical dewatering methods such as centrifuging, decanting and  filtering by the fact that in drying, water is removed as a gas vapor.  &lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;The goal of this session is to provide an understanding the theoretical concepts that have been developed for the science of drying a solid.  These concepts are used for the design and efficient operation of carbon black dryers.&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;/TextFlow&gt;</notes>
+			<slideThumbnail url="thumb.swf" frame="1"/>
+		</slide>
+		<slide id="263" showInTOC="" inSequence="" frameRate="30" totalFrames="390" usePptxSlideDur="0" lockInteractionSlide="false" isHiddenInteractionSl="false" isWrongInteractionSl="false" swfConvertorEngine="Nova" slideDuration="105.41" advance="auto" blockMovement="false" hideplaybar="false" type="normal">
+			<transition/>
+			<content url="Slide1.swf" id="263"/>
+			<backdrop displayBgSp="true"/>
+			<master id="1" frameNum="0"/>
+			<layout id="2" frameNum="0"/>
+			<slidexml><AS3Class className="TL_03fb4b0e143f4a22a05243c1eea937c4yxy" classType="PptTmline_xyxyxyxyxyxyxyxyxyxyxyxyxyxy" frameRate="30" normalSlide="1"><OnLoadCallBacks/><Audios/></AS3Class></slidexml>
+			<clickAnimations>
+				<click startTime="2960" isStartRelative="false" duration="167"/>
+				<click startTime="4140" isStartRelative="false" duration="167"/>
+				<click startTime="6350" isStartRelative="false" duration="167"/>
+				<click startTime="8050" isStartRelative="false" duration="167"/>
+				<click startTime="10950" isStartRelative="false" duration="167"/>
+				<click startTime="20420" isStartRelative="false" duration="167"/>
+				<click startTime="22320" isStartRelative="false" duration="167"/>
+				<click startTime="24920" isStartRelative="false" duration="167"/>
+				<click startTime="30190" isStartRelative="false" duration="167"/>
+				<click startTime="31770" isStartRelative="false" duration="167"/>
+				<click startTime="32680" isStartRelative="false" duration="167"/>
+				<click startTime="35230" isStartRelative="false" duration="10034"/>
+			</clickAnimations>
+			<webObjectContents/>
+			<flvContents/>
+			<audios id="2" duration=" 105410">
+				<media url="a24x2.mp3" startMsecs="0" duration="105410" startAtMSecs="0"/>
+			</audios>
+			<playbackActions></playbackActions>
+			<slideTitle>@Drying Definition@</slideTitle>
+			<notes isHTML="true">&lt;TextFlow xmlns = "http://ns.adobe.com/textLayout/2008" fontFamily = "Verdana" fontSize = "9"&gt;&lt;p&gt;&lt;span &gt;Drying is a mass transfer operation resulting in the removal of a liquid from a solid, a semi-solid or a liquid by evaporation. We say that the liquid that is removed changes state to a gas, commonly called a vapor, in this process. &lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;In a carbon black process, drying of the liquid, water, from the solid, carbon black, occurs after wet pelletization.  &lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;Drying requires a source of heat and a place for the vapor to go called a “sink”.  &lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;Let’s use an example of water being dried from our skin.  The evaporation of water from our skin causes our skin to be cool because heat is removed from our skin by this process.    When the humidity in the atmosphere is high on a summer day, the skin stays hot because the water on our skin, the perspiration, has a difficult time evaporating.  This is because the air is saturated with water and has no capacity or “sink” for the water to be absorbed.  &lt;/span&gt;&lt;span  fontWeight="bold"&gt;However, when the humidity in the air is low, the skin is cool because the perspiration evaporates quickly.&lt;/span&gt;&lt;span &gt;  The low humidity air provides a greater “sink” for the perspiration to evaporate.  The water evaporates quickly, the heat is removed rapidly so the skin cools.  The “rate” of evaporation is high.  Normally on a day when the humidity is low, our skin stays drier.&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;In a drying operation in the chemical industry, we are always seeking low cost methods to evaporate the water from the wet pellets at a fast rate.&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;/TextFlow&gt;</notes>
+			<slideThumbnail url="thumb.swf" frame="2"/>
+		</slide>
+		<slide id="264" showInTOC="" inSequence="" frameRate="30" totalFrames="630" usePptxSlideDur="0" lockInteractionSlide="false" isHiddenInteractionSl="false" isWrongInteractionSl="false" swfConvertorEngine="Nova" slideDuration="141.004" advance="auto" blockMovement="false" hideplaybar="false" type="normal">
+			<transition/>
+			<content url="Slide2.swf" id="264"/>
+			<backdrop displayBgSp="true"/>
+			<master id="1" frameNum="0"/>
+			<layout id="2" frameNum="0"/>
+			<slidexml><AS3Class className="TL_df0594b8079242da8db96a9a64dc4328yxy" classType="PptTmline_xyxyxyxyxyxyxyxyxyxyxyxyxyxy" frameRate="30" normalSlide="1"><OnLoadCallBacks/><Audios/></AS3Class></slidexml>
+			<clickAnimations>
+				<click startTime="4920" isStartRelative="false" duration="167"/>
+				<click startTime="6150" isStartRelative="false" duration="2034"/>
+				<click startTime="7810" isStartRelative="false" duration="2034"/>
+				<click startTime="12410" isStartRelative="false" duration="2034"/>
+				<click startTime="39070" isStartRelative="false" duration="167"/>
+				<click startTime="44990" isStartRelative="false" duration="4034"/>
+				<click startTime="51380" isStartRelative="false" duration="6034"/>
+				<click startTime="64680" isStartRelative="false" duration="534"/>
+				<click startTime="73830" isStartRelative="false" duration="1034"/>
+				<click startTime="78220" isStartRelative="false" duration="534"/>
+				<click startTime="79540" isStartRelative="false" duration="1034"/>
+				<click startTime="120830" isStartRelative="false" duration="534"/>
+			</clickAnimations>
+			<webObjectContents/>
+			<flvContents/>
+			<audios id="3" duration=" 127050">
+				<media url="a24x3.mp3" startMsecs="0" duration="127050" startAtMSecs="0"/>
+			</audios>
+			<playbackActions></playbackActions>
+			<slideTitle>@Phase Diagram for a Substance@</slideTitle>
+			<notes isHTML="true">&lt;TextFlow xmlns = "http://ns.adobe.com/textLayout/2008" fontFamily = "Verdana" fontSize = "9"&gt;&lt;p&gt;&lt;span &gt;Water can be found in nature in three forms:  as a gas or vapor, as a liquid, and as a solid.  The form depends upon the pressure and temperature of the water.  At atmospheric pressure and 100 degrees C, we can find water boiling as a liquid and changing into a gas. At zero degrees C and atmospheric pressure, we can find water freezing as ice.  Any substance can be found as a solid, liquid or gas or some combination of the three states depending upon the temperature and pressure of that substance.&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;Above is a typical phase diagram for a substance which shows the state of the substance at certain pressures, P,  and temperatures ,T.  The state of a substance at a point on the graph shown as a liquid, L,  a gas, G, or a solid, S.  The point on the diagram at which a substance can be found in all three states - a  liquid, solid and gas is called the triple point.  Can you identify that point on this graph? &lt;/span&gt;&lt;span &gt;The &lt;/span&gt;&lt;span &gt;point at which the state of the liquid and gas are not distinctive is called the critical point.   This is the dot at the end of the line between the L region and the G region.  Temperatures and pressures above this point are called “supercritical”.  &lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;In drying, we want to take water that is in the liquid form, L, and move it to the gaseous form, G. Freeze drying is achieved by lowering the pressure and temperature of the liquid so the substance passes through a solid phase - it’s frozen - before becoming a gas.  This is represented by the blue arrow.  In normal drying  a substance passes directly from the liquid state to the gaseous state without any other phase change.  This is represented by the green arrow.   &lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;The process of drying carbon black is a “normal drying” process.&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;/TextFlow&gt;</notes>
+			<slideThumbnail url="thumb.swf" frame="3"/>
+		</slide>
+		<slide id="266" showInTOC="" inSequence="" frameRate="30" totalFrames="930" usePptxSlideDur="0" lockInteractionSlide="false" isHiddenInteractionSl="false" isWrongInteractionSl="false" swfConvertorEngine="Nova" slideDuration="221.09" advance="auto" blockMovement="false" hideplaybar="false" type="normal">
+			<transition/>
+			<content url="Slide3.swf" id="266"/>
+			<backdrop displayBgSp="true"/>
+			<master id="1" frameNum="0"/>
+			<layout id="2" frameNum="0"/>
+			<slidexml><AS3Class className="TL_58609390fcd44c769119f29e240fbb83yxy" classType="PptTmline_xyxyxyxyxyxyxyxyxyxyxyxyxyxy" frameRate="30" normalSlide="1"><OnLoadCallBacks/><Audios/></AS3Class></slidexml>
+			<clickAnimations>
+				<click startTime="43860" isStartRelative="false" duration="6034"/>
+				<click startTime="69620" isStartRelative="false" duration="3034"/>
+				<click startTime="77720" isStartRelative="false" duration="2034"/>
+				<click startTime="90650" isStartRelative="false" duration="2166"/>
+				<click startTime="109110" isStartRelative="false" duration="2034"/>
+				<click startTime="112740" isStartRelative="false" duration="2034"/>
+				<click startTime="119460" isStartRelative="false" duration="2034"/>
+				<click startTime="124090" isStartRelative="false" duration="1034"/>
+				<click startTime="138200" isStartRelative="false" duration="3034"/>
+				<click startTime="141340" isStartRelative="false" duration="2034"/>
+				<click startTime="146210" isStartRelative="false" duration="2166"/>
+				<click startTime="152080" isStartRelative="false" duration="2034"/>
+			</clickAnimations>
+			<webObjectContents/>
+			<flvContents/>
+			<audios id="4" duration=" 221090">
+				<media url="a24x4.mp3" startMsecs="0" duration="221090" startAtMSecs="0"/>
+			</audios>
+			<playbackActions></playbackActions>
+			<slideTitle>@Psychrometry@</slideTitle>
+			<notes isHTML="true">&lt;TextFlow xmlns = "http://ns.adobe.com/textLayout/2008" fontFamily = "Verdana" fontSize = "9"&gt;&lt;p&gt;&lt;span &gt;The science of &lt;/span&gt;&lt;span &gt;psychrometry&lt;/span&gt;&lt;span &gt; is concerned with the properties of gas-vapor mixtures.  A gas-vapor system with air as the gas and water as the vapor is by far the most common system encountered.  Above is a chart called a psychometric chart.   This chart shows how much water can be absorbed by the air at the temperatures shown as the dry bulb temperatures.  A dry bulb temperature is a temperature measured by a normal thermometer as compared to a wet bulb thermometer which is a special thermometer used to determine the amount of water the air can absorb. The chart above is based on an atmospheric pressure of 101.325 &lt;/span&gt;&lt;span &gt;kiloPascals&lt;/span&gt;&lt;span &gt; as you can see in the legend.  This is normal sea level pressure.   If the atmospheric pressure is different from that value, we would have to make adjustments to this chart.  We are familiar with the weather term relative humidity which is related to the amount of water vapor in the air at a given temperature.   When the air has 100% relative humidity the air is saturated with water and cannot absorb any more.  This saturation point can be read on the curved line at the top of the chart&lt;/span&gt;&lt;span  fontWeight="bold"&gt;.&lt;/span&gt;&lt;span &gt;  Water condenses from the air at these temperatures whenever the air has 100% relative humidity.  In a nature, dew is formed.  So the temperature of condensation for this condition is called the dew point.  &lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;We will not go into detail in the discussion of &lt;/span&gt;&lt;span &gt;pyschrometry&lt;/span&gt;&lt;span &gt; except to demonstrate several points related to drying.&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;Suppose we have an air temperature today of 15 degrees C and the relative humidity is 50%.  The amount of water in the air can be read from the right hand side of the chart as 0.005 grams of water per gram of dry air.  If we want to use this air at this temperature for drying any substance, it can only absorb the amount of water up to the saturation point of the air or up to the 100% relative humidity curve&lt;/span&gt;&lt;span  fontWeight="bold" fontStyle="italic"&gt;.&lt;/span&gt;&lt;span &gt;  We can show that this air can absorb water up to 0.011 grams of water per gram of dry air&lt;/span&gt;&lt;span  fontWeight="bold" fontStyle="italic"&gt;.&lt;/span&gt;&lt;span &gt;  We will call &lt;/span&gt;&lt;span  fontWeight="bold"&gt;the difference between the saturation point and the current amount of water in the air the “sink”&lt;/span&gt;&lt;span &gt; that the air has available for water absorption.  In this case this is the difference between  0.011 grams and 0.005 grams.  So 0.011 minus 0.005 equals 0.006 grams of water per gram of dry air.  This value we will call  the “sink”.&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;This air could dry a substance using the 0.006 grams of water available as a “sink”. &lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;Substances can be dried just by providing a circulation of unheated, dry air for a long period of time.  This is a common way of drying grains such as wheat and rice.  It is an inexpensive way to dry a substance but it takes a long time.  This method can also be used for drying carbon black if you can tolerate waiting a few days for the carbon black to become dry.  This process requires that the dry air can provide a “sink” for absorbing the water contained in the carbon black.  &lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;/TextFlow&gt;</notes>
+			<slideThumbnail url="thumb.swf" frame="4"/>
+		</slide>
+		<slide id="271" showInTOC="" inSequence="" frameRate="30" totalFrames="630" usePptxSlideDur="0" lockInteractionSlide="false" isHiddenInteractionSl="false" isWrongInteractionSl="false" swfConvertorEngine="Nova" slideDuration="99.118" advance="auto" blockMovement="false" hideplaybar="false" type="normal">
+			<transition/>
+			<content url="Slide4.swf" id="271"/>
+			<backdrop displayBgSp="true"/>
+			<master id="1" frameNum="0"/>
+			<layout id="2" frameNum="0"/>
+			<slidexml><AS3Class className="TL_ebd123ffd4724c6d9b56b1bcce4deeeeyxy" classType="PptTmline_xyxyxyxyxyxyxyxyxyxyxyxyxyxy" frameRate="30" normalSlide="1"><OnLoadCallBacks/><Audios/></AS3Class></slidexml>
+			<clickAnimations>
+				<click startTime="3820" isStartRelative="false" duration="2034"/>
+				<click startTime="7790" isStartRelative="false" duration="2034"/>
+				<click startTime="13620" isStartRelative="false" duration="2034"/>
+				<click startTime="16960" isStartRelative="false" duration="5034"/>
+				<click startTime="27230" isStartRelative="false" duration="2034"/>
+				<click startTime="29040" isStartRelative="false" duration="2166"/>
+				<click startTime="31550" isStartRelative="false" duration="2034"/>
+				<click startTime="48680" isStartRelative="false" duration="1034"/>
+				<click startTime="78680" isStartRelative="false" duration="2034"/>
+			</clickAnimations>
+			<webObjectContents/>
+			<flvContents/>
+			<audios id="5" duration=" 91380">
+				<media url="a24x5.mp3" startMsecs="0" duration="91380" startAtMSecs="0"/>
+			</audios>
+			<playbackActions></playbackActions>
+			<slideTitle>@The Deeper the Sink@</slideTitle>
+			<notes isHTML="true">&lt;TextFlow xmlns = "http://ns.adobe.com/textLayout/2008" fontFamily = "Verdana" fontSize = "9"&gt;&lt;p&gt;&lt;span &gt;Now suppose we heat the air from 15 degrees C to 30 degrees C.  The amount of water per gram of dry air remains 0.005 grams.  However, at 30 degrees C the amount of water that the air can now absorb at 100% saturation has increased to 0.027 grams per gram of dry air.  The available “sink” for water absorption is now 0.022 grams of water per gram of air.  This is more than 3 times the water capacity of the air at 15 degrees C.&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;Can you see how the potential for absorption of water by heating the air can increase the potential rate of drying a substance or increase the potential of using less air for drying a substance?&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;This is one of the basic principles in drying.  In any drying process, if an adequate supply of heat is assumed, the temperature and rate at which liquid vaporization occurs will depend on the vapor concentration in the surrounding atmosphere.  By adding heat to the dryer we can increase the rate at which the evaporation occurs.&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;Our goal in drying is to add heat economically to achieve drying in the shortest time possible without overheating the substance we are drying – the carbon black.&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;/TextFlow&gt;</notes>
+			<slideThumbnail url="thumb.swf" frame="5"/>
+		</slide>
+		<slide id="265" showInTOC="" inSequence="" frameRate="30" totalFrames="660" usePptxSlideDur="0" lockInteractionSlide="false" isHiddenInteractionSl="false" isWrongInteractionSl="false" swfConvertorEngine="Nova" slideDuration="151.96" advance="auto" blockMovement="false" hideplaybar="false" type="normal">
+			<transition/>
+			<content url="Slide5.swf" id="265"/>
+			<backdrop displayBgSp="true"/>
+			<master id="1" frameNum="0"/>
+			<layout id="2" frameNum="0"/>
+			<slidexml><AS3Class className="TL_8975bb340b284f608c366a5ef90141bcyxy" classType="PptTmline_xyxyxyxyxyxyxyxyxyxyxyxyxyxy" frameRate="30" normalSlide="1"><OnLoadCallBacks/><Audios/></AS3Class></slidexml>
+			<clickAnimations>
+				<click startTime="25850" isStartRelative="false" duration="2034"/>
+				<click startTime="47860" isStartRelative="false" duration="2166"/>
+				<click startTime="50550" isStartRelative="false" duration="2034"/>
+				<click startTime="62300" isStartRelative="false" duration="1034"/>
+				<click startTime="65590" isStartRelative="false" duration="2034"/>
+				<click startTime="69090" isStartRelative="false" duration="1034"/>
+				<click startTime="74570" isStartRelative="false" duration="1034"/>
+				<click startTime="76800" isStartRelative="false" duration="2034"/>
+				<click startTime="80330" isStartRelative="false" duration="2034"/>
+				<click startTime="97060" isStartRelative="false" duration="934"/>
+				<click startTime="120780" isStartRelative="false" duration="2034"/>
+				<click startTime="131520" isStartRelative="false" duration="2034"/>
+			</clickAnimations>
+			<webObjectContents/>
+			<flvContents/>
+			<audios id="6" duration=" 141460">
+				<media url="a24x6.mp3" startMsecs="0" duration="141460" startAtMSecs="0"/>
+			</audios>
+			<playbackActions></playbackActions>
+			<slideTitle>@Heat Transfer@</slideTitle>
+			<notes isHTML="true">&lt;TextFlow xmlns = "http://ns.adobe.com/textLayout/2008" fontFamily = "Verdana" fontSize = "9"&gt;&lt;p&gt;&lt;span  fontWeight="bold"&gt;Heat transfer&lt;/span&gt;&lt;span &gt; is the passage of &lt;/span&gt;&lt;span &gt;thermal energy&lt;/span&gt;&lt;span &gt; from a hot substance to a colder substance. When a substance is at a different &lt;/span&gt;&lt;span &gt;temperature&lt;/span&gt;&lt;span &gt; than its &lt;/span&gt;&lt;span &gt;surroundings&lt;/span&gt;&lt;span &gt; or another substance, heat is transferred to drive the substance and the surroundings to &lt;/span&gt;&lt;span &gt;thermal equilibrium&lt;/span&gt;&lt;span &gt;. At thermal equilibrium, all of the system is at the same temperature.  Heat transfer always occurs from a hot substance to a cold substance. Where there is a temperature difference between substances, heat transfer is never completely stopped; it can only be slowed down.&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;The purpose of a dryer is to induce a source of heat and transfer the thermal energy from that source of heat into the water to cause the water to evaporate.  It takes about one calorie of heat to raise the temperature of one gram of water by one degree Celsius at atmospheric pressure.  Suppose the water is entering the dryer at 40 degrees C.  Then it takes 60 calories to raise the temperature to the boiling point, 100 degrees C.  However, at atmospheric pressure and 100 degrees C, it takes 540 more calories of heat to cause one gram of water to spontaneously evaporate or boil.  &lt;/span&gt;&lt;span  fontWeight="bold"&gt;Most of the heat required to cause spontaneous evaporation of the water has to be added at 100 degrees C.&lt;/span&gt;&lt;span &gt;   For this example, a total of 540 calories plus 60 calories is 600 calories total heat.  Therefore, 90 percent of the heat has to be added just to make the water boil.  Therefore, if a dryer can add enough heat to the water to cause spontaneous evaporation to occur – the 90% of the heat shown above - the speed of drying can be increased significantly.  &lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;The purpose of most industrial drying operations is to get the water above the boiling point and achieve drying as quickly as possible at the lowest cost. &lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;There are three fundamental ways to transfer heat:&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;  by Conduction&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;  by Convection and&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;  by Radiation&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;/TextFlow&gt;</notes>
+			<slideThumbnail url="thumb.swf" frame="6"/>
+		</slide>
+		<slide id="268" showInTOC="" inSequence="" frameRate="30" totalFrames="90" usePptxSlideDur="0" lockInteractionSlide="false" isHiddenInteractionSl="false" isWrongInteractionSl="false" swfConvertorEngine="Nova" slideDuration="154.44" advance="auto" blockMovement="false" hideplaybar="false" type="normal">
+			<transition/>
+			<content url="Slide6.swf" id="268"/>
+			<backdrop displayBgSp="true"/>
+			<master id="1" frameNum="0"/>
+			<layout id="2" frameNum="0"/>
+			<slidexml><AS3Class className="TL_1e7977e0f84a43b6a8da56437297dcf7yxy" classType="PptTmline_xyxyxyxyxyxyxyxyxyxyxyxyxyxy" frameRate="30" normalSlide="1"><OnLoadCallBacks/><Audios/></AS3Class></slidexml>
+			<clickAnimations>
+				<click startTime="2990" isStartRelative="false" duration="167"/>
+				<click startTime="8430" isStartRelative="false" duration="167"/>
+				<click startTime="19760" isStartRelative="false" duration="167"/>
+				<click startTime="78650" isStartRelative="false" duration="167"/>
+				<click startTime="83030" isStartRelative="false" duration="167"/>
+				<click startTime="84610" isStartRelative="false" duration="167"/>
+				<click startTime="118720" isStartRelative="false" duration="167"/>
+				<click startTime="121470" isStartRelative="false" duration="167"/>
+				<click startTime="131560" isStartRelative="false" duration="167"/>
+				<click startTime="143010" isStartRelative="false" duration="167"/>
+			</clickAnimations>
+			<webObjectContents/>
+			<flvContents/>
+			<audios id="7" duration=" 154440">
+				<media url="a24x7.mp3" startMsecs="0" duration="154440" startAtMSecs="0"/>
+			</audios>
+			<playbackActions></playbackActions>
+			<slideTitle>@Types of Heat Transfer@</slideTitle>
+			<notes isHTML="true">&lt;TextFlow xmlns = "http://ns.adobe.com/textLayout/2008" fontFamily = "Verdana" fontSize = "9"&gt;&lt;p&gt;&lt;span &gt;Conduction is the transfer of thermal energy through direct molecular transfer.  In other words, heat is transferred by conduction when adjacent atoms of the substance vibrate against one another or as electrons move from atom to atom in the substance.  Conduction is greater in solids, where atoms are in constant contact with one another.  In liquids and gases, the molecules are usually further apart, giving a lower chance for molecules colliding and passing on thermal energy.  Metals are usually the best conductors of thermal energy.  As the density of a substance decreases so does the rate of thermal energy conducted.  Conduction cannot occur at all in a perfect vacuum.  Every solid substance has a unique thermal conductivity.  That thermal conductivity is defined as the quantity of heat transmitted in time through a thickness of the material due to the temperature difference.  We’ll look at the formulas for each form of energy on the next slide.  Thermal conductivity is a material property that is primarily dependent upon the phase of the material, the temperature, the density and the extent of molecular bonding.&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;Convection occurs in gases and liquids.  It is a combination of conduction and fluid circulation.  In natural convection a fluid receives heat then becomes less dense and rises.  The surrounding cooler fluid then moves to replace it.  The cooler fluid is then heated and the process continues forming convective currents.  The driving force for convection is buoyancy, a result of differences in fluid density in a gravitational system.  Forced convection occurs when the fluid is propelled by a pump or fan.  Convection cannot occur in a vacuum since no substances exist in the vacuum.  &lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;Radiation is the transfer of heat through electromagnetic radiation.  Substances that have a temperature above absolute zero radiate energy depending upon their temperature.  The radiated heat can be distributed through a medium, such as air, or in a vacuum.  This type of radiation is similar to light which is another form of electromagnetic radiation.  The sun is a good example of electromagnetic radiation of heat.  So also the hot fire of combustion gases in a dryer.&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;/TextFlow&gt;</notes>
+			<slideThumbnail url="thumb.swf" frame="7"/>
+		</slide>
+		<slide id="272" showInTOC="" inSequence="" frameRate="30" totalFrames="210" usePptxSlideDur="0" lockInteractionSlide="false" isHiddenInteractionSl="false" isWrongInteractionSl="false" swfConvertorEngine="Nova" slideDuration="103.42" advance="auto" blockMovement="false" hideplaybar="false" type="normal">
+			<transition/>
+			<content url="Slide7.swf" id="272"/>
+			<backdrop displayBgSp="true"/>
+			<master id="1" frameNum="0"/>
+			<layout id="2" frameNum="0"/>
+			<slidexml><AS3Class className="TL_7e14f6a7ac2f42139e4bec80f3ecfb6eyxy" classType="PptTmline_xyxyxyxyxyxyxyxyxyxyxyxyxyxy" frameRate="30" normalSlide="1"><OnLoadCallBacks/><Audios/></AS3Class></slidexml>
+			<clickAnimations>
+				<click startTime="2920" isStartRelative="false" duration="2034"/>
+				<click startTime="37360" isStartRelative="false" duration="1034"/>
+				<click startTime="41280" isStartRelative="false" duration="1034"/>
+				<click startTime="48060" isStartRelative="false" duration="1034"/>
+				<click startTime="59320" isStartRelative="false" duration="1034"/>
+				<click startTime="65030" isStartRelative="false" duration="167"/>
+			</clickAnimations>
+			<webObjectContents/>
+			<flvContents/>
+			<audios id="8" duration=" 103420">
+				<media url="a24x8.mp3" startMsecs="0" duration="103420" startAtMSecs="0"/>
+			</audios>
+			<playbackActions></playbackActions>
+			<slideTitle>@Amount of Heat Transfer@</slideTitle>
+			<notes isHTML="true">&lt;TextFlow xmlns = "http://ns.adobe.com/textLayout/2008" fontFamily = "Verdana" fontSize = "9"&gt;&lt;p&gt;&lt;span &gt;As we mentioned earlier, thermal conductivity of a substance is defined as the quantity of heat, Q, transmitted in time through a thickness of the material, L,  due to a temperature differential. &lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;Using that definition, for each form of heat transfer, there is a corresponding formula for calculating the quantity of heat transferred, Q as shown in this table.&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;There is only one reason to show these formulas here.  We want to demonstrate that all the formulas have some things in common:&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;The quantity of heat transferred is proportional to the &lt;/span&gt;&lt;span  fontWeight="bold"&gt;difference between the temperatures&lt;/span&gt;&lt;span &gt; driving the movement of heat.  The more the difference in temperature the more heat transferred.&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;The quantity of heat transferred is proportional to the surface area of the body through which the heat is transferred.  The more surface area, the more heat transferred.&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;There is a constant or coefficient in the formula that is unique to the substance itself.&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;If you need to calculate the quantity of heat transferred using any of these formulas, tables are available in many engineering and science reference books that give the corresponding heat transfer coefficients for the various substances.&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;An engineer uses these formulas to determine the size of equipment for instance the heat transfer area of a dryer drum, the quantity of heat required to dry a carbon black product by the combination of conduction, convection and radiation heat transfer, and temperature requirements.&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;/TextFlow&gt;</notes>
+			<slideThumbnail url="thumb.swf" frame="8"/>
+		</slide>
+		<slide id="261" showInTOC="" inSequence="" frameRate="30" totalFrames="480" usePptxSlideDur="0" lockInteractionSlide="false" isHiddenInteractionSl="false" isWrongInteractionSl="false" swfConvertorEngine="Nova" slideDuration="112.44" advance="auto" blockMovement="false" hideplaybar="false" type="normal">
+			<transition/>
+			<content url="Slide8.swf" id="261"/>
+			<backdrop displayBgSp="true"/>
+			<master id="1" frameNum="0"/>
+			<layout id="2" frameNum="0"/>
+			<slidexml><AS3Class className="TL_77edaa6b6993471fa7c767d71ece3e92yxy" classType="PptTmline_xyxyxyxyxyxyxyxyxyxyxyxyxyxy" frameRate="30" normalSlide="1"><OnLoadCallBacks/><Audios/></AS3Class></slidexml>
+			<clickAnimations>
+				<click startTime="10840" isStartRelative="false" duration="2034"/>
+				<click startTime="16290" isStartRelative="false" duration="2034"/>
+				<click startTime="17370" isStartRelative="false" duration="2034"/>
+				<click startTime="20180" isStartRelative="false" duration="2034"/>
+				<click startTime="26630" isStartRelative="false" duration="2034"/>
+				<click startTime="33780" isStartRelative="false" duration="2034"/>
+				<click startTime="47860" isStartRelative="false" duration="3034"/>
+			</clickAnimations>
+			<webObjectContents/>
+			<flvContents/>
+			<audios id="9" duration=" 112440">
+				<media url="a24x9.mp3" startMsecs="0" duration="112440" startAtMSecs="0"/>
+			</audios>
+			<playbackActions></playbackActions>
+			<slideTitle>@Heat Flow in an Indirect Fired Dryer@</slideTitle>
+			<notes isHTML="true">&lt;TextFlow xmlns = "http://ns.adobe.com/textLayout/2008" fontFamily = "Verdana" fontSize = "9"&gt;&lt;p&gt;&lt;span &gt;In Himadri’s indirect fired rotary driers on Lines 3 and 4, the heat is transferred from the combustion gases through the wall of the dryer.  &lt;/span&gt;&lt;span  fontWeight="bold"&gt;The heat transfer is primarily by radiation and convection to the dryer drum wall and by conduction through the drum wall to the carbon black wet pellets which contact the drum wall.&lt;/span&gt;&lt;span &gt;  The sink for the water vapor is provided by the gas in the dryer which is primarily atmospheric air.&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;The relative temperature of the systems are shown by the symbol T and red line That extends from the combustion gas side of the dryer wall to the carbon black side of the wall.  As you can see from the diagram the heat moves from the high temperature to the cold temperature  (from the combustion gases to the carbon black pellets). &lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;When we model the dryers, we are concerned with the temperature profiles of the gases on the outer surface of the dryer as well as the internal temperature of the drum wall.  These temperature differences influence the rate of heat transfer between the hot gas stream provided by the combustion products and the carbon black pellets.  &lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;If we consider other types of dryers, such as the direct-indirect rotary found on Himadri Lines 1 and 2, the method of heat transfer will need to be defined depending on the geometry of that system and the fluids, temperatures, velocities and other characteristics of that system .  The “direct contact” of hot combustion gases in the Lines 1 and 2 dryers provides a greater “sink” for evaporated water from the wet pellets and therefore, provides more drying capacity .&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;/TextFlow&gt;</notes>
+			<slideThumbnail url="thumb.swf" frame="9"/>
+		</slide>
+		<slide id="270" showInTOC="" inSequence="" frameRate="30" totalFrames="780" usePptxSlideDur="0" lockInteractionSlide="false" isHiddenInteractionSl="false" isWrongInteractionSl="false" swfConvertorEngine="Nova" slideDuration="142.962" advance="auto" blockMovement="false" hideplaybar="false" type="normal">
+			<transition/>
+			<content url="Slide9.swf" id="270"/>
+			<backdrop displayBgSp="true"/>
+			<master id="1" frameNum="0"/>
+			<layout id="2" frameNum="0"/>
+			<slidexml><AS3Class className="TL_0bffaeff9f02448ba865190f6006248cyxy" classType="PptTmline_xyxyxyxyxyxyxyxyxyxyxyxyxyxy" frameRate="30" normalSlide="1"><OnLoadCallBacks/><Audios/></AS3Class></slidexml>
+			<clickAnimations>
+				<click startTime="35950" isStartRelative="false" duration="2034"/>
+				<click startTime="56060" isStartRelative="false" duration="2034"/>
+				<click startTime="62080" isStartRelative="false" duration="2034"/>
+				<click startTime="63120" isStartRelative="false" duration="2166"/>
+				<click startTime="64840" isStartRelative="false" duration="2034"/>
+				<click startTime="69760" isStartRelative="false" duration="2034"/>
+				<click startTime="71740" isStartRelative="false" duration="2034"/>
+				<click startTime="81790" isStartRelative="false" duration="2166"/>
+				<click startTime="101880" isStartRelative="false" duration="2034"/>
+				<click startTime="105550" isStartRelative="false" duration="2034"/>
+				<click startTime="109910" isStartRelative="false" duration="2034"/>
+				<click startTime="118290" isStartRelative="false" duration="2034"/>
+			</clickAnimations>
+			<webObjectContents/>
+			<flvContents/>
+			<audios id="10" duration=" 121080">
+				<media url="a24x10.mp3" startMsecs="0" duration="121080" startAtMSecs="0"/>
+			</audios>
+			<playbackActions></playbackActions>
+			<slideTitle>@Heat Transfer Coefficients@</slideTitle>
+			<notes isHTML="true">&lt;TextFlow xmlns = "http://ns.adobe.com/textLayout/2008" fontFamily = "Verdana" fontSize = "9"&gt;&lt;p&gt;&lt;span &gt;To calculate the rate of convection between an object and the surrounding fluid, engineers employ a term called a heat transfer coefficient.  Unlike the thermal conductivity, we discussed with the previous formula, the heat transfer coefficient is not a property based on the type of substances in the system  It is an estimate of the heat transfer capability which depends upon the geometry, fluid, temperature, velocity and other characteristics of the entire system.  Therefore, a heat transfer coefficient must be derived or found experimentally for every system analyzed.  Correlations are available to calculate the heat transfer coefficient for typical configurations and fluids such as those found in dryers.  &lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;The model above shows an “external heat transfer coefficient” which represents the heat transfer of the combustion gas by radiation and convection and an “internal heat transfer coefficient” which represents the conduction from the wall to the carbon black and can include heat transfer contributed by the drum wall and the carbon black.    These type coefficients simplify our estimation of dryer capabilities when the systems are similar and are used for designing and troubleshooting dryers.&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;Once we know the heat transfer coefficient, we can estimate the rate of heat transferred using the same type parameters we saw earlier in the thermal coefficient formulas.  If we call the heat transfer coefficient, U, then the quantity of heat transferred, Q,  will be equal to the heat transfer coefficient times the differential in temperature observed, (T1 minus T2), times the area through which the heat is transferred, A. &lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;/TextFlow&gt;</notes>
+			<slideThumbnail url="thumb.swf" frame="10"/>
+		</slide>
+		<slide id="259" showInTOC="" inSequence="" frameRate="30" totalFrames="330" usePptxSlideDur="0" lockInteractionSlide="false" isHiddenInteractionSl="false" isWrongInteractionSl="false" swfConvertorEngine="Nova" slideDuration="30.49" advance="auto" blockMovement="false" hideplaybar="false" type="normal">
+			<transition/>
+			<content url="Slide10.swf" id="259"/>
+			<backdrop displayBgSp="true"/>
+			<master id="1" frameNum="0"/>
+			<layout id="2" frameNum="0"/>
+			<slidexml><AS3Class className="TL_50efa2632f3f47058afe293fc979c512yxy" classType="PptTmline_xyxyxyxyxyxyxyxyxyxyxyxyxyxy" frameRate="30" normalSlide="1"><OnLoadCallBacks/><Audios/></AS3Class></slidexml>
+			<clickAnimations>
+				<click startTime="6800" isStartRelative="false" duration="10034"/>
+			</clickAnimations>
+			<webObjectContents/>
+			<flvContents/>
+			<audios id="11" duration=" 30490">
+				<media url="a24x11.mp3" startMsecs="0" duration="30490" startAtMSecs="0"/>
+			</audios>
+			<playbackActions></playbackActions>
+			<slideTitle>@Drying A Carbon Black Agglomerate@</slideTitle>
+			<notes isHTML="true">&lt;TextFlow xmlns = "http://ns.adobe.com/textLayout/2008" fontFamily = "Verdana" fontSize = "9"&gt;&lt;p&gt;&lt;span &gt;In our carbon black process, our purpose of drying is to take the saturated agglomerates of carbon black we call pellets, add heat to remove the water, and end up with dry pellets.&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;span &gt;Knowing the fundamentals of drying can help us do that effectively and economically.  It can also show us better ways to do that while maintaining a high quality product for our customer.&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;/TextFlow&gt;</notes>
+			<slideThumbnail url="thumb.swf" frame="11"/>
+		</slide>
+		<slide id="273" showInTOC="" inSequence="" frameRate="30" totalFrames="30" usePptxSlideDur="0" lockInteractionSlide="false" isHiddenInteractionSl="false" isWrongInteractionSl="false" swfConvertorEngine="Nova" slideDuration="9.91" advance="auto" blockMovement="false" hideplaybar="false" type="normal">
+			<transition/>
+			<content url="Slide11.swf" id="273"/>
+			<backdrop displayBgSp="true"/>
+			<master id="1" frameNum="0"/>
+			<layout id="1" frameNum="0"/>
+			<slidexml><AS3Class className="TL_2f23b2d970344ea3a83ae06efe59175fyxy" classType="PptTmline_xyxyxyxyxyxyxyxyxyxyxyxyxyxy" frameRate="30" normalSlide="1"><OnLoadCallBacks/><Audios/></AS3Class></slidexml>
+			<clickAnimations></clickAnimations>
+			<webObjectContents/>
+			<flvContents/>
+			<audios id="12" duration=" 9910">
+				<media url="a24x12.mp3" startMsecs="0" duration="9910" startAtMSecs="0"/>
+			</audios>
+			<playbackActions></playbackActions>
+			<slideTitle>@END@</slideTitle>
+			<notes isHTML="true">&lt;TextFlow xmlns = "http://ns.adobe.com/textLayout/2008" fontFamily = "Verdana" fontSize = "9"&gt;&lt;p&gt;&lt;span &gt;This is the end of module 8.1 Theory of Drying Carbon Black.&lt;/span&gt;&lt;span &gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;/TextFlow&gt;</notes>
+			<slideThumbnail url="thumb.swf" frame="12"/>
+		</slide>
+	</slides>
+	<attachments></attachments>
+</presentation>
