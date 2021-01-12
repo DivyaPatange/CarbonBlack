@@ -107,7 +107,14 @@ Route::get('/test/submit/{id}', 'User\TestController@testResultSubmit')->name('s
 Route::get('/resultStore/{id}', 'User\TestController@getTestResult')->name('user.test.result');
 
 
+// SignaturePad Route
+Route::get('signaturepad', 'Admin\SignaturePadController@index');
+
+Route::post('signaturepad', 'Admin\SignaturePadController@upload')->name('signaturepad.upload');
+
+
 // Test Route
+Route::get('/viewTest/{id}', 'Admin\TestController@viewTest')->name('view.result');
 Route::get('/admin/question/type/{id}', 'Admin\QuestionController@getQuestionType')->name('question.type');
 Route::post('/question/single/store/{id}', 'Admin\QuestionController@questionSingleSubmit')->name('question.single.store');
 Route::post('/question/multiple/store/{id}', 'Admin\QuestionController@questionMultipleSubmit')->name('question.multiple.store');

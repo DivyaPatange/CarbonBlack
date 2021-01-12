@@ -110,6 +110,10 @@ class TestController extends Controller
                             // dd($ans);
                             $output .= '
                             <div class="mdc-card p-0">
+                            <div id="watermark">
+  <img src="http://www.topchinatravel.com/pic/city/dalian/attraction/people-square-1.jpg">
+  <p>This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark.</p>
+</div>
                                 <h6 class="card-title card-padding pb-0" style="display:inline-block;"><b>'.$key.'. '.$que->question.
                                 '</b></h6>
                                 <div class="mdc-card" style="display:inline">
@@ -164,7 +168,9 @@ class TestController extends Controller
                             ->where('user_id', Auth::user()->id)
                             ->where('question_id', $que->id)->first();
                             $output .= '
-                            <div class="mdc-card p-0">
+                            <div class="mdc-card p-0" id="watermark">
+                            
+  <p id="watermarkText">CarbonBlack Education</p>
                                 <h6 class="card-title card-padding pb-0" style="display:inline-block;"><b>'.$key.'. '.$que->question.
                                 '</b></h6>
                                 <div class="mdc-card" style="display:inline">
@@ -172,7 +178,7 @@ class TestController extends Controller
                                 Hint
                             </button>
                                 </div>
-                                <div class="mdc-card">
+                                <div class="mdc-card" >
                                     <div class="template-demo">
                                         <div class="mdc-layout-grid__inner">';
                                             $option = DB::table('options')->where('question_id', $que->id)->get();
@@ -413,8 +419,8 @@ class TestController extends Controller
                     {
                         $userAnswer = Answer::where('take_test_id', $request->take_test_id)->where('test_id', $request->exam_id)->where('question_id', $row->id)->first();
                         $output .= '
-                        <div class="col-md-4" style="margin-bottom:24px;">
-                            <button style="padding: 0 10px; min-width:0px;'; if($userAnswer != null){ $output .= 'background-color:#12a63a; color:white; border-color:white; font-weight: 900; border-radius:50%;';}  $output .= '" type="button" class=" mdc-button mdc-button--outlined outlined-button--secondary mdc-ripple-upgraded question_navigation btn inactive" data-question_id="'.$row->id.'">'.$count.'</button>
+                        <div class="col-md-4 col-3" style="margin-bottom:24px;">
+                            <button style="height:40px; padding: 0 10px; min-width:0px;'; if($userAnswer != null){ $output .= 'background-color:#12a63a; color:white; border-color:white; font-weight: 900; border-radius:50%;';}  $output .= '" type="button" class=" mdc-button mdc-button--outlined outlined-button--secondary mdc-ripple-upgraded question_navigation btn inactive" data-question_id="'.$row->id.'">'.sprintf("%02d", $count).'</button>
                         </div>
                         ';
                         $count++;

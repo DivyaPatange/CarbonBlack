@@ -13,6 +13,7 @@ use App\Admin\TakeTest;
 use App\Coursetab;
 use DB;
 use Redirect;
+use Auth;
 
 class TestController extends Controller
 {
@@ -109,7 +110,23 @@ class TestController extends Controller
     }
 
     public function testResult(){
+        if(Auth::user()->parent_id == 0){
+            $student = User::where('acc_type', "user")->where('registration_code', '!=', null)->get();
+        }
+        else{
+            $student = User::where('acc_type', "user")->where('registration_code', '!=', null)->where('parent_id', Auth::user()->id)->get();
+        }
+        // dd($student);
         $takeTest = TakeTest::all();
-        return view('auth.result', compact('takeTest'));
+        return view('auth.result', compact('takeTest', 'student'));
+    }
+
+    public function viewTest($id)
+    {
+        $student = User::findorfail($id);
+        // dd($student);
+        $takeTest = TakeTest::where('user_id', $id)->get();
+        // dd($takeTest);
+        return view('auth.users.testResult', compact('takeTest', 'student'));
     }
 }

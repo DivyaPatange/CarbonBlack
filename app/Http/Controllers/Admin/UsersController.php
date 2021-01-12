@@ -131,7 +131,21 @@ class UsersController extends Controller
     public function update(Request $request, $id)
     {
         $user = User::findorfail($id);
-        $user->parent_id = $request->company_name;
+        $branchId = User::where('parent_id', $request->company_name)->get();
+        // dd(sprintf("%05d", 1));
+        if(count($branchId) > 0)
+        {
+            $user->parent_id = $request->company_name;
+            $companyName = User::where('id', $request->company_name)->first();
+            // dd($companyName);
+            $user->registration_code  = strtoupper($companyName->name)."".sprintf("%05d", count($branchId));
+        }
+        else{
+            $user->parent_id = $request->company_name;
+            $companyName = User::where('id', $request->company_name)->first();
+            $user->registration_code  = strtoupper($companyName->name)."00001";
+        }
+        // dd($branchId);
         $user->update($request->all());
         return Redirect::back()->with('success', 'User updated successfully!');
 

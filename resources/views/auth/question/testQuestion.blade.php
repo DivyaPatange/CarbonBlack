@@ -71,6 +71,26 @@ $exam_status = $takeTest->status;
 .active{background:green}
 .inactive{background:red}
 
+#watermark {
+  /* height: 450px; */
+  /* width: 600px; */
+  position: relative;
+  /* overflow: hidden; */
+  z-index:100;
+}
+#watermarkText {
+  position: absolute;
+  top: 301px;
+  left: 0;
+  color: lightgrey;
+  font-size: 50px;
+  opacity:0.5;
+  pointer-events: none;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  /* z-index:100; */
+}
+
     </style>
      <script src="http://www.codermen.com/js/jquery.js"></script>
 @endsection
@@ -79,25 +99,24 @@ $exam_status = $takeTest->status;
 @if($exam_status == 0)
 <div class="mdc-layout-grid">
 	<div class="mdc-layout-grid__inner">
-      <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-10 " >
-	  </div>
-	  <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-2 " >
-	  <div class="mdc-card" style="background-color:transparent; box-shadow:none; padding:0px">
-<div id="exam_timer" class="demo" data-timer="{{ $remaining_minutes }}" height="150">
-            
-                      </div>
-                      </div>
-					  <p id="demo"></p>
-	  </div>
-	  </div>
-
+		<div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-10 " >
+		</div>
+	  	<div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-2 " >
+	  		<div class="mdc-card" style="background-color:transparent; box-shadow:none; padding:0px">
+				<div id="exam_timer" class="demo" data-timer="{{ $remaining_minutes }}" height="150">
+            	</div>
+            </div>
+			<p id="demo"></p>
+	  	</div>
+	</div>
 </div>
   <div class="mdc-layout-grid">
     <div class="mdc-layout-grid__inner mt-2">
-      <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-8 " id="single_question_area">
-      </div>
-      <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-4 " id="question_navigation_area">
-      </div>
+      	<div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-8 " id="single_question_area">
+		  
+      	</div>
+      	<div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-4 " id="question_navigation_area">
+      	</div>
     </div>
   </div>
   @foreach($question as $q)
@@ -138,7 +157,32 @@ $exam_status = $takeTest->status;
 </script>
 
 <script>
+ document.addEventListener("keyup", function (e) {
+    var keyCode = e.keyCode ? e.keyCode : e.which;
+            if (keyCode == 44) {
+                stopPrntScr();
+            }
+        });
+function stopPrntScr() {
 
+            var inpFld = document.createElement("input");
+            inpFld.setAttribute("value", ".");
+            inpFld.setAttribute("width", "0");
+            inpFld.style.height = "0px";
+            inpFld.style.width = "0px";
+            inpFld.style.border = "0px";
+            document.body.appendChild(inpFld);
+            inpFld.select();
+            document.execCommand("copy");
+            inpFld.remove(inpFld);
+        }
+       function AccessClipboardData() {
+            try {
+                window.clipboardData.setData('text', "Access   Restricted");
+            } catch (err) {
+            }
+        }
+        setInterval("AccessClipboardData()", 300);
 $(document).ready(function(){
   var exam_id = "{{ $test->id }}";
   var take_test_id =  "{{ $takeTest->id }}";
