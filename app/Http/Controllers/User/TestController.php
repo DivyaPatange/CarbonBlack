@@ -109,11 +109,8 @@ class TestController extends Controller
                             ->where('question_id', $que->id)->first();
                             // dd($ans);
                             $output .= '
-                            <div class="mdc-card p-0">
-                            <div id="watermark">
-  <img src="http://www.topchinatravel.com/pic/city/dalian/attraction/people-square-1.jpg">
-  <p>This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark. This is a watermark.</p>
-</div>
+                            <div class="mdc-card p-0" id="watermark">
+                            <p id="watermarkText">CarbonBlack Education</p>
                                 <h6 class="card-title card-padding pb-0" style="display:inline-block;"><b>'.$key.'. '.$que->question.
                                 '</b></h6>
                                 <div class="mdc-card" style="display:inline">
@@ -170,7 +167,7 @@ class TestController extends Controller
                             $output .= '
                             <div class="mdc-card p-0" id="watermark">
                             
-  <p id="watermarkText">CarbonBlack Education</p>
+                            <p id="watermarkText">CarbonBlack Education</p>
                                 <h6 class="card-title card-padding pb-0" style="display:inline-block;"><b>'.$key.'. '.$que->question.
                                 '</b></h6>
                                 <div class="mdc-card" style="display:inline">
@@ -229,7 +226,8 @@ class TestController extends Controller
                             ->where('user_id', Auth::user()->id)
                             ->where('question_id', $que->id)->first();
                             $output .= '
-                            <div class="mdc-card p-0">
+                            <div class="mdc-card p-0" id="watermark">
+                            <p id="watermarkText">CarbonBlack Education</p>
                                 <h6 class="card-title card-padding pb-0" style="display:inline-block;"><b>'.$key.'. '.$que->question.
                                 '</b></h6>
                                 <div class="mdc-card" style="display:inline">
@@ -275,7 +273,8 @@ class TestController extends Controller
                             ->where('question_id', $que->id)->first();
                             // dd($ans3);
                             $output .= '
-                            <div class="mdc-card p-0">
+                            <div class="mdc-card p-0" id="watermark">
+                            <p id="watermarkText">CarbonBlack Education</p>
                                 <h6 class="card-title card-padding pb-0" style="display:inline-block;"><b>'.$key.'. '.$que->question.
                                 '</b></h6>
                                 <div class="mdc-card" style="display:inline">

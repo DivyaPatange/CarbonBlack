@@ -80,7 +80,7 @@ $exam_status = $takeTest->status;
 }
 #watermarkText {
   position: absolute;
-  top: 301px;
+  top: 225px;
   left: 0;
   color: lightgrey;
   font-size: 50px;
