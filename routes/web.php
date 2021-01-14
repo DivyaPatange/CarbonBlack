@@ -135,3 +135,6 @@ Route::get('/admin/testResult', 'Admin\TestController@testResult')->name('admin.
 Route::get('/admin/moduleReactivate', 'Admin\ModuleController@index')->name('user.moduleReactivate.request');
 Route::get('/test/enabled/{id}', 'Admin\ModuleController@testEnabled')->name('test.enabled');
 Route::post('/checkAnswer', 'User\TestController@checkUserAnswer')->name('checkUserAnswer');
+
+
+Route::get('/sendCertificateMail/{id}', 'User\CertificateController@sendCertificateMail')->name('send.certificate.mail');
