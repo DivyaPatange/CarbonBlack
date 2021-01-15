@@ -81,7 +81,7 @@
               <a class="mdc-drawer-link" href="{{ route('tempCoursesData.coursesAll') }}">
                 <!--<i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">description</i>-->
                 <i class="mdi mdi-book-open-page-variant mdc-drawer-item-icon mdc-list-item__start-detail" aria-hidden="true"></i>
-                Courses
+                Homepage Courses
               </a>
             </div>
             <div class="mdc-list-item mdc-drawer-item">

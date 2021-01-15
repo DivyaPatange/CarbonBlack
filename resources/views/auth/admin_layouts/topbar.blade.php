@@ -67,6 +67,37 @@
             <!--  </div>-->
             <!--</div>-->
             <div class="menu-button-container">
+            @can('manage-users')
+            <div class="menu-button-container">
+              <button class="mdc-button mdc-menu-button">
+                <i class="mdi mdi-bell"></i>
+              </button>
+              <div class="mdc-menu mdc-menu-surface" tabindex="-1">
+                <h6 class="title"> <i class="mdi mdi-bell-outline mr-2 tx-16"></i> Notifications</h6>
+                <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
+                  <li class="mdc-list-item" role="menuitem">
+                    <div class="item-thumbnail item-thumbnail-icon">
+                      <i class="mdi mdi-account-outline"></i>                      
+                    </div>
+                    
+                    <?php
+                        if(Auth::user()->acc_type == "superadmin")
+                        {
+                            $user = DB::table('users')->where('date', date("Y-m-d"))->where('registration_code', '!=', null)->get();
+                            // dd($user);
+                        }
+                        else{
+                            $user = DB::table('users')->where('parent_id', Auth::user()->id)->where('date', date("Y-m-d"))->get();
+                        }
+                    ?>
+                    <div class="item-content d-flex align-items-start flex-column justify-content-center">
+                      <h6 class="item-subject font-weight-normal">Today's Registered User <span class="badge badge-danger" style="border-radius:50%">{{ count($user) }}</span></h6>
+                    </div>
+                  </li>
+                </ul>
+              </div> 
+            </div>
+            @endcan
               <!-- <button class="mdc-button mdc-menu-button">
                 <i class="mdi mdi-bell"></i>
               </button>

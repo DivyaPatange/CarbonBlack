@@ -196,7 +196,7 @@
 
                 {{-- courses description --}}
                 <div class="mdc-layout-grid__cell stretch-card1 mdc-layout-grid__cell--span-4-desktop">
-                  <p class="card-title">Module Description</p>
+                  <p class="card-title">Module Brief</p>
                   <p class="card-text">This appears on module card</p>
                    @error('description')
 				<div>
