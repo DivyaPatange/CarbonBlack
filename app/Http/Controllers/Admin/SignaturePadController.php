@@ -35,7 +35,7 @@ class SignaturePadController extends Controller
 
         $image_parts = explode(";base64,", $request->signed);
 
-              
+        // dd($image_parts);
 
         $image_type_aux = explode("image/", $image_parts[0]);
 

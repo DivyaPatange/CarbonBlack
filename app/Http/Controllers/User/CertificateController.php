@@ -9,6 +9,7 @@ use Auth;
 use App\User;
 use PDF;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
 
 class CertificateController extends Controller
 {
@@ -29,32 +30,62 @@ class CertificateController extends Controller
     public function sendCertificateMail($id)
     {
         $takeTest = TakeTest::findorfail($id);
-        $user = User::where('id', $takeTest->user_id)->first();
-        $data["email"]=$user->email;
-        $data["client_name"]=$user->name;
-        $data["subject"]="Test Certificate";
+        // $user = User::where('id', $takeTest->user_id)->first();
+        // $data["email"]=$user->email;
+        // $data["client_name"]=$user->name;
+        // $data["subject"]="Test Certificate";
 
-        $pdf = PDF::loadView('auth.viewCertificate', compact('data', 'takeTest'));
+        // $pdf = PDF::loadView('auth.viewCertificate', compact('data', 'takeTest'));
 
-        try{
-            Mail::send('auth.viewCertificate', compact('data', 'takeTest'), function($message)use($data,$pdf,$takeTest) {
-            $message->to($data["email"], $data["client_name"])
-            ->subject($data["subject"])
-            ->attachData($pdf->output(), "invoice.pdf");
-            });
-        }catch(JWTException $exception){
-            $this->serverstatuscode = "0";
-            $this->serverstatusdes = $exception->getMessage();
-        }
-        if (Mail::failures()) {
-             $this->statusdesc  =   "Error sending mail";
-             $this->statuscode  =   "0";
+        // try{
+        //     Mail::send('auth.viewCertificate', compact('data', 'takeTest'), function($message)use($data,$pdf,$takeTest) {
+        //     $message->to($data["email"], $data["client_name"])
+        //     ->subject($data["subject"])
+        //     ->attachData($pdf->output(), "invoice.pdf");
+        //     });
+        // }catch(JWTException $exception){
+        //     $this->serverstatuscode = "0";
+        //     $this->serverstatusdes = $exception->getMessage();
+        // }
+        // if (Mail::failures()) {
+        //      $this->statusdesc  =   "Error sending mail";
+        //      $this->statuscode  =   "0";
 
-        }else{
+        // }else{
 
-           $this->statusdesc  =   "Message sent Succesfully";
-           $this->statuscode  =   "1";
-        }
-        return response()->json(compact('this'));
+        //    $this->statusdesc  =   "Message sent Succesfully";
+        //    $this->statuscode  =   "1";
+        // }
+        // return response()->json(compact('this'));
+        // $data["email"] = "shreeyabondre78@gmail.com";
+
+        // $data["title"] = "From HDTuto.com";
+
+        // $data["id"] = $takeTest->id;
+            // dd($data["id"]);
+  
+
+        $pdf = PDF::loadView('auth.viewCertificate', compact('takeTest'));
+        $path = public_path('pdf');
+        dd($pdf->save($path . '/text.pdf', $pdf->output()));
+        $pdf->save($path . '/text.pdf', $pdf->output());
+        // Storage::put($path, $pdf->output());
+        // dd(Storage::put('public/pdf/invoice.pdf', $pdf->output()));
+
+        // return $pdf->download('invoice.pdf');
+
+        // Mail::send('email.myTestMail', $data, function($message)use($data, $pdf) {
+
+        //     $message->to($data["email"], $data["email"])
+
+        //             ->subject($data["title"])
+
+        //             ->attachData($pdf->output(), "text.pdf");
+
+        // });
+
+  
+
+        // dd('Mail sent successfully');
     }
 }
