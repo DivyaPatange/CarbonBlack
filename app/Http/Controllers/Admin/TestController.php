@@ -111,10 +111,10 @@ class TestController extends Controller
 
     public function testResult(){
         if(Auth::user()->parent_id == 0){
-            $student = User::where('acc_type', "user")->where('registration_code', '!=', null)->get();
+            $student = User::where('acc_type', "user")->get();
         }
         else{
-            $student = User::where('acc_type', "user")->where('registration_code', '!=', null)->where('parent_id', Auth::user()->id)->get();
+            $student = User::where('acc_type', "user")->where('parent_id', Auth::user()->id)->get();
         }
         // dd($student);
         $takeTest = TakeTest::all();

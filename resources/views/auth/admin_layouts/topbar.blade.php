@@ -83,7 +83,7 @@
                     <?php
                         if(Auth::user()->acc_type == "superadmin")
                         {
-                            $user = DB::table('users')->where('date', date("Y-m-d"))->where('registration_code', '!=', null)->get();
+                            $user = DB::table('users')->where('date', date("Y-m-d"))->get();
                             // dd($user);
                         }
                         else{

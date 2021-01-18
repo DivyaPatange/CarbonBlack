@@ -94,6 +94,7 @@ class RegisterController extends Controller
             'password_1' => $data['password'],
             'acc_type' => 'user',
             'status' => false,
+            'date' => date('Y-m-d'),
         ]);
         // dd($user);
         $userRole = Role::where('acc_type', 'user')->first();
