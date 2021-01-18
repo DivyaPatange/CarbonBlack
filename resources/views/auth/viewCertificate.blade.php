@@ -2,12 +2,12 @@
 <html>
 <head>
 <title>Carbon Black Education | Certificate</title>
-  <meta charset="utf-8">
+  <!-- <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
 <style> 
 
 .certificate_name{
@@ -125,7 +125,7 @@ p{
     </table>
 </div>
 <div id="editor"></div>
-<div class="container-fluid">
+<!-- <div class="container-fluid">
 <div class="col-12">
 <div class="text-center">
 <button type="button" id="btnExport" onclick="Export()" class="mdc-button mb-4 mdc-button--raised filled-button--info">
@@ -133,8 +133,8 @@ p{
 </button>
 </div>
 </div>
-</div>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
+</div> -->
+<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
 <script type="text/javascript">
 function Export() {
@@ -152,6 +152,6 @@ function Export() {
             });
         }
 
-</script>
+</script> -->
 </body>
 </html>

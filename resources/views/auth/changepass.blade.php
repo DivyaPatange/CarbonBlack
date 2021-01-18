@@ -1,6 +1,6 @@
 @extends('auth.admin_layouts.main')
 
-@section('title','Dashboard')
+@section('title','Change Password')
 
 @section('custom_styles')
     <style>

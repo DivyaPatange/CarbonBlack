@@ -62,6 +62,8 @@ Route::get('activate/{id}', 'Auth\RegisterController@activate')->name('activate'
 Route::post('/subscribe', 'DesignController@storeSubscriber')->name('subscribe');
 Route::resource('/coursesData', 'CoursesController');
 Route::resource('/tempCoursesData', 'TempCoursesController');
+Route::get('/editProfile', 'Admin\UsersController@editProfile')->name('admin.editProfile');
+Route::put('/updateProfile', 'Admin\UsersController@updateProfile')->name('admin.updateProfile');
 
 
 // CourseTab Route

@@ -16,6 +16,16 @@
               </button>
               <div class="mdc-menu mdc-menu-surface" tabindex="-1">
                 <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
+                  @if(Auth::user()->acc_type == 'admin')
+                  <li class="mdc-list-item" role="menuitem">
+                    <div class="item-thumbnail item-thumbnail-icon-only">
+                      <i class="mdi mdi-account-edit-outline text-primary"></i>
+                    </div>
+                    <div class="item-content d-flex align-items-start flex-column justify-content-center">
+                      <a href="{{ url('/editProfile') }}"<h6 class="item-subject font-weight-normal">Edit Profile</h6></a>
+                    </div>
+                  </li>
+                  @endif
                     @if(Auth::user()->acc_type == 'user')
                   <li class="mdc-list-item" role="menuitem">
                     <div class="item-thumbnail item-thumbnail-icon-only">

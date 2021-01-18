@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
     <title>Certificate</title>
 </head>
 <body>
@@ -51,5 +52,14 @@
         <h6 style="text-align:center">DATE</h6></td>
       </tr>
     </table>
+=======
+    <title>ItsolutionStuff.com</title>
+</head>
+<body>
+    <h1>{{ $title }}</h1>
+    <p>{{ $body }}</p>
+     
+    <p>Thank you</p>
+>>>>>>> f4a703fe51ceeef9b1bc4b0de68ddbbfd23b32de
 </body>
 </html>

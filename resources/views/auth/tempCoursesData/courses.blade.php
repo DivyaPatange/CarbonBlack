@@ -88,7 +88,7 @@
                   <td class="text-center">{{ $course->title }}</td>
                   <td class="text-center" ><img src="{{ URL::to('/') }}/courseImg/{{$course->img}}" class="card-img-top" alt="..." width="50%"></td>
                   <td class="text-center" width="40%"><p class="text-wrap">{{$course->category}}</p></td>
-                  <td class="text-center" width="40%"><p class="text-wrap">{{$course->description}}</p></td>
+                  <td class="text-center" width="40%"><p class="">{{$course->description}}</p></td>
                   <td class="text-center" width="40%"><p class="text-wrap">{{$course->path}}</p></td>
                   <td class="text-center">
                     

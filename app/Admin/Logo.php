@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class Logo extends Model
 {
     protected $table = "company_logo";
-    protected $fillable = ['user_id', 'logo'];
+    protected $fillable = ['user_id', 'logo', 'signature_img'];
 }

@@ -12,6 +12,7 @@ use Redirect;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ActivateConfirmMail;
+use App\Admin\Logo;
 
 class UsersController extends Controller
 {
@@ -166,6 +167,70 @@ class UsersController extends Controller
     public function resetpas()
     {
         return view('auth.resetpasswrd');
+    }
+
+
+    public function editProfile()
+    {
+        $user = User::findorfail(Auth::user()->id);
+        $userInfo = Logo::where('user_id', $user->id)->first();
+        // dd($userInfo);
+        return view('auth.users.editProfile', compact('user', 'userInfo'));
+    }
+
+    public function updateProfile(Request $request)
+    {
+        $user = User::findorfail($request->id);
+        // dd($user);
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'contact_no' => 'required',
+            'designation' => 'required',
+            'department' => 'required',
+            'country' => 'required',
+            'state' => 'required',
+            'city' => 'required',
+            'pin_code' => 'required', 
+        ]);
+        $updateUser = User::where('id', $request->id)->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->contact_no,
+            'designation' => $request->designation,
+            'department' => $request->department,
+            'country' => $request->country,
+            'state' => $request->state,
+            'city' => $request->city,
+            'pin' => $request->pin_code,
+        ]);
+        $userInfo = Logo::where('user_id', $user->id)->first();
+
+        if($request->signed)
+        {        
+            $folderPath = public_path('upload/');
+            $image_parts = explode(";base64,", $request->signed);
+            $image_type_aux = explode("image/", $image_parts[0]);
+            $image_type = $image_type_aux[1];
+            $image_base64 = base64_decode($image_parts[1]);
+            $fileName = uniqid() . '.'.$image_type;
+            $file = $folderPath . $fileName;
+            // dd($fileName);
+            file_put_contents($file, $image_base64);
+            if(empty($userInfo))
+            {
+                $userInfo = new Logo();
+                $userInfo->user_id = $request->id;
+                $userInfo->signature_img = $fileName;
+                $userInfo->save();
+            }
+            else{
+                $userInfo = Logo::where('user_id', $request->id)->update([
+                    'signature_img' =>$fileName,
+                ]);
+            }
+        }
+        return Redirect::back()->with('success', 'Profile Updated Successfully');
     }
     
    
