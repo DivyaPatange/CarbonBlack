@@ -16,7 +16,7 @@
               </button>
               <div class="mdc-menu mdc-menu-surface" tabindex="-1">
                 <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
-                  @if(Auth::user()->acc_type == 'admin')
+                @if(Auth::user()->acc_type == 'admin')
                   <li class="mdc-list-item" role="menuitem">
                     <div class="item-thumbnail item-thumbnail-icon-only">
                       <i class="mdi mdi-account-edit-outline text-primary"></i>
