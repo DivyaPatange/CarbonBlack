@@ -131,7 +131,7 @@ Route::delete('/question/delete/{id}', 'Admin\QuestionController@destroyQuestion
 Route::post('/test/multiple/store', 'User\TestController@storeCheckboxAnswer')->name('user.test.multiple.store');
 Route::post('/test/blank/store', 'User\TestController@storeInputAnswer')->name('user.test.blank.store');
 Route::post('/test/trueorfalse/store', 'User\TestController@storeTrueOrFalseAnswer')->name('user.test.trueorfalse.store');
-Route::get('/certificate', 'User\CertificateController@index')->name('user.certificate');
+Route::get('/certificates', 'User\CertificateController@index')->name('user.certificate');
 Route::get('/certificate/{id}', 'User\CertificateController@certificateDownload')->name('certificate.download');
 Route::get('/admin/testResult', 'Admin\TestController@testResult')->name('admin.test.result');
 Route::get('/admin/moduleReactivate', 'Admin\ModuleController@index')->name('user.moduleReactivate.request');

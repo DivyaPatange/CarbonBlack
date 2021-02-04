@@ -37,7 +37,7 @@ h3{
 #pdfdiv{
   position: relative;
   /*text-align: center;*/
-  margin:50px;
+  /*margin:50px;*/
 }
 .centered {
   position: absolute;
@@ -82,15 +82,18 @@ p{
          
     <table width="" class="">
       <tr>
-        <td width="50%"><img src="{{ asset('assets/frontend/img/logo/logo.png') }}" width="150px" height="90px">
+        <td width="50%"><img src="{{ public_path('assets/frontend/img/logo/logo.png') }}" width="150px" height="90px" style="padding:20px">
         </td>
-        <td><?php
+        <td style="text-align:right;">
+            <?php
               $employee = DB::table('users')->where('id', Auth::user()->id)->first();
               // dd($employee);
               $logo1 = DB::table('company_logo')->where('user_id', $employee->parent_id)->first();
-          ?>
-          @if(!empty($logo1))
-           <img src="{{ URL::to('/') }}/logo/{{$logo1->logo}}" width="90px" height="90px" style="float:right;">@endif</td>
+            ?>
+            @if(!empty($logo1))
+                <img src="{{ public_path('logo/'.$logo1->logo) }}" width="90px" height="90px" style="padding:20px">
+            @endif
+        </td>
       </tr>
       <tr>
         <td colspan="2"><h1 class="mt-3">Certificate of Training</h1></td>
@@ -108,10 +111,10 @@ p{
         <p>Has Successfully completed the training in <b>CARBON BLACK TECHNOLOGY</b> for the training program requirement for</p>
               <?php 
               // dd($takeTest);
-              $test = DB::table('test')->where('id', $takeTest->test_id)->first();
+              $test = DB::table('test')->where('id', $test_id)->first();
               $section = DB::table('coursetabs')->where('course_id', $test->tab_id)->first();
-              $newtime = strtotime($takeTest->created_at);
-                $takeTest->time = date('M d, Y',$newtime);
+              $newtime = strtotime($created_at);
+                $time = date('M d, Y',$newtime);
                 // dd($takeTest->time);
               ?>
         </td>
@@ -120,12 +123,12 @@ p{
         <td colspan="2"> <h3>{{ $section->name }}</h3></td>
       </tr>
       <tr>
-        <td colspan="2" style="text-align:center"><h4 class="date_border">{{ $takeTest->time }}</h4>
-        <h6 style="text-align:center">DATE</h6></td>
+        <td colspan="2" style="text-align:center"><h4 class="date_border">{{ $time }}</h4>
+        
+        <h6 style="text-align:center">DATE</h6></td></td>
       </tr>
       <tr>
         <td colspan="2">
-        </td>
       </tr>
     </table>
 </div>

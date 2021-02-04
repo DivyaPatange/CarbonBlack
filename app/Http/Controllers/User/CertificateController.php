@@ -8,11 +8,16 @@ use App\Admin\TakeTest;
 use Auth;
 use App\User;
 use PDF;
-use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\Storage;
+use DB;
+use Mail;
 
 class CertificateController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
         $takeTest = TakeTest::where('user_id', Auth::user()->id)->get();
@@ -29,27 +34,36 @@ class CertificateController extends Controller
 
     public function sendCertificateMail($id)
     {
-        $takeTest = TakeTest::findorfail($id);
-<<<<<<< HEAD
-        // return view('email.myTestMail', compact('takeTest'));
-=======
->>>>>>> f4a703fe51ceeef9b1bc4b0de68ddbbfd23b32de
+        $takeTest = DB::table('take_test')->where('id', $id)->first();
+        // dd($takeTest);
+        $data["email"] = "divyapatange0@gmail.com";
+        $data["title"] = "Test Certificate";
+        $data["body"] = "You have successfully passed the test. Please find attachment of certificate below.";
+        $folderPath = public_path('certificate/');
+        $takeTestArray = (array)$takeTest;
+        // dd($takeTestArray);
+        $pdf = PDF::loadView('auth.mailCertificate', $takeTestArray);
+        $fileName = uniqid() . '.pdf';
+
+        $file = $folderPath . $fileName;
+        $path = file_put_contents($file, $pdf->output());
+        // dd($file);
+        $pdfFile = public_path('certificate/'.$fileName);
+        Mail::send('email.myTestMail', $data, function($message)use($data, $pdfFile) {
+            $message->to($data["email"], $data["email"])
+                    ->subject($data["title"])
+                    ->attach($pdfFile);
+            
+        });
         // $user = User::where('id', $takeTest->user_id)->first();
         // $data["email"]=$user->email;
         // $data["client_name"]=$user->name;
         // $data["subject"]="Test Certificate";
-<<<<<<< HEAD
-        // $pdf = PDF::loadView('auth.viewCertificate', compact('data', 'takeTest'));
-
-        // try{
-        //     Mail::send('auth.viewCertificate', compact('data', 'takeTest'), function($message)use($data,$pdf) {
-=======
 
         // $pdf = PDF::loadView('auth.viewCertificate', compact('data', 'takeTest'));
 
         // try{
         //     Mail::send('auth.viewCertificate', compact('data', 'takeTest'), function($message)use($data,$pdf,$takeTest) {
->>>>>>> f4a703fe51ceeef9b1bc4b0de68ddbbfd23b32de
         //     $message->to($data["email"], $data["client_name"])
         //     ->subject($data["subject"])
         //     ->attachData($pdf->output(), "invoice.pdf");
@@ -68,22 +82,6 @@ class CertificateController extends Controller
         //    $this->statuscode  =   "1";
         // }
         // return response()->json(compact('this'));
-<<<<<<< HEAD
-
-        $data["email"] = "divyapatange0@gmail.com";
-        $data["title"] = "From ItSolutionStuff.com";
-        $data["body"] = "This is Demo";
-  
-        $pdf = PDF::loadView('email.myTestMail', compact('takeTest'));
-  
-        Mail::send('email.myTestMail', $takeTest, function($message)use($data, $pdf) {
-            $message->to($data["email"], $data["email"])
-                    ->subject($data["title"])
-                    ->attachData($pdf->output(), "text.pdf");
-        });
-  
-        dd('Mail sent successfully');
-=======
         // $data["email"] = "shreeyabondre78@gmail.com";
 
         // $data["title"] = "From HDTuto.com";
@@ -92,10 +90,10 @@ class CertificateController extends Controller
             // dd($data["id"]);
   
 
-        $pdf = PDF::loadView('auth.viewCertificate', compact('takeTest'));
-        $path = public_path('pdf');
-        dd($pdf->save($path . '/text.pdf', $pdf->output()));
-        $pdf->save($path . '/text.pdf', $pdf->output());
+        // $pdf = PDF::loadView('auth.viewCertificate', compact('takeTest'));
+        // $path = public_path('pdf');
+        // dd($pdf->save($path . '/text.pdf', $pdf->output()));
+        // $pdf->save($path . '/text.pdf', $pdf->output());
         // Storage::put($path, $pdf->output());
         // dd(Storage::put('public/pdf/invoice.pdf', $pdf->output()));
 
@@ -113,7 +111,6 @@ class CertificateController extends Controller
 
   
 
-        // dd('Mail sent successfully');
->>>>>>> f4a703fe51ceeef9b1bc4b0de68ddbbfd23b32de
+        dd('Mail sent successfully');
     }
 }

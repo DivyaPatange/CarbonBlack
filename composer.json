@@ -9,6 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.2",
+        "andrey-helldar/laravel-app": "^1.0",
         "anhskohbo/no-captcha": "^3.3",
         "barryvdh/laravel-dompdf": "^0.9.0",
         "doctrine/dbal": "^2.10",

@@ -12,9 +12,16 @@ use App\Admin\Answer;
 use App\Admin\TakeTest;
 use App\Admin\Attempt;
 use DB;
+use PDF;
+use Mail;
 
 class TestController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
         $id = Auth::user()->id;
@@ -721,6 +728,28 @@ class TestController extends Controller
                 $take_test = DB::table('take_test')
                 ->where('id', $takeTest->id)
                 ->update(['status'=> 1, 'result' => "Pass", 'is_verified' => 1]);
+                $takeTest1 = DB::table('take_test')->where('id', $id)->first();
+                // dd($takeTest);
+                $user = DB::table('users')->where('id', $takeTest1->user_id)->first();
+                $data["email"] = $user->email;
+                $data["title"] = "Test Certificate";
+                $data["body"] = "You have successfully passed the test. Please find attachment of certificate below.";
+                $folderPath = public_path('certificate/');
+                $takeTestArray = (array)$takeTest1;
+                // dd($takeTestArray);
+                $pdf = PDF::loadView('auth.mailCertificate', $takeTestArray);
+                $fileName = uniqid() . '.pdf';
+        
+                $file = $folderPath . $fileName;
+                $path = file_put_contents($file, $pdf->output());
+                // dd($file);
+                $pdfFile = public_path('certificate/'.$fileName);
+                Mail::send('email.myTestMail', $data, function($message)use($data, $pdfFile) {
+                    $message->to($data["email"], $data["email"])
+                            ->subject($data["title"])
+                            ->attach($pdfFile);
+                    
+                });
             }
             else{
                 $take_test = DB::table('take_test')
@@ -731,7 +760,7 @@ class TestController extends Controller
         $userAnswer = Answer::where('take_test_id', $takeTest->id)->get();
         // dd($userAnswer);
         $result = Answer::where('take_test_id', $takeTest->id)->get()->sum('mark');
-       return view('auth.test.result', compact('takeTest', 'test', 'userAnswer', 'result', 'question'));
+        return view('auth.test.result', compact('takeTest', 'test', 'userAnswer', 'result', 'question'));
     }
 
     public function testResultSubmit($id)
@@ -747,6 +776,28 @@ class TestController extends Controller
                 $take_test = DB::table('take_test')
                 ->where('id', $takeTest->id)
                 ->update(['status'=> 1, 'result' => "Pass", 'is_verified' => 1]);
+                $takeTest1 = DB::table('take_test')->where('id', $id)->first();
+                // dd($takeTest);
+                $user = DB::table('users')->where('id', $takeTest1->user_id)->first();
+                $data["email"] = $user->email;
+                $data["title"] = "Test Certificate";
+                $data["body"] = "You have successfully passed the test. Please find attachment of certificate below.";
+                $folderPath = public_path('certificate/');
+                $takeTestArray = (array)$takeTest1;
+                // dd($takeTestArray);
+                $pdf = PDF::loadView('auth.mailCertificate', $takeTestArray);
+                $fileName = uniqid() . '.pdf';
+        
+                $file = $folderPath . $fileName;
+                $path = file_put_contents($file, $pdf->output());
+                // dd($file);
+                $pdfFile = public_path('certificate/'.$fileName);
+                Mail::send('email.myTestMail', $data, function($message)use($data, $pdfFile) {
+                    $message->to($data["email"], $data["email"])
+                            ->subject($data["title"])
+                            ->attach($pdfFile);
+                    
+                });
             }
             else{
                 $take_test = DB::table('take_test')

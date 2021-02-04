@@ -4,8 +4,81 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1c909fe6bd81b577f6ac9a7f28edf36b",
+    "content-hash": "9563976f5795c86dbcc2896fddbb05f0",
     "packages": [
+        {
+            "name": "andrey-helldar/laravel-app",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/andrey-helldar/laravel-app.git",
+                "reference": "f70347eed85d52206e6f22398a1428009f353352"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/andrey-helldar/laravel-app/zipball/f70347eed85d52206e6f22398a1428009f353352",
+                "reference": "f70347eed85d52206e6f22398a1428009f353352",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "^6.0|^7.0",
+                "illuminate/filesystem": "^6.0|^7.0",
+                "illuminate/support": "^6.0|^7.0",
+                "php": "^7.2"
+            },
+            "suggest": {
+                "laravel/helpers": "Provides backwards compatibility for helpers in the latest Laravel release."
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Helldar\\LaravelApp\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Helldar\\LaravelApp\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                },
+                {
+                    "name": "Andrey Helldar",
+                    "email": "helldar@ai-rus.com"
+                }
+            ],
+            "description": "Provides backwards compatibility for app:name command in the latest Laravel release.",
+            "keywords": [
+                "console",
+                "helpers",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/andrey-helldar/laravel-app/issues",
+                "source": "https://github.com/andrey-helldar/laravel-app"
+            },
+            "funding": [
+                {
+                    "url": "https://money.yandex.ru/to/410012115955701",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://paypal.me/helldar",
+                    "type": "custom"
+                }
+            ],
+            "abandoned": true,
+            "time": "2020-09-27T20:44:05+00:00"
+        },
         {
             "name": "anhskohbo/no-captcha",
             "version": "3.3.0",
