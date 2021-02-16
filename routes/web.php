@@ -70,6 +70,8 @@ Route::put('/updateProfile', 'Admin\UsersController@updateProfile')->name('admin
 Route::get('/courseTab/create/{id}', 'TempCoursesController@create')->name('tab.create');
 Route::post('/courseTab/store/{id}', 'TempCoursesController@storetab')->name('tab.store');
 Route::get('admin/tab/edit/{id}', 'CoursesController@edit')->name('edit.tab');
+// Status of course tab
+Route::get('admin/tab/status/{id}', 'CoursesController@status')->name('status.tab');
 Route::put('admin/tab/update/{id}', 'CoursesController@update')->name('tab.update');
 // Route::post('/tempCoursesData/tab', 'TempCoursesController@storetab')->name('tab');
 Route::post('/admin/tempcourses/store/{id}', 'TempCoursesController@storeCourse')->name('course.store');
@@ -137,6 +139,7 @@ Route::get('/admin/testResult', 'Admin\TestController@testResult')->name('admin.
 Route::get('/admin/moduleReactivate', 'Admin\ModuleController@index')->name('user.moduleReactivate.request');
 Route::get('/test/enabled/{id}', 'Admin\ModuleController@testEnabled')->name('test.enabled');
 Route::post('/checkAnswer', 'User\TestController@checkUserAnswer')->name('checkUserAnswer');
+Route::post('submitTestResult', 'User\TestController@submitTestResult')->name('admin.get.submitTestResult');
 
 
 Route::get('/sendCertificateMail/{id}', 'User\CertificateController@sendCertificateMail')->name('send.certificate.mail');

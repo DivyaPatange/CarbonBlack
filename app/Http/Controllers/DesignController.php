@@ -11,12 +11,13 @@ use App\Mail\SubscribeMail;
 use Illuminate\Support\Facades\Mail;
 use App\Contact;
 use Illuminate\Support\Facades\Validator;
+use DB;
 
 class DesignController extends Controller
 {
     public function index()
     {
-        $coursetab = Coursetab::orderBy('course_id')->where('admin_id', 1)->get();
+        $coursetab = Coursetab::orderBy('course_id')->where('admin_id', 1)->where('status', 1)->get();
         $tempcourses = TempCourses::orderBy('title')->where('admin_id', 1)->get();
         return view('brand_front.index')
         ->with('courses', Course::all())
@@ -42,15 +43,12 @@ class DesignController extends Controller
         ];
  
         $validator = Validator::make($request->all(), [
-            'g-recaptcha-response' => 'required|captcha',
+            // 'g-recaptcha-response' => 'required|captcha',
             'first_name' => 'required',
             'last_name' => 'required',
             'email' => 'required',
             'phone_no' => 'required',
             'country' => 'required',
-            'company' => 'required',
-            'industry' => 'required',
-            'inquiry_category' => 'required',
         ], $messages);
  
         if ($validator->fails()) {
@@ -65,12 +63,23 @@ class DesignController extends Controller
             $contact->email = $request->email;
             $contact->phone_no = $request->phone_no;
             $contact->country = $request->country;
-            $contact->company = $request->company;
-            $contact->industry = $request->industry;
-            $contact->inquiry_category = $request->inquiry_category;
-            $contact->existing_client = $request->existing_client;
             $contact->message = $request->message;
             $contact->save();
+            if($contact->save())
+            {
+                $contactus = DB::table('contacts')->where('id', $contact->id)->first();
+                // dd($contactus);
+                $contactArray = (array)$contactus;
+                // dd($contactArray);
+                $data["email"] = "divyapatange0@gmail.com";
+                $data["title"] = "Enquiry Message";
+                $data["body"] = "New User Enquiry Submitted";
+                Mail::send('email.contactMail', $contactArray, function($message)use($data, $contactArray) {
+                    $message->to($data["email"], $data["email"])
+                            ->subject($data["title"]);
+                    
+                });
+            }
             return redirect('/contact')->with('success', 'Thank you for contacting us!');
         }
     }

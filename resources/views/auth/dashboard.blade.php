@@ -11,7 +11,7 @@
 @section('content')
 <div class="mdc-layout-grid">
             <div class="mdc-layout-grid__inner">
-              <!--<div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet">-->
+              <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-12-tablet">
               <!--  <div class="mdc-card info-card info-card--success">-->
               <!--    <div class="card-inner">-->
               <!--      <h5 class="card-title">Borrowed</h5>-->
@@ -59,7 +59,8 @@
               <!--    </div>-->
               <!--  </div>-->
               <!--</div>-->
-             <h1>Welcome {{Auth::user()->name}}...!</h1>
+                <h1>Welcome {{Auth::user()->name}}...!</h1>
+             </div>
             </div>
           </div>
           @endsection

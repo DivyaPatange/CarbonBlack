@@ -389,7 +389,7 @@ class TestController extends Controller
                       <button type="button" style="border-width:3px" class="next  mdc-button mdc-button--outlined outlined-button--warning mdc-ripple-upgraded" name="next" id="'.$next_id.'" '.$if_next_disable.'>
                         Save & Next
                       </button>
-                      <button type="button" style="border-width:3px" class="submit mdc-button mdc-button--outlined outlined-button--success mdc-ripple-upgraded" name="submit">
+                      <button type="button" style="border-width:3px" class="mdc-button mdc-button--outlined outlined-button--success mdc-ripple-upgraded" name="submit" onclick="SubmitTest(this, '.$request->take_test_id.')">
                         Submit
                       </button>
                       </div>
@@ -808,6 +808,24 @@ class TestController extends Controller
             // dd($userAnswer);
             $result = Answer::where('take_test_id', $takeTest->id)->get()->sum('mark');
            return view('auth.test.result', compact('takeTest', 'test', 'userAnswer', 'result', 'question'));
+    }
+
+    public function submitTestResult(Request $request)
+    {
+        $takeTest = TakeTest::where('id', $request->bid)->first();
+        $totalQue = Question::where('test_id', $takeTest->test_id)->get();
+        $userAns = Answer::where('take_test_id', $takeTest->id)->where('test_id', $takeTest->test_id)->where('user_id', Auth::user()->id)->get();
+        $notAttemptQue = count($totalQue) - count($userAns);
+        $attemptedQue = count($userAns);
+        if(isset($notAttemptQue) && isset($attemptedQue))
+        {
+            $data = array('notAttemptQue' =>$notAttemptQue,'attemptedQue' =>$attemptedQue
+            );
+        }
+        else{
+            $data =0;
+        }
+        echo json_encode($data);
     }
 
 

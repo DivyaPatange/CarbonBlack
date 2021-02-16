@@ -37,6 +37,7 @@
               <tr>
                 <th class="text-center">ID</th>
                 <th class="text-center">Section Name</th>
+                <th class="text-center">Status</th>
                 <th class="text-center">Action</th>
               </tr>
             </thead>
@@ -45,7 +46,9 @@
                 <tr>
                   <td class="text-center">{{ ++$key }}</td>
                   <td class="text-center" width="40%"><p class="text-wrap">{{$c->name}}</p></td>
+                  <td class="text-center">@if($c->status ==1) Active @else Inactive @endif</td>
                   <td class="text-center">
+                  <a href="{{ route('status.tab', $c->course_id) }}"><button type="button" class="mdc-button mdc-button--unelevated filled-button--primary mdc-ripple-upgraded">@if($c->status == 1) Inactive @else Active @endif</button></a>
                        <a href="{{ route('edit.tab', $c->course_id) }}"><button type="button" class="mdc-button mdc-button--unelevated filled-button--warning mdc-ripple-upgraded">Edit</button></a>
                     <a href="javascript:void(0)" onclick="$(this).parent().find('form').submit()"><button type="button" class="mdc-button mdc-button--unelevated filled-button--secondary mdc-ripple-upgraded">Delete</button></a>
                             <form action="{{ route('deletetab', $c->course_id) }}" method="post">

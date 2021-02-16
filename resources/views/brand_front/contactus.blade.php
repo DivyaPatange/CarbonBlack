@@ -73,7 +73,6 @@ input[type="email"]{
 @endsection
 @section('content')
     <!--carosel section start-->
-    @include('brand_front.front_layouts.banner')
     <!--carosel section ends-->
     <!-- courses -->
     <section id="portfolio" class="portfolio section-bg">
@@ -153,54 +152,6 @@ input[type="email"]{
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Company</label><span>*</span>
-                                <input type="text" name="company" class="form-control @error('company') is-invalid @enderror" value="{{ old('company') }}">
-                                @error('company')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror 
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Industry</label><span>*</span>
-                                <input type="text" name="industry" class="form-control @error('industry') is-invalid @enderror" value="{{ old('industry') }}"> 
-                                @error('industry')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Inquiry Category</label><span>*</span>
-                                <input type="text" name="inquiry_category"  class="form-control @error('inquiry_category') is-invalid @enderror" value="{{ old('inquiry_category') }}">
-                                @error('inquiry_category')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div> 
-                        </div>
-                        <div class="col-md-6">
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <small>Are you an existing client?</small>
-                                <div class="form-check-inline">
-                                    <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="existing_client" value="1" @if(old('existing_client') == 1) checked="checked" @endif><small>Yes</small>
-                                    </label>
-                                </div>
-                                <div class="form-check-inline">
-                                    <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="existing_client" value="0" @if(old('existing_client') == 0) checked="checked" @endif><small>No</small>
-                                    </label>
-                                </div>
-                            </div>
                         </div>
                         <div class="col-md-12">
                             <small>How can we help you?</small>
@@ -211,11 +162,11 @@ input[type="email"]{
                                 </span>
                             @enderror
                         </div>
-                        <div class="col-md-12 mt-3">
+                        <!-- <div class="col-md-12 mt-3">
                             <div class="m-auto w-50">
                              {!! NoCaptcha::display() !!}
                              </div>
-                        </div>
+                        </div> -->
                     </div>
                     {{ csrf_field() }}
                     <div class="row">

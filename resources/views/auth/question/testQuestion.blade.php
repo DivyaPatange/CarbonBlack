@@ -20,7 +20,10 @@ $exam_status = $takeTest->status;
 @section('customcss')
 
 <meta name="csrf-token" content="{{ csrf_token() }}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <link rel="stylesheet" href="{{ asset('brandAssets/css/TimeCircles.css') }}" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
   
       <style>
      .files input {
@@ -90,6 +93,9 @@ $exam_status = $takeTest->status;
   -moz-transform: rotate(-45deg);
   /* z-index:100; */
 }
+label{
+	margin-bottom:0px;
+}
 
     </style>
      <script src="http://www.codermen.com/js/jquery.js"></script>
@@ -142,12 +148,48 @@ $exam_status = $takeTest->status;
   </div>
   @endforeach
   @endif
+<div id="costumModal17" class="modal" data-easein="slideDownIn"  tabindex="-1" role="dialog" aria-labelledby="costumModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title">
+					Submit Test
+				</h4>
+			</div>
+			<div class="modal-body">
+				<table class="table">
+					<tr>
+						<th>No. of Questions Attempted</th>
+						<th>No. of Not Attempted Questions</th>
+					</tr>
+					<tr>
+						<td class="text-left" id="attemptedQue">2</td>
+						<td class="text-left" id="notAttemptQue">3</td>
+					</tr>
+				</table>
+				<p>Do You Want to Submit Test?</p>
+				<button class="submit btn-primary">
+					Yes
+				</button>
+				<button class=" btn-danger" data-dismiss="modal" aria-hidden="true">
+					No
+				</button>
+			</div>
+			<div class="modal-footer">
+				
+			</div>
+		</div>
+	</div>
+</div>
 @endsection
 @section('customjs')
  
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="{{ asset('brandAssets/js/TimeCircles.js') }}"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script>
    $.ajaxSetup({
   headers: {
@@ -349,12 +391,8 @@ $(document).ready(function(){
 	});
 
 	$(document).on('click', '.submit', function(){
-		var proceed = confirm("Are you sure you want to submit test?");
-		if (proceed) {
-		  //proceed
+	
 		window.location.href="{{ route('submit.test', $takeTest->id) }}";
-		} else {
-		}
 		
 	});
 	
@@ -377,6 +415,28 @@ function selectOnlyThis1(id){
   	el.checked = false;
   });
   id.checked = true;
-}  
+} 
+
+function SubmitTest(obj,bid)
+{
+    var datastring="bid="+bid;
+    // alert(datastring);
+    $.ajax({
+        type:"POST",
+        url:"{{ route('admin.get.submitTestResult') }}",
+        data:datastring,
+        cache:false,        
+        success:function(returndata)
+        {
+            // alert(returndata);
+        if (returndata!="0") {
+            $("#costumModal17").modal('show');
+            var json = JSON.parse(returndata);
+            $("#attemptedQue").html(json.attemptedQue);
+            $("#notAttemptQue").html(json.notAttemptQue);
+        }
+        }
+    });
+}
 </script>
 @endsection

@@ -18,13 +18,13 @@ class TempCoursesController extends Controller
      */
     public function index()
     {
-        $coursetab = Coursetab::orderBy('course_id')->where('admin_id', '=', Auth::user()->id)->get();
+        $coursetab = Coursetab::orderBy('course_id')->where('admin_id', '=', Auth::user()->id)->where('status', 1)->get();
         $tempcourses = TempCourses::orderBy('title')->where('admin_id', '=', Auth::user()->id)->get();
         // dd($tempcourses);
 
         $user = User::findorfail(Auth::user()->id);
         // dd($user);
-        $courses = Coursetab::orderBy('course_id')->where('admin_id', '=', $user->parent_id)->get();
+        $courses = Coursetab::orderBy('course_id')->where('admin_id', '=', $user->parent_id)->where('status', 1)->get();
         $tempCourses = TempCourses::orderBy('title')->where('admin_id', '=', $user->parent_id)->get();
     //     $tempcourses = Coursetab::join('temp_courses', 'temp_courses.category', '=', 'coursetabs.name')
     //   ->select('coursetabs.course_id', 'coursetabs.name', 'temp_courses.*')
