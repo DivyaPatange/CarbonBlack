@@ -31,7 +31,6 @@ class TempCoursesController extends Controller
     //   ->get();
         return view('auth.tempCoursesData.index', compact('tempcourses', 'courses', 'tempCourses'))->with('coursetab',$coursetab);
     }
-
     /**
      * Show the form for creating a new resource.
      *
