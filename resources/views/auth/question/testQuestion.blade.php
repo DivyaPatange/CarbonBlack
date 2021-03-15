@@ -23,7 +23,10 @@ $exam_status = $takeTest->status;
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <link rel="stylesheet" href="{{ asset('brandAssets/css/TimeCircles.css') }}" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   
       <style>
      .files input {
@@ -35,6 +38,19 @@ $exam_status = $takeTest->status;
     text-align: center !important;
     margin: 0;
     width: 100% !important;
+}
+.mdc-card{
+	background:transparent;
+}
+.mdc-text-field--outlined .mdc-text-field__input{
+	border:2px solid black !important;
+}
+.card{
+	background-color:transparent;
+	border-radius:1.25rem;
+	border:2px solid black;
+	height:300px;
+	overflow-y :scroll;
 }
 .files input:focus{     outline: 2px dashed #92b0b3;  outline-offset: -10px;
     -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
@@ -55,6 +71,9 @@ $exam_status = $takeTest->status;
     background-size: 100%;
     background-repeat: no-repeat;
 }
+.col{
+	width:20%;
+}
 .color input{ background-color:#f1f1f1;}
 .files:before {
     position: absolute;
@@ -73,7 +92,19 @@ $exam_status = $takeTest->status;
 }
 .active{background:green}
 .inactive{background:red}
-
+canvas{
+	width:0;
+	height:0;
+}
+.textDiv_Minutes{
+	top:2px !important;
+	width:50px !important;
+}
+.textDiv_Seconds{
+	top:2px !important;
+	width:50px !important;
+	left:70px !important;
+}
 #watermark {
   /* height: 450px; */
   /* width: 600px; */
@@ -96,6 +127,19 @@ $exam_status = $takeTest->status;
 label{
 	margin-bottom:0px;
 }
+.test-heading{
+	background-color: #ffd78e;
+    /* height: 34px; */
+    width: 100%;
+    border-radius: 18px;
+    border: 2px solid black;
+	padding: 0 16px;
+}
+.block{
+	border:2px solid black;
+	padding:20px;
+	border-radius:14px;
+}
 
     </style>
      <script src="http://www.codermen.com/js/jquery.js"></script>
@@ -103,7 +147,117 @@ label{
 
 @section('content')
 @if($exam_status == 0)
-<div class="mdc-layout-grid">
+<div class="mdc-layout-grid p-0">
+	<div class="mdc-layout-grid__inner">
+		<div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
+			<div class="test-heading d-flex justify-content-between">
+			<?php 
+				$test = DB::table('test')->where('id', $takeTest->test_id)->first();
+				$question = DB::table('question')->where('test_id', $test->id)->get();
+				if(!empty($test))
+				{
+					$coursetab = DB::table('coursetabs')->where('course_id', $test->tab_id)->where('status', 1)->first();
+				}
+			?>
+				<h6 class="mt-1"><b>Module @if(!empty($test)) @if(!empty($coursetab)) {{ $coursetab->name }} @endif @endif</b></h6>
+				<h6 class="mt-1"><i class="fa fa-info-circle" aria-hidden="true">&nbsp;</i>View Instructions</h6>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-8 pr-0">
+		<div class="row">
+			<div class="col-md-9">
+				<div class="row">
+					<div class="col-md-3">
+						<div class="test-heading">
+							<h6 class="mt-1">Section</h6>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-5">
+					<div class="test-heading">
+					<h6 class="mt-1"><i class="fa fa-info-circle" aria-hidden="true">&nbsp;</i>Question 1 to {{ count($question) }}</h6>
+				</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+			<div class="test-heading" style="height:100%">
+			<h6>Time Left :</h6>
+				<div id="exam_timer" class="demo" data-timer="{{ $remaining_minutes }}" height="100">
+					</div>
+					<p id="demo"></p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-md-12" id="single_question_area">
+				
+			</div>
+		</div>
+	</div>
+	<div class="col-md-4 pl-0">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="block">
+					<img src="{{ asset('img/download.png') }}" alt="" width="100px" class="float-left">
+					<h2 class="p-4">{{ Auth::user()->name }}</h2>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="block">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="d-flex">
+								<img src="{{ asset('img/download1.png') }}" width="25px" height="25px" alt="" class="m-1">
+								<h6 class="m-1">Answered</h6>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="d-flex">
+								<img src="{{ asset('img/download2.png') }}" width="25px" height="25px" alt="" class="m-1">
+								<h6 class="m-1">Not Visited</h6>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="d-flex">
+								<img src="{{ asset('img/download3.png') }}" width="25px" height="25px" alt="" class="m-1">
+								<h6 class="m-1">Not Answered</h6>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="d-flex">
+								<img src="{{ asset('img/download4.png') }}" width="25px" height="25px" alt="" class="m-1">
+								<h6 class="m-1">Marked For Review</h6>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="test-heading">
+					<h6 class="mt-1">Question 1 to {{ count($question) }}</h6>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12" id="question_navigation_area"></div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-12" id="buttonArea"></div>
+</div>
+<!-- <div class="mdc-layout-grid">
 	<div class="mdc-layout-grid__inner">
 		<div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-10 " >
 		</div>
@@ -115,16 +269,22 @@ label{
 			<p id="demo"></p>
 	  	</div>
 	</div>
-</div>
-  <div class="mdc-layout-grid">
+</div> -->
+  <!-- <div class="mdc-layout-grid">
     <div class="mdc-layout-grid__inner mt-2">
       	<div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-8 " id="single_question_area">
 		  
       	</div>
-      	<div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-4 " id="question_navigation_area">
+      	<div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-4 " >
+		  	<div class="mdc-layout-grid__inner">
+				<div class="mdc-layout-grid__cell stretch-card d-block mdc-layout-grid__cell--span-12">fskgj</div>
+			</div>
+			<div class="mdc-layout-grid__inner">
+				<div class="mdc-layout-grid__cell stretch-card d-block mdc-layout-grid__cell--span-12" id="question_navigation_area"></div>
+			</div>
       	</div>
     </div>
-  </div>
+  </div> -->
   @foreach($question as $q)
   <!-- The Modal -->
   <div class="modal fade" id="test{{ $q->id }}">
@@ -241,14 +401,15 @@ $(document).ready(function(){
 			data:{exam_id:exam_id,take_test_id:take_test_id, question_id:question_id, page:'testQuestion', action:'load_question'},
 			success:function(data)
 			{
-				$('#single_question_area').html(data);
+				$('#single_question_area').html(data.output);
+				$('#buttonArea').html(data.button)
 			}
 		})
 	}
   	$(document).on('click', '.next', function(){
 		var question_id = $(this).attr('id');
 		
-		var prev_que_id = $(this).attr('id') - 1;
+		var prev_que_id = $(this).attr('current-id');
 		var take_test_id =  "{{ $takeTest->id }}";
 		load_question(question_id);
 		// console.log(prev_que_id);
@@ -265,6 +426,10 @@ $(document).ready(function(){
 				{
 					var que_nav = $("[data-question_id^='"+data.prev_que_id+"']").css({"background-color":"#12a63a", "color":"white", "border-color":"white", "font-weight": "900", "border-radius": "50%"});
 				}
+				else if(data.not_ans == 1)
+				{
+					var que_nav = $("[data-question_id^='"+data.prev_que_id+"']").css({"background-color":"red", "color":"white", "border-color":"white", "font-weight": "900", "border-radius": "50%"});
+				}
 				// if(data.prev_que_id == );
 				console.log(que_nav);
 				// $('#question_navigation_area').html(data);
@@ -272,6 +437,46 @@ $(document).ready(function(){
 			})
 		}
 	});
+
+	$(document).on('click', '.review', function(){
+		var question_id = $(this).attr('id');
+		var que_id = $(this).attr('current-id');
+
+		load_question(question_id);
+		if(que_id != "")
+		{
+			$.ajax({
+			url:"{{ route('markForReview') }}",
+			method:"POST",
+			data:{que_id:que_id, take_test_id:take_test_id, page:'testQuestion', action:'review'},
+			success:function(data)
+			{
+				console.log(data);
+				if(data.review == 1)
+				{
+					var que_nav = $("[data-question_id^='"+data.prev_que_id+"']").css({"background-color":"#ffc000", "color":"white", "border-color":"white", "font-weight": "900", "border-radius": "50%"});
+				}
+			}
+			})
+		}
+	})
+
+	$(document).on('click', '.clearResponse', function(){
+		var que_id = $(this).attr('current-id');
+		if(que_id != "")
+		{
+			$.ajax({
+			url:"{{ route('removeAns') }}",
+			method:"POST",
+			data:{que_id:que_id, take_test_id:take_test_id, page:'testQuestion', action:'clearResponse'},
+			success:function(data)
+			{
+				load_question(data.que_id);
+				question_navigation();
+			}
+			})
+		}
+	})
 
 	$(document).on('click', '.previous', function(){
 		var question_id = $(this).attr('id');

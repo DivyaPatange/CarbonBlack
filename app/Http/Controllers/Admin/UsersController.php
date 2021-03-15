@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ActivateConfirmMail;
 use App\Admin\Logo;
+use DB;
 
 class UsersController extends Controller
 {
@@ -30,7 +31,7 @@ class UsersController extends Controller
         $id = Auth::user()->id;   
         $users = User::where('parent_id', '=', $id)->get();
         $result = User::findorfail($id);
-        $emp = User::where('parent_id', '=', NULL)->get();
+        $emp = User::where('parent_id', '=', NULL)->orderBy('id', 'DESC')->get();
         // dd($emp);
         return view('auth.users.index', compact('result', 'emp'))->with('users', $users);
     }
@@ -132,18 +133,28 @@ class UsersController extends Controller
     public function update(Request $request, $id)
     {
         $user = User::findorfail($id);
-        $branchId = User::where('parent_id', $request->company_name)->get();
+        $branchId = DB::table('users')->where('parent_id', $request->company_name)->max('code');
+        // dd(!empty($branchId));
         // dd(sprintf("%05d", 1));
-        if(count($branchId) > 0)
+        if(!empty($branchId))
         {
+            $Enq= User::where('code', $branchId)->first();
+            // dd($Enq);
+            $string = $Enq->registration_code;
+            $string = $Enq->registration_code;
+            $int = intval(preg_replace('/[^0-9]+/', '', $string), 10);
+            
+            $en=$int+1;
             $user->parent_id = $request->company_name;
             $companyName = User::where('id', $request->company_name)->first();
+            $user->code = $en;
             // dd($companyName);
-            $user->registration_code  = strtoupper($companyName->name)."".sprintf("%05d", count($branchId));
+            $user->registration_code  = strtoupper($companyName->name)."".sprintf("%05d", $en);
         }
         else{
             $user->parent_id = $request->company_name;
             $companyName = User::where('id', $request->company_name)->first();
+            $user->code = 1;
             $user->registration_code  = strtoupper($companyName->name)."00001";
         }
         // dd($branchId);

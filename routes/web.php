@@ -139,6 +139,8 @@ Route::get('/admin/testResult', 'Admin\TestController@testResult')->name('admin.
 Route::get('/admin/moduleReactivate', 'Admin\ModuleController@index')->name('user.moduleReactivate.request');
 Route::get('/test/enabled/{id}', 'Admin\ModuleController@testEnabled')->name('test.enabled');
 Route::post('/checkAnswer', 'User\TestController@checkUserAnswer')->name('checkUserAnswer');
+Route::post('/markForReview', 'User\TestController@markForReview')->name('markForReview');
+Route::post('/removeAns', 'User\TestController@removeAns')->name('removeAns');
 Route::post('submitTestResult', 'User\TestController@submitTestResult')->name('admin.get.submitTestResult');
 
 

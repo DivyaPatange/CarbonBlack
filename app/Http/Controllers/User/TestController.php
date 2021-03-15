@@ -103,6 +103,7 @@ class TestController extends Controller
                         // dd($exam);
                     }
                     $output = '';
+                    $button = '';
                     // $key = 1;
                     foreach($exam as $que)
                     {
@@ -116,54 +117,81 @@ class TestController extends Controller
                             ->where('question_id', $que->id)->first();
                             // dd($ans);
                             $output .= '
-                            <div class="mdc-card p-0" id="watermark">
-                            <p id="watermarkText">CarbonBlack Education</p>
-                                <h6 class="card-title card-padding pb-0" style="display:inline-block;"><b>'.$key.'. '.$que->question.
-                                '</b></h6>
-                                <div class="mdc-card" style="display:inline">
-                                <button class="mdc-button mdc-button--outlined mdc-button--dense mdc-ripple-upgraded" style="--mdc-ripple-fg-size:44px; --mdc-ripple-fg-scale:2.06352; --mdc-ripple-fg-translate-start:32.9874px, 1.20001px; --mdc-ripple-fg-translate-end:15.0938px, -6px;" data-toggle="modal" data-target="#test'.$que->id.'">
-                                    Hint
-                                </button>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="test-heading">
+                                        <h6>Question Type : <b>MCQ</b></h6>
+                                    </div>
                                 </div>
-                                <div class="mdc-card">
-                                    <div class="template-demo">
-                                        <div class="mdc-layout-grid__inner">';
-                                            $option = DB::table('options')->where('question_id', $que->id)->get();
-                                            $count = 1;
-                                            foreach($option as $sub_row)
-                                            {
-                                            $output .= '<div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
-                                                <div class="mdc-form-field">
-                                                    <div class="mdc-checkbox mdc-checkbox--success">';
-                                                    if(!empty($ans))
+                                <div class="col-md-3"></div>
+                                <div class="col-md-5">
+                                    <div class="test-heading">
+                                        <h6><b>Marks For Correct Answer: '.$que->que_mark.'</b></h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="test-heading">
+                                        <h6 class="mt-1"><b>Question No. '.$key.'</b></h6>
+                                    </div>
+                                </div>
+                                <div class="col-md-6"></div>
+                                <div class="col-md-3">
+                                    <div class="test-heading">
+                                        <a data-toggle="modal" data-target="#test'.$que->id.'">
+                                            <h6 class="mt-1"><b><i class="fa fa-info-circle" aria-hidden="true">&nbsp;</i> Hint</b></h6>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="mdc-card p-0" id="watermark" style="border:2px solid black; border-radius:11px; min-height:459px">
+                                        <p id="watermarkText">CarbonBlack Education</p>
+                                        <h6 class="card-title card-padding pb-0" style="display:inline-block;"><b>'.$que->question.'</b></h6>
+                                        <div class="mdc-card">
+                                            <div class="template-demo">
+                                                <div class="mdc-layout-grid__inner">';
+                                                    $option = DB::table('options')->where('question_id', $que->id)->get();
+                                                    $count = 1;
+                                                    foreach($option as $sub_row)
                                                     {
-                                                        if($ans->answer_option == $count){
-                                                        $output .= '<input type="checkbox" name="myCheckbox" class="answer_option mdc-checkbox__native-control" data-question_id="'.$que->id.'" data-id="'.$count.'" onclick="selectOnlyThis(this)" checked>';
-                                                        }
-                                                        else{
-                                                            $output .= '<input type="checkbox" name="myCheckbox" class="answer_option mdc-checkbox__native-control" data-question_id="'.$que->id.'" onclick="selectOnlyThis(this)" data-id="'.$count.'">';
-                                                        }
-                                                    }
-                                                    else{
-                                                        $output .= '<input type="checkbox" name="myCheckbox" class="answer_option mdc-checkbox__native-control" data-question_id="'.$que->id.'" onclick="selectOnlyThis(this)" data-id="'.$count.'">';
-                                                    }
+                                        $output .= '<div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+                                                        <div class="mdc-form-field">
+                                                            <div class="mdc-checkbox mdc-checkbox--success">';
+                                                            if(!empty($ans))
+                                                            {
+                                                                if($ans->answer_option == $count){
+                                                                $output .= '<input type="checkbox" name="myCheckbox" class="answer_option mdc-checkbox__native-control" data-question_id="'.$que->id.'" data-id="'.$count.'" onclick="selectOnlyThis(this)" checked>';
+                                                                }
+                                                                else{
+                                                                $output .= '<input type="checkbox" name="myCheckbox" class="answer_option mdc-checkbox__native-control" data-question_id="'.$que->id.'" onclick="selectOnlyThis(this)" data-id="'.$count.'">';
+                                                                }
+                                                            }
+                                                            else{
+                                                                $output .= '<input type="checkbox" name="myCheckbox" class="answer_option mdc-checkbox__native-control" data-question_id="'.$que->id.'" onclick="selectOnlyThis(this)" data-id="'.$count.'">';
+                                                            }
                                                     
-                                                    $output .= '<div class="mdc-checkbox__background">
-                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
-                                                    </svg>
-                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                            $output .= '<div class="mdc-checkbox__background">
+                                                                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                                <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                            </svg>
+                                                                            <div class="mdc-checkbox__mixedmark"></div>
+                                                                        </div>
+                                                            </div>
+                                                            <label for="basic-disabled-checkbox" id="basic-disabled-checkbox-label">'.$sub_row->option_title.'</label>
+                                                        </div>
+                                                    </div>';
+                                                    $count = $count + 1;
+                                                    }
+                                                $output .= '
                                                 </div>
-                                                    </div>
-                                                    <label for="basic-disabled-checkbox" id="basic-disabled-checkbox-label">'.$sub_row->option_title.'</label>
-                                                </div>
-                                                </div>';
-                                                $count = $count + 1;
-                                            }
-                                            $output .= '
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
                             ';
                         }
                         if($que->que_type == "multiple"){
@@ -172,16 +200,39 @@ class TestController extends Controller
                             ->where('user_id', Auth::user()->id)
                             ->where('question_id', $que->id)->first();
                             $output .= '
-                            <div class="mdc-card p-0" id="watermark">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="test-heading">
+                                        <h6>Question Type : <b>MCQ</b></h6>
+                                    </div>
+                                </div>
+                                <div class="col-md-3"></div>
+                                <div class="col-md-5">
+                                    <div class="test-heading">
+                                        <h6><b>Marks For Correct Answer: '.$que->que_mark.'</b></h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="test-heading">
+                                        <h6 class="mt-1"><b>Question No. '.$key.'</b></h6>
+                                    </div>
+                                </div>
+                                <div class="col-md-6"></div>
+                                <div class="col-md-3">
+                                    <div class="test-heading">
+                                        <a data-toggle="modal" data-target="#test'.$que->id.'">
+                                            <h6 class="mt-1"><b><i class="fa fa-info-circle" aria-hidden="true">&nbsp;</i> Hint</b></h6>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mdc-card p-0" id="watermark" style="border:2px solid black; border-radius:11px; min-height:459px">
                             
                             <p id="watermarkText">CarbonBlack Education</p>
-                                <h6 class="card-title card-padding pb-0" style="display:inline-block;"><b>'.$key.'. '.$que->question.
+                                <h6 class="card-title card-padding pb-0" style="display:inline-block;"><b>'.$que->question.
                                 '</b></h6>
-                                <div class="mdc-card" style="display:inline">
-                                <button class="mdc-button mdc-button--outlined mdc-button--dense mdc-ripple-upgraded" style="--mdc-ripple-fg-size:44px; --mdc-ripple-fg-scale:2.06352; --mdc-ripple-fg-translate-start:32.9874px, 1.20001px; --mdc-ripple-fg-translate-end:15.0938px, -6px;" data-toggle="modal" data-target="#test'.$que->id.'">
-                                Hint
-                            </button>
-                                </div>
                                 <div class="mdc-card" >
                                     <div class="template-demo">
                                         <div class="mdc-layout-grid__inner">';
@@ -233,15 +284,38 @@ class TestController extends Controller
                             ->where('user_id', Auth::user()->id)
                             ->where('question_id', $que->id)->first();
                             $output .= '
-                            <div class="mdc-card p-0" id="watermark">
-                            <p id="watermarkText">CarbonBlack Education</p>
-                                <h6 class="card-title card-padding pb-0" style="display:inline-block;"><b>'.$key.'. '.$que->question.
-                                '</b></h6>
-                                <div class="mdc-card" style="display:inline">
-                                <button class="mdc-button mdc-button--outlined mdc-button--dense mdc-ripple-upgraded" style="--mdc-ripple-fg-size:44px; --mdc-ripple-fg-scale:2.06352; --mdc-ripple-fg-translate-start:32.9874px, 1.20001px; --mdc-ripple-fg-translate-end:15.0938px, -6px;" data-toggle="modal" data-target="#test'.$que->id.'">
-                                    Hint
-                                </button>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="test-heading">
+                                        <h6>Question Type : <b>MCQ</b></h6>
+                                    </div>
                                 </div>
+                                <div class="col-md-3"></div>
+                                <div class="col-md-5">
+                                    <div class="test-heading">
+                                        <h6><b>Marks For Correct Answer: '.$que->que_mark.'</b></h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="test-heading">
+                                        <h6 class="mt-1"><b>Question No. '.$key.'</b></h6>
+                                    </div>
+                                </div>
+                                <div class="col-md-6"></div>
+                                <div class="col-md-3">
+                                    <div class="test-heading">
+                                        <a data-toggle="modal" data-target="#test'.$que->id.'">
+                                            <h6 class="mt-1"><b><i class="fa fa-info-circle" aria-hidden="true">&nbsp;</i> Hint</b></h6>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mdc-card p-0" id="watermark" style="border:2px solid black; border-radius:11px; min-height:459px">
+                            <p id="watermarkText">CarbonBlack Education</p>
+                                <h6 class="card-title card-padding pb-0" style="display:inline-block;"><b>'.$que->question.
+                                '</b></h6>
                                 <div class="mdc-card">
                                     <div class="template-demo">
                                         <div class="mdc-layout-grid__inner">
@@ -280,15 +354,38 @@ class TestController extends Controller
                             ->where('question_id', $que->id)->first();
                             // dd($ans3);
                             $output .= '
-                            <div class="mdc-card p-0" id="watermark">
-                            <p id="watermarkText">CarbonBlack Education</p>
-                                <h6 class="card-title card-padding pb-0" style="display:inline-block;"><b>'.$key.'. '.$que->question.
-                                '</b></h6>
-                                <div class="mdc-card" style="display:inline">
-                                <button class="mdc-button mdc-button--outlined mdc-button--dense mdc-ripple-upgraded" style="--mdc-ripple-fg-size:44px; --mdc-ripple-fg-scale:2.06352; --mdc-ripple-fg-translate-start:32.9874px, 1.20001px; --mdc-ripple-fg-translate-end:15.0938px, -6px;" data-toggle="modal" data-target="#test'.$que->id.'">
-                                    Hint
-                                </button>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="test-heading">
+                                        <h6>Question Type : <b>MCQ</b></h6>
+                                    </div>
                                 </div>
+                                <div class="col-md-3"></div>
+                                <div class="col-md-5">
+                                    <div class="test-heading">
+                                        <h6><b>Marks For Correct Answer: '.$que->que_mark.'</b></h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="test-heading">
+                                        <h6 class="mt-1"><b>Question No. '.$key.'</b></h6>
+                                    </div>
+                                </div>
+                                <div class="col-md-6"></div>
+                                <div class="col-md-3">
+                                    <div class="test-heading">
+                                    <a data-toggle="modal" data-target="#test'.$que->id.'">
+                                        <h6 class="mt-1"><b><i class="fa fa-info-circle" aria-hidden="true">&nbsp;</i> Hint</b></h6>
+                                    </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mdc-card p-0" id="watermark" style="border:2px solid black; border-radius:11px; min-height:459px">
+                            <p id="watermarkText">CarbonBlack Education</p>
+                                <h6 class="card-title card-padding pb-0" style="display:inline-block;"><b>'.$que->question.
+                                '</b></h6>
                                 <div class="mdc-card">
                                     <div class="template-demo">
                                         <div class="mdc-layout-grid__inner">
@@ -381,15 +478,19 @@ class TestController extends Controller
                         {
                             $if_next_disable = 'disabled';
                         }
-                        $output .= '
-                    <div class="mdc-card" style="display:inline-block; text-align:center">
-                      <button type="button" style="border-width:3px" class="mdc-button previous mdc-button--outlined outlined-button--secondary mdc-ripple-upgraded" name="previous" id="'.$previous_id.'" '.$if_previous_disable.'>
-                        Previous
-                      </button>
-                      <button type="button" style="border-width:3px" class="next  mdc-button mdc-button--outlined outlined-button--warning mdc-ripple-upgraded" name="next" id="'.$next_id.'" '.$if_next_disable.'>
+                        $button .= '
+                    <div class="mdc-card" style="display:inline-block; text-align:center; width:100%">
+                    <button class="col review mdc-button mdc-button--raised filled-button--warning mdc-ripple-upgraded" style="--mdc-ripple-fg-size:55px; --mdc-ripple-fg-scale:1.98525; --mdc-ripple-fg-translate-start:33.9249px, 5.89999px; --mdc-ripple-fg-translate-end:18.7125px, -9.5px;" current-id="'.$que->id.'" id="'.$next_id.'" >
+                      Mark For Review & Next
+                    </button>
+                    <button class="col clearResponse mdc-button mdc-button--raised filled-button--dark mdc-ripple-upgraded" current-id="'.$que->id.'">
+                      Clear Response
+                    </button>
+                     
+                      <button type="button" style="border-width:3px" class="col next  mdc-button mdc-button--raised filled-button--success mdc-ripple-upgraded" name="next" current-id="'.$que->id.'" id="'.$next_id.'" '.$if_next_disable.'>
                         Save & Next
                       </button>
-                      <button type="button" style="border-width:3px" class="mdc-button mdc-button--outlined outlined-button--success mdc-ripple-upgraded" name="submit" onclick="SubmitTest(this, '.$request->take_test_id.')">
+                      <button type="button" style="border-width:3px" class="col mdc-button mdc-button--raised mdc-ripple-upgraded" name="submit" onclick="SubmitTest(this, '.$request->take_test_id.')">
                         Submit
                       </button>
                       </div>
@@ -397,7 +498,7 @@ class TestController extends Controller
                       ';
                     }
                     }
-                    return $output;
+                    return response()->json(['output' => $output, 'button' => $button]);
                 }
             }
         }
@@ -416,17 +517,29 @@ class TestController extends Controller
                     $exam = DB::table('question')->where('test_id', $request->exam_id)->orderBy('id', 'ASC')->get();
                     $output = '
                     <div class="card w-100">
-                        <div class="card-header">Question Navigation</div>
+                        <div class="card-header">Choose a Question</div>
                         <div class="card-body">
                             <div class="row">
                     ';
                     $count = 1;
                     foreach($exam as $row)	
                     {
-                        $userAnswer = Answer::where('take_test_id', $request->take_test_id)->where('test_id', $request->exam_id)->where('question_id', $row->id)->first();
+                        $userAnswer = Answer::where('take_test_id', $request->take_test_id)->where('test_id', $request->exam_id)->where('user_id', Auth::user()->id)->where('question_id', $row->id)->first();
+                        // dd($userAnswer);
                         $output .= '
                         <div class="col-md-4 col-3" style="margin-bottom:24px;">
-                            <button style="height:40px; padding: 0 10px; min-width:0px;'; if($userAnswer != null){ $output .= 'background-color:#12a63a; color:white; border-color:white; font-weight: 900; border-radius:50%;';}  $output .= '" type="button" class=" mdc-button mdc-button--outlined outlined-button--secondary mdc-ripple-upgraded question_navigation btn inactive" data-question_id="'.$row->id.'">'.sprintf("%02d", $count).'</button>
+                            <button style="height:40px; padding: 0 10px; min-width:0px;'; 
+                            if(!empty($userAnswer)){  
+                                if($userAnswer->answer_option != null){ 
+                                    $output .= 'background-color:#12a63a; color:white; border-color:white; font-weight: 900; border-radius:50%;';
+                                } 
+                                elseif($userAnswer->review == 1){ 
+                                    $output .= 'background-color:#ffc000; color:white; border-color:white; font-weight: 900; border-radius:50%;';
+                                } 
+                                elseif($userAnswer->not_ans == 1){ 
+                                    $output .= 'background-color:red; color:white; border-color:white; font-weight: 900; border-radius:50%;';
+                                } 
+                            } $output .= '" type="button" class=" mdc-button mdc-button--outlined outlined-button--secondary mdc-ripple-upgraded question_navigation btn inactive" data-question_id="'.$row->id.'">'.sprintf("%02d", $count).'</button>
                         </div>
                         ';
                         $count++;
@@ -451,10 +564,28 @@ class TestController extends Controller
                 if($request->action == 'checkAnswer')
                 {
                     $que_id = $request->prev_que_id;
-                    $userAnswer = Answer::where('take_test_id', $request->take_test_id)->where('question_id', $request->prev_que_id)->first();
+                    // dd($que_id);
+                    $userAnswer1 = Answer::where('take_test_id', $request->take_test_id)->where('user_id', Auth::user()->id)->where('question_id', $request->prev_que_id)->first();
+                    $takeTest = DB::table('take_test')->where('id', $request->take_test_id)->first();
+                    // dd($userAnswer1);
+                    if(!empty($userAnswer1))
+                    {
+                        $row = Answer::where('take_test_id', $request->take_test_id)->where('user_id', Auth::user()->id)->where('question_id', $request->prev_que_id)->update(['not_ans' => 1]);
+                    }
+                    else{
+                        $result = new Answer();
+                        $result->take_test_id = $request->take_test_id;
+                        $result->test_id = $takeTest->test_id;
+                        $result->user_id = Auth::user()->id;
+                        $result->question_id = $que_id;
+                        $result->not_ans = 1;
+                        $result->save();
+                    }
+                    $userAnswer = Answer::where('take_test_id', $request->take_test_id)->where('user_id', Auth::user()->id)->where('question_id', $request->prev_que_id)->first();
                     return response()->json([
-                        'userAnswer' => $userAnswer,
+                        'userAnswer' => $userAnswer->answer_option,
                         'prev_que_id' => $que_id,
+                        'not_ans' => $userAnswer->not_ans,
                     ]);
                 }
             }
@@ -814,7 +945,7 @@ class TestController extends Controller
     {
         $takeTest = TakeTest::where('id', $request->bid)->first();
         $totalQue = Question::where('test_id', $takeTest->test_id)->get();
-        $userAns = Answer::where('take_test_id', $takeTest->id)->where('test_id', $takeTest->test_id)->where('user_id', Auth::user()->id)->get();
+        $userAns = Answer::where('take_test_id', $takeTest->id)->where('test_id', $takeTest->test_id)->where('user_id', Auth::user()->id)->where('answer_option', '!=', null)->get();
         $notAttemptQue = count($totalQue) - count($userAns);
         $attemptedQue = count($userAns);
         if(isset($notAttemptQue) && isset($attemptedQue))
@@ -826,6 +957,65 @@ class TestController extends Controller
             $data =0;
         }
         echo json_encode($data);
+    }
+
+    public function markForReview(Request $request)
+    {
+        if(isset($request->page))
+        {
+            // dd($request->page == 'testQuestion');
+            if($request->page == 'testQuestion')
+            {
+                if($request->action == 'review')
+                {
+                    $que_id = $request->que_id;
+                    $takeTest = DB::table('take_test')->where('id', $request->take_test_id)->first();
+                    $userAns = Answer::where('take_test_id', $takeTest->id)->where('user_id', Auth::user()->id)->where('test_id', $takeTest->test_id)->where('question_id', $que_id)->first();
+                    if(!empty($userAns))
+                    {
+                        $userAns1 = Answer::where('take_test_id', $takeTest->id)->where('user_id', Auth::user()->id)->where('test_id', $takeTest->test_id)->where('question_id', $que_id)->update(['review' => 1]);
+                    }
+                    else{
+                        $result = new Answer();
+                        $result->take_test_id = $request->take_test_id;
+                        $result->test_id = $takeTest->test_id;
+                        $result->user_id = Auth::user()->id;
+                        $result->question_id = $que_id;
+                        $result->review = 1;
+                        $result->save();
+                    }
+                    $row = Answer::where('take_test_id', $takeTest->id)->where('user_id', Auth::user()->id)->where('test_id', $takeTest->test_id)->where('question_id', $que_id)->first();
+                    return response()->json([
+                        'review' => $row->review,
+                        'prev_que_id' => $que_id,
+                    ]);
+                }
+            }
+        }   
+    }
+
+    public function removeAns(Request $request)
+    {
+        if(isset($request->page))
+        {
+            // dd($request->page == 'testQuestion');
+            if($request->page == 'testQuestion')
+            {
+                if($request->action == 'clearResponse')
+                {
+                    $que_id = $request->que_id;
+                    $takeTest = DB::table('take_test')->where('id', $request->take_test_id)->first();
+                    $userAns = Answer::where('take_test_id', $takeTest->id)->where('user_id', Auth::user()->id)->where('test_id', $takeTest->test_id)->where('question_id', $que_id)->first();
+                    if(!empty($userAns))
+                    {
+                        $userAns = Answer::where('take_test_id', $takeTest->id)->where('user_id', Auth::user()->id)->where('test_id', $takeTest->test_id)->where('question_id', $que_id)->update(['answer_option' => null, 'mark' => null, 'review' => 0, 'not_ans' => 0]);
+                        return response()->json([
+                            'que_id' => $que_id,
+                        ]);
+                    }
+                }
+            }
+        }
     }
 
 
