@@ -140,18 +140,16 @@ class CoursesController extends Controller
 
     public function status($id)
     {
-        $courseTab = Coursetab::findorfail($id);
-        // dd($courseTab);
-        if($courseTab->status == 1)
+        $tab = Coursetab::where('course_id', $id)->first();
+        if($tab->status == 1)
         {
-            $courseTab->status = 0;
-            $courseTab->save();
+            $tab->status = 0;
         }
         else{
-            $courseTab->status = 1;
-            $courseTab->save();
+            $tab->status = 1;
         }
-        return Redirect::back()->with('status', 'Status changed successfully!');
+        $tab->save();
+        return Redirect::back()->with('status', 'Status Changed Successfully!');
     }
 
 }
