@@ -9,13 +9,15 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
 <style> 
-
+@page { margin: 0px; }
 table{
   border: 3px solid #f0dfbe;
 }
+td{
+    line-height:1.5rem;
+}
 .certificate_name{
   color: #b34a00;
-  margin-bottom:25px;
   text-align:center;
 }
 .date_border{
@@ -36,20 +38,25 @@ h3{
 
 #pdfdiv{
   position: relative;
+  background-image: url('https://carbonblack.education/public/img/image1.png');
+  width:100%;
+  height:750px;
+  background-size:cover;
   /*text-align: center;*/
   /*margin:50px;*/
 }
 .centered {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 49.5%;
+  left: 49.5%;
+  transform: translate(-50%, -50%);
   width:76%;
-  transform: translate(-50%, -50%);
-  /*height:600px;*/
-  transform: translate(-50%, -50%);
+  height:520px;
+  /*z-index:1000;*/
   
 }
 table{
+  
   /*background-image: url('../img/image1.png');*/
 /*  border: 100px solid transparent;*/
 /*  padding: 15px;*/
@@ -78,11 +85,11 @@ p{
 <body>
 
 <div  id="pdfdiv">
-          
+          <!--<img src="https://carbonblack.education/public/img/image1.png" width="100%" height="800px" >-->
          
-    <table width="" class="">
+    <table width="" class="centered">
       <tr>
-        <td width="50%"><img src="{{ public_path('assets/frontend/img/logo/logo.png') }}" width="150px" height="90px" style="padding:20px">
+        <td width="50%"><img src="{{ public_path('assets/frontend/img/logo/logo.png') }}" width="150px" height="90px" style="padding:20px 0px 0px 20px">
         </td>
         <td style="text-align:right;">
             <?php
@@ -91,24 +98,24 @@ p{
               $logo1 = DB::table('company_logo')->where('user_id', $employee->parent_id)->first();
             ?>
             @if(!empty($logo1))
-                <img src="{{ public_path('logo/'.$logo1->logo) }}" width="90px" height="90px" style="padding:20px">
+                <img src="{{ public_path('logo/'.$logo1->logo) }}" width="90px" height="90px" style="padding:20px 20px 0px 0px">
             @endif
         </td>
       </tr>
       <tr>
-        <td colspan="2"><h1 class="mt-3">Certificate of Training</h1></td>
+        <td colspan="2"><h1 style="margin-bottom:10px;">Certificate of Training</h1></td>
       </tr>
       <tr>
         <td colspan="2">
-        <p class="mt-3">This Certifies that</p>
+        <p style="margin:10px;">This Certifies that</p>
         </td>
       </tr>
       <tr>
-        <td colspan="2"><h2 class="certificate_name">{{ Auth::user()->name }}</h2></td>
+        <td colspan="2"><h2 class="certificate_name" style="margin:5px;">{{ Auth::user()->name }}</h2></td>
       </tr>
       <tr>
         <td colspan="2">
-        <p>Has Successfully completed the training in <b>CARBON BLACK TECHNOLOGY</b> for the training program requirement for</p>
+        <p style="margin:10px;">Has Successfully completed the training in <b>CARBON BLACK TECHNOLOGY</b> for the training program requirement for</p>
               <?php 
               // dd($takeTest);
               $test = DB::table('test')->where('id', $test_id)->first();
@@ -120,16 +127,14 @@ p{
         </td>
       </tr>
       <tr>
-        <td colspan="2"> <h3>{{ $section->name }}</h3></td>
+        <td colspan="2"> <p><b>{{ $section->name }}</b></p></td>
       </tr>
       <tr>
-        <td colspan="2" style="text-align:center"><h4 class="date_border">{{ $time }}</h4>
+        <td colspan="2" style="text-align:center"><h2 class="date_border" style="margin:0px">{{ $time }}</h2>
         
-        <h6 style="text-align:center">DATE</h6></td></td>
+        <h6 style="text-align:center;margin:0px">DATE</h6></td></td>
       </tr>
-      <tr>
-        <td colspan="2">
-      </tr>
+     
     </table>
 </div>
 <div id="editor"></div>

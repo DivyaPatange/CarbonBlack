@@ -125,23 +125,35 @@ class AdminRegController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+     public function update(Request $request, $id)
     {
         $request->validate([
             'email' => 'unique:users,email,'.$id,
+            'password' => 'confirmed',
         ]);
         $adminReg = User::findorfail($id);
         $logo = Logo::where('user_id', $id)->first();
-        $adminReg->name = $request->name;
-        $adminReg->email = $request->email;
-        $adminReg->phone = $request->phone;
-        $adminReg->designation =  $request->designation;
-        $adminReg->department = $request->department;
-        $adminReg->city = $request->city;
-        $adminReg->state = $request->state;
-        $adminReg->country = $request->country;
-        $adminReg->pin = $request->pin;
-        $adminReg->update($request->all());
+        $password = $request->hidden_password;
+        if($request->password)
+        {
+            $password = Hash::make($request->password);
+        }
+        $input_data = array (
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'designation' => $request->designation,
+            'department' => $request->department,
+            'city' => $request->city,
+            'state' => $request->state,
+            'country' => $request->country,
+            'pin' => $request->pin,
+            'password' => $password,
+            'password_1' => $request->password,
+        );
+
+        User::whereId($id)->update($input_data);
+       
         
         $image_name = $request->hidden_image;
         $cvrimage = $request->file('logo');

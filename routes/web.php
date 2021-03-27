@@ -50,7 +50,7 @@ Route::get('/', 'DesignController@index')-> name('home');
 Route::get('/contact', 'DesignController@contactus')->name('contactus');
 Route::post('/store/contact', 'DesignController@storeContact')->name('store.contact');
 // Route::get('/loginform', 'DesignController@loginForm')-> name('loginform');
-
+Route::resource('/user-manual', 'Admin\UserManualController');
 // Route::get('/login', 'HomeController@front')->name('login');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin/users', 'Admin\UsersController@index')->middleware('can:manage-users,manage-admin-user,admin')->name('users');

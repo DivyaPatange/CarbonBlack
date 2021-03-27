@@ -120,7 +120,7 @@ class TestController extends Controller
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="test-heading">
-                                        <h6>Question Type : <b>MCQ</b></h6>
+                                        <h6><b>Question Type : MCQ</b></h6>
                                     </div>
                                 </div>
                                 <div class="col-md-3"></div>
@@ -140,15 +140,17 @@ class TestController extends Controller
                                 <div class="col-md-3">
                                     <div class="test-heading">
                                         <a data-toggle="modal" data-target="#test'.$que->id.'">
-                                            <h6 class="mt-1"><b><i class="fa fa-info-circle" aria-hidden="true">&nbsp;</i> Hint</b></h6>
+                                            <h6 class="mt-1"><i class="fa fa-info" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<b> Hint</b></h6>
                                         </a>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="mdc-card p-0" id="watermark" style="border:2px solid black; border-radius:11px; min-height:459px">
-                                        <p id="watermarkText">CarbonBlack Education</p>
+                                    <div class="mdc-card p-0" style="border:2px solid black; border-radius:11px; min-height:457.5px">
+                                    <div id="watermark">
+                            <p id="watermarkText">carbonblack.education carbonblack.education carbonblack.education carbonblack.education carbonblack.education carbonblack.education carbonblack.education carbonblack.education carbonblack.education carbonblack.education carbonblack.education carbonblack.education </p>
+                                        <p id="watermarkText">carbonblack.education carbonblack.education carbonblack.education carbonblack.education carbonblack.education carbonblack.education carbonblack.education carbonblack.education carbonblack.education carbonblack.education carbonblack.education carbonblack.education</p>
                                         <h6 class="card-title card-padding pb-0" style="display:inline-block;"><b>'.$que->question.'</b></h6>
                                         <div class="mdc-card">
                                             <div class="template-demo">
@@ -189,6 +191,7 @@ class TestController extends Controller
                                                 </div>
                                             </div>
                                         </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -203,7 +206,7 @@ class TestController extends Controller
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="test-heading">
-                                        <h6>Question Type : <b>MCQ</b></h6>
+                                        <h6><b>Question Type : MCQ</b></h6>
                                     </div>
                                 </div>
                                 <div class="col-md-3"></div>
@@ -223,14 +226,15 @@ class TestController extends Controller
                                 <div class="col-md-3">
                                     <div class="test-heading">
                                         <a data-toggle="modal" data-target="#test'.$que->id.'">
-                                            <h6 class="mt-1"><b><i class="fa fa-info-circle" aria-hidden="true">&nbsp;</i> Hint</b></h6>
+                                            <h6 class="mt-1"><i class="fa fa-info" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp; <b>Hint</b></h6>
                                         </a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="mdc-card p-0" id="watermark" style="border:2px solid black; border-radius:11px; min-height:459px">
                             
-                            <p id="watermarkText">CarbonBlack Education</p>
+                            <div class="mdc-card p-0"  style="border:2px solid black; border-radius:11px; min-height:457.5px">
+                            <div id="watermark">
+                            <p id="watermarkText">carbonblack.education carbonblack.education carbonblack.education carbonblack.education carbonblack.education carbonblack.education carbonblack.education carbonblack.education carbonblack.education carbonblack.education carbonblack.education carbonblack.education </p>
                                 <h6 class="card-title card-padding pb-0" style="display:inline-block;"><b>'.$que->question.
                                 '</b></h6>
                                 <div class="mdc-card" >
@@ -275,6 +279,7 @@ class TestController extends Controller
                                             $output .= '
                                         </div>
                                     </div>
+                                    </div>
                                 </div>
                             ';
                         }
@@ -287,7 +292,7 @@ class TestController extends Controller
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="test-heading">
-                                        <h6>Question Type : <b>MCQ</b></h6>
+                                        <h6><b>Question Type : MCQ</b></h6>
                                     </div>
                                 </div>
                                 <div class="col-md-3"></div>
@@ -307,13 +312,15 @@ class TestController extends Controller
                                 <div class="col-md-3">
                                     <div class="test-heading">
                                         <a data-toggle="modal" data-target="#test'.$que->id.'">
-                                            <h6 class="mt-1"><b><i class="fa fa-info-circle" aria-hidden="true">&nbsp;</i> Hint</b></h6>
+                                            <h6 class="mt-1"><i class="fa fa-info" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<b> Hint</b></h6>
                                         </a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="mdc-card p-0" id="watermark" style="border:2px solid black; border-radius:11px; min-height:459px">
-                            <p id="watermarkText">CarbonBlack Education</p>
+                            <div class="mdc-card p-0"  style="border:2px solid black; border-radius:11px; min-height:457.5px">
+                            <div id="watermark">
+                            <p id="watermarkText">carbonblack.education carbonblack.education carbonblack.education carbonblack.education carbonblack.education carbonblack.education carbonblack.education carbonblack.education carbonblack.education carbonblack.education carbonblack.education carbonblack.education </p>
+                           
                                 <h6 class="card-title card-padding pb-0" style="display:inline-block;"><b>'.$que->question.
                                 '</b></h6>
                                 <div class="mdc-card">
@@ -343,6 +350,7 @@ class TestController extends Controller
                                             </div>
                                         </div>
                                     </div>
+                                    </div>
                                 </div>
                             ';
                         }
@@ -357,7 +365,7 @@ class TestController extends Controller
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="test-heading">
-                                        <h6>Question Type : <b>MCQ</b></h6>
+                                        <h6> <b>Question Type : MCQ</b></h6>
                                     </div>
                                 </div>
                                 <div class="col-md-3"></div>
@@ -377,13 +385,15 @@ class TestController extends Controller
                                 <div class="col-md-3">
                                     <div class="test-heading">
                                     <a data-toggle="modal" data-target="#test'.$que->id.'">
-                                        <h6 class="mt-1"><b><i class="fa fa-info-circle" aria-hidden="true">&nbsp;</i> Hint</b></h6>
+                                        <h6 class="mt-1"><i class="fa fa-info" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<b> Hint</b></h6>
                                     </a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="mdc-card p-0" id="watermark" style="border:2px solid black; border-radius:11px; min-height:459px">
-                            <p id="watermarkText">CarbonBlack Education</p>
+                            <div class="mdc-card p-0" style="border:2px solid black; border-radius:11px; min-height:457.5px">
+                            <div id="watermark">
+                            <p id="watermarkText">carbonblack.education carbonblack.education carbonblack.education carbonblack.education carbonblack.education carbonblack.education carbonblack.education carbonblack.education carbonblack.education carbonblack.education carbonblack.education carbonblack.education </p>
+                            
                                 <h6 class="card-title card-padding pb-0" style="display:inline-block;"><b>'.$que->question.
                                 '</b></h6>
                                 <div class="mdc-card">
@@ -443,6 +453,7 @@ class TestController extends Controller
                                                 </div>
                                             </div>
                                         </div>
+                                        </div>
                                     </div>
                                 </div>
                             ';
@@ -479,20 +490,32 @@ class TestController extends Controller
                             $if_next_disable = 'disabled';
                         }
                         $button .= '
-                    <div class="mdc-card" style="display:inline-block; text-align:center; width:100%">
-                    <button class="col review mdc-button mdc-button--raised filled-button--warning mdc-ripple-upgraded" style="--mdc-ripple-fg-size:55px; --mdc-ripple-fg-scale:1.98525; --mdc-ripple-fg-translate-start:33.9249px, 5.89999px; --mdc-ripple-fg-translate-end:18.7125px, -9.5px;" current-id="'.$que->id.'" id="'.$next_id.'" >
+                        
+                    <div class="mdc-card" style="display:inline-block; text-align:center; width:100%; padding:0">
+                        <div class="row">
+                        <div class="col-md-3 pr-0">
+                    <button class="col review mdc-button mdc-button--raised mdc-ripple-upgraded" style="border-radius: 11px;
+    border: 2px solid black; background-color:transparent; color:black; font-style:italic" current-id="'.$que->id.'" id="'.$next_id.'" >
                       Mark For Review & Next
                     </button>
-                    <button class="col clearResponse mdc-button mdc-button--raised filled-button--dark mdc-ripple-upgraded" current-id="'.$que->id.'">
+                    </div>
+                    <div class="col-md-3 p-0">
+                    <button class="col clearResponse mdc-button mdc-button--raised mdc-ripple-upgraded" style="border-radius: 11px;
+    border: 2px solid black; background-color:transparent; color:black;font-style:italic" current-id="'.$que->id.'">
                       Clear Response
                     </button>
-                     
-                      <button type="button" style="border-width:3px" class="col next  mdc-button mdc-button--raised filled-button--success mdc-ripple-upgraded" name="next" current-id="'.$que->id.'" id="'.$next_id.'" '.$if_next_disable.'>
+                     </div>
+                     <div class="col-md-3 p-0">
+                      <button type="button" style="border:2px solid black; border-radius:11px;font-style:italic" class="col next  mdc-button mdc-button--raised filled-button--success mdc-ripple-upgraded" name="next" current-id="'.$que->id.'" id="'.$next_id.'" '.$if_next_disable.'>
                         Save & Next
                       </button>
-                      <button type="button" style="border-width:3px" class="col mdc-button mdc-button--raised mdc-ripple-upgraded" name="submit" onclick="SubmitTest(this, '.$request->take_test_id.')">
+                      </div>
+                      <div class="col-md-3 pl-0">
+                      <button type="button" style="border:2px solid black; background-color:#0070c0; border-radius:11px;font-style:italic" class="col mdc-button mdc-button--raised mdc-ripple-upgraded" name="submit" onclick="SubmitTest(this, '.$request->take_test_id.')">
                         Submit
                       </button>
+                      </div>
+                      </div>
                       </div>
                       </div>
                       ';
@@ -522,13 +545,15 @@ class TestController extends Controller
                             <div class="row">
                     ';
                     $count = 1;
-                    foreach($exam as $row)	
+                    foreach($exam as $row)  
                     {
                         $userAnswer = Answer::where('take_test_id', $request->take_test_id)->where('test_id', $request->exam_id)->where('user_id', Auth::user()->id)->where('question_id', $row->id)->first();
                         // dd($userAnswer);
                         $output .= '
                         <div class="col-md-4 col-3" style="margin-bottom:24px;">
-                            <button style="height:40px; padding: 0 10px; min-width:0px;'; 
+                            <button style="height:40px; padding: 0 10px; min-width:0px; border-radius: 50%;
+    color: black;
+    border: 2px solid #4f6da1;'; 
                             if(!empty($userAnswer)){  
                                 if($userAnswer->answer_option != null){ 
                                     $output .= 'background-color:#12a63a; color:white; border-color:white; font-weight: 900; border-radius:50%;';
@@ -868,7 +893,7 @@ class TestController extends Controller
                 $folderPath = public_path('certificate/');
                 $takeTestArray = (array)$takeTest1;
                 // dd($takeTestArray);
-                $pdf = PDF::loadView('auth.mailCertificate', $takeTestArray);
+                $pdf = PDF::loadView('auth.mailCertificate', $takeTestArray)->setPaper('a4', 'landscape');
                 $fileName = uniqid() . '.pdf';
         
                 $file = $folderPath . $fileName;
@@ -893,6 +918,14 @@ class TestController extends Controller
         $result = Answer::where('take_test_id', $takeTest->id)->get()->sum('mark');
         return view('auth.test.result', compact('takeTest', 'test', 'userAnswer', 'result', 'question'));
     }
+    
+    public function downloadCertificate($id)
+    {
+        $takeTest1 = DB::table('take_test')->where('id', $id)->first();
+        $takeTestArray = (array)$takeTest1;
+        $pdf = PDF::loadView('auth.mailCertificate', $takeTestArray)->setPaper('a4', 'landscape');
+        return $pdf->download('certificate.pdf');
+    }
 
     public function testResultSubmit($id)
     {
@@ -916,7 +949,8 @@ class TestController extends Controller
                 $folderPath = public_path('certificate/');
                 $takeTestArray = (array)$takeTest1;
                 // dd($takeTestArray);
-                $pdf = PDF::loadView('auth.mailCertificate', $takeTestArray);
+                $pdf = PDF::loadView('auth.mailCertificate', $takeTestArray)->setPaper('a4', 'landscape');
+                // $pdf->setPaper('A4', 'landscape');
                 $fileName = uniqid() . '.pdf';
         
                 $file = $folderPath . $fileName;
@@ -940,7 +974,7 @@ class TestController extends Controller
             $result = Answer::where('take_test_id', $takeTest->id)->get()->sum('mark');
            return view('auth.test.result', compact('takeTest', 'test', 'userAnswer', 'result', 'question'));
     }
-
+    
     public function submitTestResult(Request $request)
     {
         $takeTest = TakeTest::where('id', $request->bid)->first();
@@ -958,7 +992,7 @@ class TestController extends Controller
         }
         echo json_encode($data);
     }
-
+    
     public function markForReview(Request $request)
     {
         if(isset($request->page))

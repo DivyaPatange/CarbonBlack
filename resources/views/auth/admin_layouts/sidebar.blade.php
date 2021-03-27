@@ -78,6 +78,13 @@
             @endcan
             @can('manage-admin-user')
             <div class="mdc-list-item mdc-drawer-item">
+              <a class="mdc-drawer-link" href="{{ route('user-manual.index') }}">
+                <!--<i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">description</i>-->
+                <i class="mdi mdi-book-open-page-variant mdc-drawer-item-icon mdc-list-item__start-detail" aria-hidden="true"></i>
+                User Manual
+              </a>
+            </div>
+            <div class="mdc-list-item mdc-drawer-item">
               <a class="mdc-drawer-link" href="{{ route('tempCoursesData.coursesAll') }}">
                 <!--<i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">description</i>-->
                 <i class="mdi mdi-book-open-page-variant mdc-drawer-item-icon mdc-list-item__start-detail" aria-hidden="true"></i>

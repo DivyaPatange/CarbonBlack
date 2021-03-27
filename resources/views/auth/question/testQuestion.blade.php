@@ -47,7 +47,7 @@ $exam_status = $takeTest->status;
 }
 .card{
 	background-color:transparent;
-	border-radius:1.25rem;
+	border-radius:1rem;
 	border:2px solid black;
 	height:300px;
 	overflow-y :scroll;
@@ -70,9 +70,6 @@ $exam_status = $takeTest->status;
     margin: 0 auto;
     background-size: 100%;
     background-repeat: no-repeat;
-}
-.col{
-	width:20%;
 }
 .color input{ background-color:#f1f1f1;}
 .files:before {
@@ -106,23 +103,45 @@ canvas{
 	left:70px !important;
 }
 #watermark {
-  /* height: 450px; */
-  /* width: 600px; */
+   height: 450px; 
+   width: 100%; 
   position: relative;
-  /* overflow: hidden; */
+   overflow: hidden; 
   z-index:100;
 }
 #watermarkText {
   position: absolute;
-  top: 225px;
-  left: 125px;
+  top: 0;
+  left: 0;
   color: lightgrey;
-  font-size: 50px;
-  opacity:0.5;
+  font-size: 23px;
+  opacity:0.7;
   pointer-events: none;
   -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
   /* z-index:100; */
+  word-spacing: 2em;
+    line-height: 5em;
+}
+.card::-webkit-scrollbar {
+  width: 20px;
+  background:transparent;
+  margin-right:8px;
+
+}
+
+/* Track */
+.card::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 50px;
+}
+ 
+/* Handle */
+.card::-webkit-scrollbar-thumb {
+  background: white; 
+  border:1px solid black; 
+  border-radius: 120px;
+  margin-right:8px;
 }
 label{
 	margin-bottom:0px;
@@ -139,6 +158,33 @@ label{
 	border:2px solid black;
 	padding:20px;
 	border-radius:14px;
+}
+.fa-info{
+    background-color: #0056b0;
+    border-radius: 50%;
+    color: white;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    /* margin-top: 4px; */
+    padding-top: 2px;
+    font-style:italic;
+}
+.textDiv_Minutes h4{
+    font-size: 10px !important;
+    line-height: 5px !important;
+    font-weight: 600 !important;
+}
+.textDiv_Seconds h4{
+    font-size: 10px !important;
+    line-height: 5px !important;
+    font-weight: 600 !important;
+}
+.textDiv_Minutes span{
+    font-size:20px !important;
+}
+.textDiv_Seconds span{
+    font-size:20px !important;
 }
 
     </style>
@@ -160,7 +206,7 @@ label{
 				}
 			?>
 				<h6 class="mt-1"><b>Module @if(!empty($test)) @if(!empty($coursetab)) {{ $coursetab->name }} @endif @endif</b></h6>
-				<h6 class="mt-1"><i class="fa fa-info-circle" aria-hidden="true">&nbsp;</i>View Instructions</h6>
+				<a data-toggle="modal" data-target="#test"><h6 class="mt-1"><i class="fa fa-info" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<b>View Instructions</b></h6></a>
 			</div>
 		</div>
 	</div>
@@ -173,21 +219,21 @@ label{
 				<div class="row">
 					<div class="col-md-3">
 						<div class="test-heading">
-							<h6 class="mt-1">Section</h6>
+							<h6 class="mt-1"><b>Section</b></h6>
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-5">
 					<div class="test-heading">
-					<h6 class="mt-1"><i class="fa fa-info-circle" aria-hidden="true">&nbsp;</i>Question 1 to {{ count($question) }}</h6>
+					<h6 class="mt-1"><i class="fa fa-info" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<b>Question 1 to {{ count($question) }}</b></h6>
 				</div>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-3">
 			<div class="test-heading" style="height:100%">
-			<h6>Time Left :</h6>
+			<h6><b>Time Left :</b></h6>
 				<div id="exam_timer" class="demo" data-timer="{{ $remaining_minutes }}" height="100">
 					</div>
 					<p id="demo"></p>
@@ -245,7 +291,7 @@ label{
 		<div class="row">
 			<div class="col-md-12">
 				<div class="test-heading">
-					<h6 class="mt-1">Question 1 to {{ count($question) }}</h6>
+					<h6 class="mt-1"><b>Question 1 to {{ count($question) }}</b></h6>
 				</div>
 			</div>
 		</div>
@@ -308,6 +354,70 @@ label{
   </div>
   @endforeach
   @endif
+  
+  <div class="modal" id="test">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+      <?php
+      
+                                $tab = DB::table('coursetabs')->where('course_id', $test->tab_id)->first();
+                                $question = DB::table('question')->where('test_id', $test->id)->get();
+                                // dd($question);
+                                // dd($tab);
+                                if(!empty($tab))
+                                {
+                                    $tabname = $tab->name;
+                                }
+                            ?>
+        <!-- Modal Header -->
+        
+        <div class="modal-header">
+       
+          <h4>Instructions for Test</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body text-justify">
+        <p>This begins an examination (test) for the course CARBON BLACK TECHNOLOGY “SECTION :
+          {{ $tabname }}”.</p>
+        <p><b>PLEASE READ THESE INSTRUCTIONS CAREFULLY. IF YOU DO NOT UNDERSTAND
+THE INSTRUCTIONS, PLEASE CONTACT THE HUMAN RESOURCES.</b></p>
+        <ol>
+          <li>The section has <b>{{ count($question) }}</b> questions, with a total of <b>{{ $test->marks }} Marks</b>.</li>
+          <li>Each question is based on information presented in the video modules that you have just completed.
+Please answer each question on the basis of the content given in the modules. In some instances,
+more than one option may seem to answer the question. In such a case, please choose the option that
+most accurately and comprehensively answers the question.</li>
+<li>Click on <b>✓</b> box to select the answer</li>
+<li>Click on the <span style="background-color: #337ab7; color:white;"><</span> <span style="background-color: #337ab7; color:white;">></span> button to move on to the next set of questions.</li>
+<li>Once you have answered the section to your satisfaction, you can click on <span style="background-color: #337ab7; color:white;">Submit</span> to finalize the
+complete test. You will then be directed to a table to review your results on each question and the
+score for the total examination.
+</li>
+<li>You MUST submit answers to all the examination questions (in this case, <b>{{ count($question) }}</b> questions).  Any question not answered will be scored zero (0)..
+
+</li>
+<li>To pass the exam you need to score {{ ($test->passing_mark/$test->marks)*100 }}% (i.e {{ $test->passing_mark }} marks)</li>
+<li>A timer will begin when you click on <b>START TEST</b> and you will be given {{ $test->time }} minutes to complete the exam.  If you do not complete the examination in {{ $test->time }} minutes (by clicking on Submit), a FAIL grade for the test will be recorded.
+</li>
+<li>You will be given three chances to pass this examination.  
+</li>
+<li>After each FAILED examination attempt, you will be given the opportunity to review the material in the respective modules again before you attempt another examination.</li>
+<li>After three failed attempts you will be blocked from continuing to review modules in this SECTION and will have to register for this course again with approval from the appropriate department head and the program administrator from Human Resources.</li>
+ <li>The timer will begin when the <b>START TEST</b> button is clicked.</li>
+ <li>If you are ready, PLEASE CLICK the <b>START TEST</b> button now to begin the examination. </li>
+        </ol>
+        </div>  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+        
+                    <button type="button" class="mdc-button mdc-button--raised filled-button--secondary mdc-ripple-upgraded" data-dismiss="modal">
+                      Cancel
+                    </button>
+          <!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
 <div id="costumModal17" class="modal" data-easein="slideDownIn"  tabindex="-1" role="dialog" aria-labelledby="costumModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
@@ -503,28 +613,28 @@ $(document).ready(function(){
 		
 		load_question(question_id);
 	});
-  	// $('#exam_timer').TimeCircles({ 
-	// 	time:{
-	// 		Days:{
-	// 			show: false
-	// 		},
-	// 		Hours:{
-	// 			show: false
-	// 		}
-	// 	}
-	// });
+  	$('#exam_timer').TimeCircles({ 
+		time:{
+			Days:{
+				show: false
+			},
+			Hours:{
+				show: false
+			}
+		}
+	});
 
-	// interval = setInterval(function(){
-	// 	var remaining_second = $('#exam_timer').TimeCircles().getTime();
-	// 	if(remaining_second < 1)
-	// 	{
-    //   clearInterval(interval);
-    //   document.getElementById("exam_timer").innerHTML="Done";
-    //   alert("You're out of time!");
-    //   window.location.href="{{ route('user.test.result', ['id' => $takeTest->id]) }}";
+	interval = setInterval(function(){
+		var remaining_second = $('#exam_timer').TimeCircles().getTime();
+		if(remaining_second < 1)
+		{
+      clearInterval(interval);
+      document.getElementById("exam_timer").innerHTML="Done";
+      alert("You're out of time!");
+      window.location.href="{{ route('user.test.result', ['id' => $takeTest->id]) }}";
 
-	// 	}
-	// }, 1000);
+		}
+	}, 1000);
 
   $(document).on('click', '.answer_option', function(){
 		var question_id = $(this).data('question_id');
