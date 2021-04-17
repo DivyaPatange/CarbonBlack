@@ -29,6 +29,7 @@
             <thead>
               <tr>
                 <th class="text-left">ID</th>
+                <th class="text-left">Employee ID</th>
                 <th class="text-left">User ID</th>
                 <th class="text-left">Name</th>
                 <th class="text-left">Result</th>
@@ -50,6 +51,7 @@
             ?>
             <tr>
                 <td class="text-left">{{ ++$key }}</td>
+                <td class="text-left">{{ $s->employee_id }}</td>
                 <td class="text-left">{{ $s->registration_code }}</td>
                 <td class="text-left">{{ $s->name }}</td>
                 <td class="text-left">
@@ -75,6 +77,7 @@
             ?>
             <tr>
                 <td class="text-left">{{ ++$key }}</td>
+                <td class="text-left">{{ $s->employee_id }}</td>
                 <td class="text-left">{{ $s->registration_code }}</td>
                 <td class="text-left">{{ $s->name }}</td>
                 <td class="text-left">

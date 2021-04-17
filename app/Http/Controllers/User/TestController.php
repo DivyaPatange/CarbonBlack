@@ -40,7 +40,9 @@ class TestController extends Controller
         
         $user = User::findorfail(Auth::user()->id);
         // dd($user);
-        $test = Test::where('user_id', $user->parent_id)->get();
+
+        $test = DB::table('test')->where('user_id', $user->parent_id)->join('coursetabs', 'coursetabs.course_id', '=', 'test.tab_id')->get();
+        // dd($test);
         return view('auth.test.takeTest', compact('user', 'test'));
     }
 

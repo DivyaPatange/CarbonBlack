@@ -25,7 +25,7 @@
           <table class="table table-hoverable" id="datatable" >
             <thead>
               <tr>
-                <th class="text-center">ID</th>
+                <th class="text-center">Employee ID</th>
                 <th class="text-center">Name</th>
                 <th class="text-center">Email</th>
                 <th class="text-center">Account Type</th>
@@ -43,7 +43,7 @@
                             @else
                           
                             <tr>
-                              <td class="text-center">{{ ++$key }}</td>
+                              <td class="text-center">{{ $user->employee_id }}</td>
                               <td class="text-center">{{$user->name}}</td>
                               <td class="text-center">{{$user->email}}</td>
                               <td class="text-center">{{$user->acc_type}}</td>
@@ -69,7 +69,7 @@
                     @else
                   
                     <tr>
-                      <td class="text-center">{{ $key }}</td>
+                      <td class="text-center">{{ $user->employee_id }}</td>
                       <td class="text-center">{{$user->name}}</td>
                       <td class="text-center">{{$user->email}}</td>
                       <td class="text-center">{{$user->acc_type}}</td>

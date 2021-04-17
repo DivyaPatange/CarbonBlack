@@ -24,7 +24,16 @@ class TempCoursesController extends Controller
 
         $user = User::findorfail(Auth::user()->id);
         // dd($user);
-        $courses = Coursetab::orderBy('course_id')->where('admin_id', '=', $user->parent_id)->where('status', 1)->get();
+        if((Auth::user()->designation == "Sr. Manager") || (Auth::user()->designation == "Manager")){
+            $courses = Coursetab::orderBy('course_id')->where('admin_id', '=', $user->parent_id)->where('status', 1)->get();
+        }
+        if((Auth::user()->designation == "Sr. Engineer") || (Auth::user()->designation == "Engineer")){
+            $courses = Coursetab::orderBy('course_id')->where('admin_id', '=', $user->parent_id)->where('status', 1)->limit(3)->get();
+        }
+        if(Auth::user()->designation == "Trainee"){
+            $searchValue = "Introduction";
+            $courses = Coursetab::orderBy('course_id')->where('admin_id', '=', $user->parent_id)->where('status', 1)->where('name', 'like', "%{$searchValue}%")->get();   
+        }
         $tempCourses = TempCourses::orderBy('title')->where('admin_id', '=', $user->parent_id)->get();
     //     $tempcourses = Coursetab::join('temp_courses', 'temp_courses.category', '=', 'coursetabs.name')
     //   ->select('coursetabs.course_id', 'coursetabs.name', 'temp_courses.*')

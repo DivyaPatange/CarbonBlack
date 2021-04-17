@@ -31,21 +31,17 @@
             <div class="container">
                 <div class="row">
                 @foreach($test as $t)
+                  <?php
+                    $tab = DB::table('coursetabs')->where('course_id', $t->tab_id)->first();
+                    if(!empty($tab))
+                    {
+                      $tabname = $tab->name;
+                    }
+                  ?>
                     <div class="col-md-4 mt-4 pb-4">
                         <div class="mdc-card card-hover" >
                             <div class="card-body block text-center">
-                            <?php
-                                $tab = DB::table('coursetabs')->where('course_id', $t->tab_id)->first();
-                                // dd($tab);
-                                if(!empty($tab))
-                                {
-                                    $tabname = $tab->name;
-                                }
-                                
-                               
-                                // dd($takeTest);
-                            ?>
-                            <h5 class="card-title">{{ $tabname }}</h5>
+                            <h5 class="card-title">@if(!empty($tabname)){{ $tabname }}@endif</h5>
                             <p>Time:- {{ $t->time }} Min.</p>
                             <p>Total Mark:- {{ $t->marks }} </p>
                             </div>

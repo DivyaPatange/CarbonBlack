@@ -56,6 +56,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin/users', 'Admin\UsersController@index')->middleware('can:manage-users,manage-admin-user,admin')->name('users');
 Route::put('/admin/users/update/{id}', 'Admin\UsersController@update')->name('users.update');
 Route::delete('/users/destroy/{id}', 'Admin\UsersController@destroy')->name('deleteusers');
+Route::delete('/user/destroy/ajax/{id}', 'Admin\UsersController@destroyEmployee');
+
 // Route::get('/resetPassword', 'Admin\UsersController@resetpas')->name('resetpass');
 Route::get('status/{id}', 'Admin\UsersController@status')->name('status');
 Route::get('activate/{id}', 'Auth\RegisterController@activate')->name('activate');

@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\ActivateConfirmMail;
 use App\Admin\Logo;
 use DB;
+use DataTables;
 
 class UsersController extends Controller
 {
@@ -32,7 +33,25 @@ class UsersController extends Controller
         $users = User::where('parent_id', '=', $id)->get();
         $result = User::findorfail($id);
         $emp = User::where('parent_id', '=', NULL)->orderBy('id', 'DESC')->get();
-        // dd($emp);
+        if(request()->ajax()) {
+            return datatables()->of($emp)
+            ->addColumn('company', function($row){    
+                $id = Auth::user()->id;    
+            $users = User::where('parent_id', '=', $id)->get();
+                $output = '';
+               $output .='<select class="form-control company_name'.$row->id.'" name="company_name">
+                            <option value="">- Select Company -</option>';
+                            foreach($users as $u){
+                            $output .='<option value="'.$u->id.'">'.$u->name.'</option>';
+                            }
+                            $output .='</select>'; 
+                            return $output;                                                                                                                                                                                                                                                                                 
+            })
+            ->addColumn('action', 'auth.users.action')
+            ->rawColumns(['action', 'company'])
+            ->addIndexColumn()
+            ->make(true);
+        }
         return view('auth.users.index', compact('result', 'emp'))->with('users', $users);
     }
 
@@ -159,7 +178,7 @@ class UsersController extends Controller
         }
         // dd($branchId);
         $user->update($request->all());
-        return Redirect::back()->with('success', 'User updated successfully!');
+        return response()->json(['success' => 'User Updated Successfully!']);
 
     }
 
@@ -175,6 +194,13 @@ class UsersController extends Controller
         $user->delete();
         return Redirect::back()->with('success', 'User deleted successfully!');
     }
+    public function destroyEmployee($id)
+    {
+        $user = User::findorfail($id);
+        $user->delete();
+        return response()->json(['success' => 'User Deleted Successfully!']);
+    }
+
     public function resetpas()
     {
         return view('auth.resetpasswrd');

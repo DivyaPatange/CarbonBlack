@@ -61,7 +61,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'phone'=> ['required','min:10'],
-            'designation' => ['required', 'string', 'max:255'],
+            'designation' => ['required'],
             'department' => ['required', 'string', 'max:255'],
             'city' => ['required', 'string', 'max:255'],
             'state' => ['required', 'string', 'max:255'],
@@ -69,6 +69,8 @@ class RegisterController extends Controller
             'pin' => ['required', 'string', 'max:255'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'terms_and_condition' => ['required'],
+            'employee_id' => ['required'],
+            'work_experience' => ['required'],
         ]);
     }
 
@@ -85,6 +87,8 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'phone' => $data['phone'],
             'designation' => $data['designation'],
+            'work_experience' => $data['work_experience'],
+            'employee_id' => $data['employee_id'],
             'department' => $data['department'],
             'city' => $data['city'],
             'state' => $data['state'],

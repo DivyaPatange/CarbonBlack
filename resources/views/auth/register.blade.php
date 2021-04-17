@@ -99,10 +99,37 @@ span{
                 </div>
                 @endif
 						    <br>
-						    <input id="designation" type="text" class="form-control @error('designation') is-invalid @enderror" name="designation" placeholder="DESIGNATION" value="{{ old('designation') }}">
+						    <select id="designation" class="form-control @error('designation') is-invalid @enderror" name="designation" placeholder="DESIGNATION">
+                  <option value="">SELECT DESIGNATION</option>
+                  <option value="Sr. Manager" @if(old('designation') == "Sr. Manager") Selected @endif>SR. MANAGER</option>
+                  <option value="Manager" @if(old('designation') == "Manager") Selected @endif>MANAGER</option>
+                  <option value="Sr. Engineer" @if(old('designation') == "Sr. Engineer") Selected @endif>SR. ENGINEER</option>
+                  <option value="Engineer" @if(old('designation') == "Engineer") Selected @endif>ENGINEER</option>
+                  <option value="Trainee" @if(old('designation') == "Trainee") Selected @endif>TRAINEE</option>
+                </select>
 							  @if ($errors->has('designation'))
     						<div>
                   <span class="text-danger" role="alert"><strong>{{ $errors->first('designation') }}</strong></span>
+                </div>
+                @endif
+                <br>
+						    <select id="work_experience" class="form-control @error('work_experience') is-invalid @enderror" name="work_experience">
+                  <option value="">SELECT WORK EXPERIENCE</option>
+                  <option value="0-2" @if(old('designation') == "0-2") Selected @endif>0-2</option>
+                  <option value="2-5" @if(old('designation') == "2-5") Selected @endif>2-5</option>
+                  <option value="5-10" @if(old('designation') == "5-10") Selected @endif>5-10</option>
+                  <option value="10-15" @if(old('designation') == "10-15") Selected @endif>10-15</option>
+                </select>
+							  @if ($errors->has('work_experience'))
+    						<div>
+                  <span class="text-danger" role="alert"><strong>{{ $errors->first('work_experience') }}</strong></span>
+                </div>
+                @endif
+                <br>
+						    <input id="employee_id" type="text" class="form-control @error('employee_id') is-invalid @enderror" name="employee_id" placeholder="EMPLOYEE ID" value="{{ old('employee_id') }}">
+							  @if ($errors->has('employee_id'))
+    						<div>
+                  <span class="text-danger" role="alert"><strong>{{ $errors->first('employee_id') }}</strong></span>
                 </div>
                 @endif
 						    <br>
