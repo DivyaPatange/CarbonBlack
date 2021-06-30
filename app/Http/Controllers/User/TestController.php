@@ -14,6 +14,7 @@ use App\Admin\Attempt;
 use DB;
 use PDF;
 use Mail;
+use App\Admin\UserCourse;
 
 class TestController extends Controller
 {
@@ -40,10 +41,11 @@ class TestController extends Controller
         
         $user = User::findorfail(Auth::user()->id);
         // dd($user);
-
-        $test = DB::table('test')->where('user_id', $user->parent_id)->join('coursetabs', 'coursetabs.course_id', '=', 'test.tab_id')->get();
+        $getCourse = UserCourse::where('user_id', Auth::user()->id)->first();
+        $explodeCourse = explode(",", $getCourse->user_course_id);
+        // $test = DB::table('test')->where('user_id', $user->parent_id)->join('coursetabs', 'coursetabs.course_id', '=', 'test.tab_id')->get();
         // dd($test);
-        return view('auth.test.takeTest', compact('user', 'test'));
+        return view('auth.test.takeTest', compact('user', 'explodeCourse'));
     }
 
     public function testQuestion(Request $request, $id)

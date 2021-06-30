@@ -66,6 +66,7 @@ tr.shown td.details-control:before{
                 <th class="text-center">Account Type</th>
                 <th class="text-center">Status</th>
                 <th class="text-center">Date</th>
+                <th class="text-center">Courses</th>
                 <th class="text-center">Action</th>
               </tr>
             </thead>
@@ -84,6 +85,9 @@ tr.shown td.details-control:before{
                               <td class="text-center">{{$user->acc_type}}</td>
                               <td class="text-center">@if($user->status == 0) Inactive @else Active @endif</td>
                               <td class="text-center">{{ $user->created_at }}</td>
+                              <td class="text-center">
+                                <!-- <button type="button" onclick="CourseModel(this, {{ $user->id }})" class="mdc-button mdc-button--unelevated filled-button--warning mdc-ripple-upgraded">View</button> -->
+                              </td>
                               <td class="text-center">
                               <a href="{{ route('status', ['id'=>$user->id]) }}" type="button" class="mdc-button mdc-button--unelevated filled-button--info mdc-ripple-upgraded">@if($user->status == 1) Inactive @else Active @endif</a>
                               <a href="{{ route('adminReg.user.edit', ['id'=>$user->id]) }}" type="button" class="mdc-button mdc-button--unelevated filled-button--warning mdc-ripple-upgraded">Edit</a>
@@ -111,6 +115,9 @@ tr.shown td.details-control:before{
                       <td class="text-center">{{$user->acc_type}}</td>
                       <td class="text-center">@if($user->status == 0) Inactive @else Active @endif</td>
                       <td class="text-center">{{ $user->created_at }}</td>
+                      <td class="text-center">
+                        <button type="button" onclick="CourseModel(this, {{ $user->id }})" class="mdc-button mdc-button--unelevated filled-button--warning mdc-ripple-upgraded">View</button>
+                      </td>
                       <td class="text-center">
                       <a href="{{ route('status', ['id'=>$user->id]) }}" type="button" class="mdc-button mdc-button--unelevated filled-button--info mdc-ripple-upgraded">@if($user->status == 1) Inactive @else Active @endif</a>
                       <a href="javascript:void(0)" onclick="$(this).parent().find('form').submit()"><button type="button" class="mdc-button mdc-button--unelevated filled-button--secondary mdc-ripple-upgraded">Delete</button></a>
@@ -161,8 +168,44 @@ tr.shown td.details-control:before{
   </div>
 </div>
 @endcan
+<div class="modal fade" id="courseModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Courses</h5>
+        <!-- <button type="button" id="add1" class="btn btn-primary btn-sm">Add New</button> -->
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+            <div class="col-md-12">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th class="text-center">Courses</th>
+                      <th class="text-center">Action  <span class="text-danger" id="course_err"></span></th>
+                    </tr>
+                  </thead>
+                  <tbody id="courseDiv"></tbody>
+                </table>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <input type="hidden" name="user_id" id="user_id" value="">
+        <button type="button" class="btn btn-success" id="updateCourse">Update</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 @endsection
 @section('customjs')
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script>
  $.ajaxSetup({
     headers: {
@@ -257,6 +300,58 @@ $('body').on('click', '#update', function () {
         data: {company_name:company_name},
         success: function(data){
           var oTable = $('#datatable1').dataTable(); 
+            oTable.fnDraw(false);
+            toastr.success(data.success);
+        },
+            error: function (data) {
+                console.log('Error:', data);
+            }
+      })
+    }
+})
+
+function CourseModel(obj,bid)
+{
+  var datastring="bid="+bid;
+  // alert(datastring);
+  $.ajax({
+    type:"POST",
+    url:"{{ route('user-get-course') }}",
+    data:datastring,
+    cache:false,        
+    success:function(returndata)
+    {
+      // if (returndata!="0") {
+        // alert(returndata);
+        $("#courseModal").modal('show');
+        var json = JSON.parse(returndata);
+        $("#user_id").val(json.user_id);
+        $("#courseDiv").html(json.courses);
+      // }
+    }
+  });
+}
+
+$('body').on('click', '#updateCourse', function () {
+    var user_id = $("#user_id").val();
+    var userCourse = $("#courseDiv input:checkbox:checked").map(function(){
+      return $(this).val();
+    }).get();
+    if(userCourse == "")
+    {
+      $("#course_err").fadeIn().html("Required");
+      setTimeout(function(){ $("#course_err").fadeOut(); }, 3000);
+      $("input:checkbox").focus();
+      return false;
+    }
+    else{
+      $.ajax({
+        url: "{{ route('userCourse-update') }}",
+        method: "POST",
+        data: {user_id:user_id, userCourse:userCourse},
+        success: function(data){
+          $("#courseModal").modal('hide');
+          var oTable = $('#datatable').dataTable(); 
             oTable.fnDraw(false);
             toastr.success(data.success);
         },

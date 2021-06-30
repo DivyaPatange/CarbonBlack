@@ -8,6 +8,7 @@ use App\User;
 use Auth;
 use Illuminate\Http\Request;
 use Redirect;
+use App\Admin\UserCourse;
 
 class TempCoursesController extends Controller
 {
@@ -23,22 +24,41 @@ class TempCoursesController extends Controller
         // dd($tempcourses);
 
         $user = User::findorfail(Auth::user()->id);
+        $getCourse = UserCourse::where('user_id', Auth::user()->id)->first();
         // dd($user);
-        if((Auth::user()->designation == "Sr. Manager") || (Auth::user()->designation == "Manager")){
-            $courses = Coursetab::orderBy('course_id')->where('admin_id', '=', $user->parent_id)->where('status', 1)->get();
-        }
-        if((Auth::user()->designation == "Sr. Engineer") || (Auth::user()->designation == "Engineer")){
-            $courses = Coursetab::orderBy('course_id')->where('admin_id', '=', $user->parent_id)->where('status', 1)->limit(3)->get();
-        }
-        if(Auth::user()->designation == "Trainee"){
-            $searchValue = "Introduction";
-            $courses = Coursetab::orderBy('course_id')->where('admin_id', '=', $user->parent_id)->where('status', 1)->where('name', 'like', "%{$searchValue}%")->get();   
+        if(Auth::user()->acc_type == "user"){
+            $userCourses = Coursetab::orderBy('course_id')->where('admin_id', '=', $user->parent_id)->where('status', 1)->get();
+            if((Auth::user()->designation == "Sr. Manager") || (Auth::user()->designation == "Manager")){
+                $courses = Coursetab::orderBy('course_id')->where('admin_id', '=', $user->parent_id)->where('status', 1)->get();
+            }
+            if((Auth::user()->designation == "Sr. Engineer") || (Auth::user()->designation == "Engineer")){
+                $courses = Coursetab::orderBy('course_id')->where('admin_id', '=', $user->parent_id)->where('status', 1)->limit(3)->get();
+            }
+            if(Auth::user()->designation == "Trainee"){
+                $searchValue = "Introduction";
+                $courses = Coursetab::orderBy('course_id')->where('admin_id', '=', $user->parent_id)->where('status', 1)->where('name', 'like', "%{$searchValue}%")->get();   
+            }
+            else{
+                $courses = Coursetab::orderBy('course_id')->where('admin_id', '=', $user->parent_id)->where('status', 1)->get();
+            }
+            $courseArray = array();
+            foreach($courses as $course)
+            {
+                $courseArray[] = $course->course_id;
+            } 
+            if(empty($getCourse))
+            {
+                $userCourse = new UserCourse;
+                $userCourse->user_id = Auth::user()->id;
+                $userCourse->user_course_id = implode(",", $courseArray);
+                $userCourse->save();
+            }
         }
         $tempCourses = TempCourses::orderBy('title')->where('admin_id', '=', $user->parent_id)->get();
     //     $tempcourses = Coursetab::join('temp_courses', 'temp_courses.category', '=', 'coursetabs.name')
     //   ->select('coursetabs.course_id', 'coursetabs.name', 'temp_courses.*')
     //   ->get();
-        return view('auth.tempCoursesData.index', compact('tempcourses', 'courses', 'tempCourses'))->with('coursetab',$coursetab);
+        return view('auth.tempCoursesData.index', compact('tempcourses', 'tempCourses'))->with('coursetab',$coursetab);
     }
     /**
      * Show the form for creating a new resource.

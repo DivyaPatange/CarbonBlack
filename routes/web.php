@@ -67,6 +67,10 @@ Route::resource('/tempCoursesData', 'TempCoursesController');
 Route::get('/editProfile', 'Admin\UsersController@editProfile')->name('admin.editProfile');
 Route::put('/updateProfile', 'Admin\UsersController@updateProfile')->name('admin.updateProfile');
 
+// Course Activation Route
+Route::post('/get-course', 'CoursesController@getCourse')->name('user-get-course');
+Route::post('/update-course', 'CoursesController@updateCourse')->name('userCourse-update');
+
 
 // CourseTab Route
 Route::get('/courseTab/create/{id}', 'TempCoursesController@create')->name('tab.create');

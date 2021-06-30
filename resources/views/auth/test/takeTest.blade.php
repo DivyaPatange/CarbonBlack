@@ -30,14 +30,20 @@
             <h4 class="card-title card-padding pb-0" style="display:inline-block;"><b>Take Test</b></h4>
             <div class="container">
                 <div class="row">
-                @foreach($test as $t)
+                @for($i=0; $i < count($explodeCourse); $i++)
                   <?php
-                    $tab = DB::table('coursetabs')->where('course_id', $t->tab_id)->first();
+                    $tab = DB::table('coursetabs')->where('course_id', $explodeCourse[$i])->first();
                     if(!empty($tab))
                     {
                       $tabname = $tab->name;
                     }
                   ?>
+                  @if(!empty($tab))
+                  <?php 
+                    $t = DB::table('test')->where('tab_id', $explodeCourse[$i])->first();
+                    // dd($t->time);
+                  ?>
+                  @if(!empty($t))
                     <div class="col-md-4 mt-4 pb-4">
                         <div class="mdc-card card-hover" >
                             <div class="card-body block text-center">
@@ -85,27 +91,30 @@
                         
                         </div> 
                     </div>
-                @endforeach
+                  @endif
+                  @endif
+                @endfor
                 </div>
             </div>
         </div>
     </div>
  </div>
  <!-- Modal -->
- @foreach($test as $t)
+ @for($i=0; $i < count($explodeCourse); $i++)
+ <?php
+  $tab = DB::table('coursetabs')->where('course_id', $explodeCourse[$i])->first();
+  if(!empty($tab))
+  {
+    $t = DB::table('test')->where('tab_id', $explodeCourse[$i])->first();
+    if(!empty($t))
+    {
+      $question = DB::table('question')->where('test_id', $t->id)->get();
+      $tabname = $tab->name;
+ ?>
  <div class="modal" id="test{{ $t->id }}">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
-      <?php
-                                $tab = DB::table('coursetabs')->where('course_id', $t->tab_id)->first();
-                                $question = DB::table('question')->where('test_id', $t->id)->get();
-                                // dd($question);
-                                // dd($tab);
-                                if(!empty($tab))
-                                {
-                                    $tabname = $tab->name;
-                                }
-                            ?>
+      
         <!-- Modal Header -->
         <form action="{{ route('view.question', $t->id) }}" method="post">
         @csrf
@@ -159,7 +168,9 @@ score for the total examination.
       </div>
     </div>
   </div>
-@endforeach
+<?php }
+} ?>
+@endfor
  <!-- /End Modal -->
 @endsection
 @section('customjs')

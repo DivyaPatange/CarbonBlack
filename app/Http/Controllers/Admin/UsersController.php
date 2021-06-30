@@ -15,6 +15,8 @@ use App\Mail\ActivateConfirmMail;
 use App\Admin\Logo;
 use DB;
 use DataTables;
+use App\Admin\UserCourse;
+use App\Coursetab;
 
 class UsersController extends Controller
 {
@@ -153,8 +155,7 @@ class UsersController extends Controller
     {
         $user = User::findorfail($id);
         $branchId = DB::table('users')->where('parent_id', $request->company_name)->max('code');
-        // dd(!empty($branchId));
-        // dd(sprintf("%05d", 1));
+        
         if(!empty($branchId))
         {
             $Enq= User::where('code', $branchId)->first();
@@ -178,6 +179,34 @@ class UsersController extends Controller
         }
         // dd($branchId);
         $user->update($request->all());
+        $user1 = User::where('id', $id)->first();
+        $userCourses = Coursetab::orderBy('course_id')->where('admin_id', '=', $user1->parent_id)->where('status', 1)->get();
+        // dd($user);
+        if(($user1->designation == "Sr. Manager") || ($user1->designation == "Manager")){
+            $courses = Coursetab::orderBy('course_id')->where('admin_id', '=', $user1->parent_id)->where('status', 1)->get();
+        }
+        if(($user->designation == "Sr. Engineer") || ($user->designation == "Engineer")){
+            $courses = Coursetab::orderBy('course_id')->where('admin_id', '=', $user1->parent_id)->where('status', 1)->limit(3)->get();
+        }
+        if($user->designation == "Trainee"){
+            $searchValue = "Introduction";
+            $courses = Coursetab::orderBy('course_id')->where('admin_id', '=', $user1->parent_id)->where('status', 1)->where('name', 'like', "%{$searchValue}%")->get();   
+        }
+        else{
+            $courses = Coursetab::orderBy('course_id')->where('admin_id', '=', $user1->parent_id)->where('status', 1)->get();
+        }
+        $courseArray = array();
+        foreach($courses as $course)
+        {
+            $courseArray[] = $course->course_id;
+        }
+        $getCourse = UserCourse::where('user_id', $id)->first();
+        if(empty($getCourse)){
+            $userCourse = new UserCourse;
+            $userCourse->user_id = $id;
+            $userCourse->user_course_id = implode(",", $courseArray);
+            $userCourse->save();
+        }
         return response()->json(['success' => 'User Updated Successfully!']);
 
     }

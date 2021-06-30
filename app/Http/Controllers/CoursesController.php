@@ -8,6 +8,8 @@ use Auth;
 use Redirect;
 use App\Coursetab;
 use App\TempCourses;
+use App\Admin\UserCourse;
+use App\User;
     
 class CoursesController extends Controller
 {
@@ -152,4 +154,62 @@ class CoursesController extends Controller
         return Redirect::back()->with('status', 'Status Changed Successfully!');
     }
 
+    public function getCourse(Request $request)
+    {
+        $getCourse = UserCourse::where('user_id', $request->bid)->first();
+        // return $getCourse;
+        $user = User::findorfail($request->bid);
+        $userCourses = Coursetab::orderBy('course_id')->where('admin_id', '=', $user->parent_id)->where('status', 1)->get();
+        // dd($user);
+        if(($user->designation == "Sr. Manager") || ($user->designation == "Manager")){
+            $courses = Coursetab::orderBy('course_id')->where('admin_id', '=', $user->parent_id)->where('status', 1)->get();
+        }
+        if(($user->designation == "Sr. Engineer") || ($user->designation == "Engineer")){
+            $courses = Coursetab::orderBy('course_id')->where('admin_id', '=', $user->parent_id)->where('status', 1)->limit(3)->get();
+        }
+        if($user->designation == "Trainee"){
+            $searchValue = "Introduction";
+            $courses = Coursetab::orderBy('course_id')->where('admin_id', '=', $user->parent_id)->where('status', 1)->where('name', 'like', "%{$searchValue}%")->get();   
+        }
+        else{
+            $courses = Coursetab::orderBy('course_id')->where('admin_id', '=', $user->parent_id)->where('status', 1)->get();
+        }
+        $courseArray = array();
+        foreach($courses as $course)
+        {
+            $courseArray[] = $course->course_id;
+        } 
+        if(empty($getCourse))
+        {
+            $userCourse = new UserCourse;
+            $userCourse->user_id = $request->bid;
+            $userCourse->user_course_id = implode(",", $courseArray);
+            $userCourse->save();
+        }
+        $getUserCourse = UserCourse::where('user_id', $request->bid)->first();
+        $explodeCourse = explode(",", $getUserCourse->user_course_id);
+        $output = "";
+        foreach($userCourses as $userCourse)
+        {
+            $output .= '<tr>'.
+                '<td>'.$userCourse->name.'</td>'. 
+                '<td>';
+                if(in_array($userCourse->course_id, $explodeCourse)){
+                    $output .= '<input type="checkbox" name="courses" checked value="'.$userCourse->course_id.'">';
+                }
+                else{
+                    $output .= '<input type="checkbox" name="courses" value="'.$userCourse->course_id.'">';
+                }
+                $output .= '</td>'.
+            '</tr>';
+        }
+        $data = array('user_id' => $request->bid, 'courses' => $output);
+        echo json_encode($data);
+    }
+
+    public function updateCourse(Request $request)
+    {
+        $getCourse = UserCourse::where('user_id', $request->user_id)->update(['user_course_id' => implode(",", $request->userCourse)]);
+        return response()->json(['success' => 'Data Updated Successfully!']);
+    }
 }

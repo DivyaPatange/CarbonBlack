@@ -103,38 +103,42 @@
       <div class="mdc-card p-0">
         <h4 class="card-title card-padding pb-0" style="display:inline-block;"><b>Courses</b></h4>
         <div class="container">
+        <?php 
+          $userCourse = DB::table('user_courses')->where('user_id', Auth::user()->id)->first();
+          $courses = explode(",", $userCourse->user_course_id);
+        ?>
           <div class="bs-example">
             <ul class="nav nav-tabs">
-              @foreach($courses as $key => $c)
+              @for($i=0; $i < count($courses); $i++)
               @php
+                $c = DB::table('coursetabs')->where('course_id', $courses[$i])->first();
                 $tabname = "$c->name";
                 $tabname = str_replace(' ', '', $tabname);
               @endphp
               <li class="nav-item">
-                  <a href="#tab{{ $c->course_id }}" class="nav-link {{ $key==0 ? 'active' : ''}}" data-toggle="tab">{{ $c->name }}</a>
+                  <a href="#tab{{ $c->course_id }}" class="nav-link {{ $i==0 ? 'active' : ''}}" data-toggle="tab">{{ $c->name }}</a>
               </li>
-              @endforeach
+              @endfor
             </ul>
             <div class="tab-content">
-              @foreach($courses as $key => $co)
-              @php
+              @for($i=0; $i < count($courses); $i++)
+                @php
+                  $co = DB::table('coursetabs')->where('course_id', $courses[$i])->first();
                   $tabname = "$co->name";
                   $tabname = str_replace(' ', '', $tabname);
                 @endphp
-              <div class="tab-pane fade show {{ $key==0 ? 'active' : ''}}" id="tab{{ $co->course_id }}">
+              <div class="tab-pane fade show {{ $i==0 ? 'active' : ''}}" id="tab{{ $co->course_id }}">
                 <div class="container">
                   <div class="row">
                     @foreach($tempCourses as $course)
                     @if($co->name == $course->category)
                     <?php
-                  $test = DB::table('test')->where('tab_id', $co->course_id)->first();
-                  // dd($test);
-                  if(!empty($test)){
-                  $takeTest = DB::table('take_test')->where('test_id', $test->id)->where('user_id', Auth::user()->id)->where('status', 1)->where('is_verified', 1)->get();
-
-                  // dd($takeTest);
-                  }
-                ?>
+                      $test = DB::table('test')->where('tab_id', $co->course_id)->first();
+                      // dd($test);
+                      if(!empty($test)){
+                        $takeTest = DB::table('take_test')->where('test_id', $test->id)->where('user_id', Auth::user()->id)->where('status', 1)->where('is_verified', 1)->get();
+                      }
+                    ?>
                     <div class="col-md-4 mt-4 pb-4">
                       <div class="mdc-card card-hover"  style="height:520px;">
                         <img class="card-img-top" src="{{ URL::to('/') }}/courseImg/{{$course->img}}" alt="Card image cap">
@@ -187,7 +191,7 @@
                   </div>
                 </div>
               </div>
-              @endforeach
+              @endfor
             </div>
           </div>
         </div>
